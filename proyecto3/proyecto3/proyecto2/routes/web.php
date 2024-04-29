@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Consulta;
 use Illuminate\Http\Request;
+use App\Http\Controllers\ConsultaController;
 use App\Http\Controllers\CitaController;
 use App\Http\Controllers\HistorialController;
 use App\Http\Controllers\HoraController;
@@ -24,7 +25,11 @@ Route::get('historial', function () {
 Route::get('/quelepasa', function () {
     return view('quelepasa');
 });
-Route::resource('citas', CitaController::class);
+
+
+Route::post('/citas', [CitaController::class, 'store'])->name('citas.store');
+Route::put('/citas/{cita}', [CitaController::class, 'update'])->name('citas.update'); // Ruta para actualizar cita
+
 
 Route::get('/historial', [HistorialController::class, 'index'])->name('historial.index');
 
@@ -34,31 +39,7 @@ Route::post('/guardar-hora', [HoraController::class, 'store']);
 
 Route::get('/fechas-reservadas', [ReservationController::class, 'fechasReservadas']);
 
-Route::get('/formulario-consulta', function () {
-    return view('quelepasa'); // Cambia 'quelepasa' por el nombre de tu vista
-});
-Route::post('/enviar-consulta', function (Request $request) {
-    // Validar los datos del formulario (opcional)
-    $request->validate([
-        'nombre' => 'required|string|max:255',
-        'especie' => 'required|string|max:255',
-        'edad' => 'required|integer',
-        'sintomas' => 'required|string',
-        'comentarios' => 'nullable|string',
-    ]);
-
-    // Crear una nueva instancia de Consulta y guardarla en la base de datos
-    $consulta = new Consulta();
-    $consulta->nombre = $request->nombre;
-    $consulta->especie = $request->especie;
-    $consulta->edad = $request->edad;
-    $consulta->sintomas = $request->sintomas;
-    $consulta->comentarios = $request->comentarios;
-    $consulta->save();
-
-    // Redirigir de vuelta al formulario con un mensaje de éxito
-    return redirect('/formulario-consulta')->with('success', 'Consulta enviada correctamente.');
-})->name('enviar-consulta');
+Route::post('/enviar-consulta', [ConsultaController::class, 'guardarConsulta'])->name('enviar-consulta');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

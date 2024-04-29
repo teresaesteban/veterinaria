@@ -1,13 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-white leading-tight">
-            {{ __('CALENDARIO') }}
+            <?php echo __('CALENDARIO'); ?>
         </h2>
     </x-slot>
 
     <meta charset="UTF-8"> <!-- Agregar esta línea -->
 
-    @php
+    <?php
         // Obtenemos el mes y el año actual
         $currentMonth = date('n');
         $currentYear = date('Y');
@@ -20,50 +20,50 @@
 
         // Obtenemos los nombres de los días de la semana en español
         $daysOfWeek = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
-    @endphp
+    ?>
 
     <div class="py-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-white">
-                    <div class="text-center text-lg font-bold mb-4">{{ $monthName }} {{ $currentYear }}</div>
+                    <div class="text-center text-lg font-bold mb-4"><?php echo $monthName; ?> <?php echo $currentYear; ?></div>
                     <table class="w-full">
                         <thead>
                             <tr>
-                                @foreach ($daysOfWeek as $day)
-                                    <th class="border border-gray-700 py-2 px-4">{{ substr($day, 0, 10) }}</th>
-                                @endforeach
+                                <?php foreach ($daysOfWeek as $day): ?>
+                                    <th class="border border-gray-700 py-2 px-4"><?php echo substr($day, 0, 10); ?></th>
+                                <?php endforeach; ?>
                             </tr>
                         </thead>
                         <tbody>
-                            @php
+                            <?php
                                 $startDay = date('N', strtotime("$currentYear-$currentMonth-01"));
                                 $totalDays = $daysInMonth + $startDay - 1;
                                 $dayCounter = 1;
-                            @endphp
-                            @for ($i = 0; $i < $totalDays + ($totalDays >= 5 ? 2 : 0); $i++)
-                                @if ($i % 7 == 0)
+                            ?>
+                            <?php for ($i = 0; $i < $totalDays + ($totalDays >= 5 ? 2 : 0); $i++): ?>
+                                <?php if ($i % 7 == 0): ?>
                                     <tr>
-                                @endif
-                                @if ($i < $startDay - 1 || $i >= $totalDays)
+                                <?php endif; ?>
+                                <?php if ($i < $startDay - 1 || $i >= $totalDays): ?>
                                     <td class="border border-gray-700 py-2 px-4"></td>
-                                @else
+                                <?php else: ?>
                                     <td class="border border-gray-700 py-2 px-4">
                                         <div class="relative pb-12">
                                             <div class="bg-gray-700 border border-gray-700 rounded-lg px-4 py-2 cursor-pointer"
-                                                onclick="showSchedule({{ $dayCounter }})">
-                                                <div class="text-lg font-bold">{{ $dayCounter }}</div>
+                                                onclick="showSchedule(<?php echo $dayCounter; ?>)">
+                                                <div class="text-lg font-bold"><?php echo $dayCounter; ?></div>
                                                 <button class="text-sm font-medium text-white focus:outline-none"
-                                                    onclick="showHours({{ $dayCounter }})">Seleccionar hora</button>
+                                                    onclick="showHours(<?php echo $dayCounter; ?>)">Seleccionar hora</button>
                                             </div>
                                         </div>
-                                        @php $dayCounter++; @endphp
+                                        <?php $dayCounter++; ?>
                                     </td>
-                                @endif
-                                @if ($i % 7 == 6)
+                                <?php endif; ?>
+                                <?php if ($i % 7 == 6): ?>
                                     </tr>
-                                @endif
-                            @endfor
+                                <?php endif; ?>
+                            <?php endfor; ?>
                         </tbody>
                     </table>
                 </div>
@@ -84,15 +84,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @for ($hour = 8; $hour <= 18; $hour++)
+                            <?php for ($hour = 8; $hour <= 18; $hour++): ?>
                                 <tr>
-                                    <td class="border border-gray-700 py-2 px-4">{{ str_pad($hour, 2, '0', STR_PAD_LEFT) }}:00</td>
+                                    <td class="border border-gray-700 py-2 px-4"><?php echo str_pad($hour, 2, '0', STR_PAD_LEFT); ?>:00</td>
                                     <td class="border border-gray-700 py-2 px-4">
                                         <button class="text-sm font-medium text-white focus:outline-none"
-                                            onclick="confirmHour({{ $hour }})">Seleccionar</button>
+                                            onclick="confirmHour(<?php echo $hour; ?>)">Seleccionar</button>
                                     </td>
                                 </tr>
-                            @endfor
+                            <?php endfor; ?>
                         </tbody>
                     </table>
                     <div id="confirmation" class="hidden mt-4">
@@ -107,9 +107,7 @@
             </div>
         </div>
     </div>
-
     @include('registro.footer')
-
     <script>
         let selectedDay = 0;
         let selectedHour = 0;
@@ -138,14 +136,14 @@
         function saveDate() {
             document.getElementById('confirmation').classList.add('hidden');
             let formData = new FormData();
-            formData.append('fecha', '{{ $currentYear }}-{{ $currentMonth }}-' + selectedDay);
+            formData.append('fecha', '<?php echo $currentYear; ?>-<?php echo $currentMonth; ?>-' + selectedDay);
             formData.append('hora', selectedHour);
 
             fetch('/guardar-hora', {
                 method: 'POST',
                 body: formData,
                 headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    'X-CSRF-TOKEN': '<?php echo csrf_token(); ?>'
                 }
             })
             .then(response => response.json())
