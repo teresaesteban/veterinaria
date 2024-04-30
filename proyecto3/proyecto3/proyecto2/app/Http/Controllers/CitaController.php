@@ -3,9 +3,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cita;
+use App\Models\Mascota;
 
 class CitaController extends Controller
-{
+{public function index(Request $request)
+    {
+        // Obtener todas las mascotas para el formulario de selección
+        $mascotas = Mascota::all();
+
+        // Si hay una mascota seleccionada, obtener sus citas
+        if ($request->has('mascota_id')) {
+            $mascota_id = $request->input('mascota_id');
+            $mascota = Mascota::findOrFail($mascota_id);
+            $citas = $mascota->citas;
+        } else {
+            // Si no hay una mascota seleccionada, mostrar todas las citas
+            $citas = Cita::all();
+        }
+
+        // Pasar las mascotas y las citas a la vista
+        return view('historial', compact('citas', 'mascotas'));
+    }
     public function store(Request $request)
     {
         $request->validate([

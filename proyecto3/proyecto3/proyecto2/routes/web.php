@@ -27,12 +27,11 @@ Route::get('/quelepasa', function () {
 });
 
 
+Route::get('/historial', [CitaController::class, 'index'])->name('citas.index');
+Route::get('/citas', [CitaController::class, 'index'])->name('citas.index');
+
 Route::post('/citas', [CitaController::class, 'store'])->name('citas.store');
 Route::put('/citas/{cita}', [CitaController::class, 'update'])->name('citas.update'); // Ruta para actualizar cita
-
-
-Route::get('/historial', [HistorialController::class, 'index'])->name('historial.index');
-
 
 Route::post('/guardar-hora', [HoraController::class, 'store']);
 // routes/web.php

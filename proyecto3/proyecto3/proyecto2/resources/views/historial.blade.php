@@ -1,4 +1,5 @@
 <x-app-layout>
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-white leading-tight">
             {{ __('HISTORIAL CLÍNICO') }}
@@ -50,7 +51,7 @@
                     <!-- Contenedor del formulario de modificar cita (inicialmente oculto) -->
                     <div id="formularioModificarCita" class="hidden mt-4">
                         <h3 class="text-lg font-semibold mb-4 text-white">{{ __('Modificar Cita Guardada') }}</h3>
-                        <form id="formModificarCita" action="" method="POST">
+                        <form id="formModificarCita" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="mb-4">
@@ -74,6 +75,17 @@
                             </div>
                         </form>
                     </div>
+
+                    <form action="{{ route('citas.index') }}" method="GET" class="mb-4">
+                        @csrf
+                        <label for="mascota_id" class="block text-sm font-medium text-white">Selecciona Mascota:</label>
+                        <select name="mascota_id" id="mascota_id" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-700 rounded-md">
+                            @foreach($mascotas as $mascota)
+                                <option value="{{ $mascota->id }}">{{ $mascota->nombre }}</option>
+                            @endforeach
+                        </select>
+                        <button type="submit" class="mt-2 inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:border-indigo-900 focus:ring focus:ring-indigo-300 disabled:opacity-25 transition">{{ __('Mostrar Historial') }}</button>
+                    </form>
 
                     <div class="mt-8">
                         <h3 class="text-lg font-semibold mb-4 text-white">{{ __('Citas Registradas') }}</h3>

@@ -22,7 +22,7 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('historial')" :active="request()->routeIs('historial')">
+                    <x-nav-link :href="route('citas.index')" :active="request()->routeIs('historial')">
                         {{ __('Historial Clínico') }}
                     </x-nav-link>
                 </div>
