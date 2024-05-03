@@ -10,7 +10,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
+                <div class="p-6 bg-white border-b border-gray-200 text-black">
                     <p>Mascota agregada correctamente para el usuario {{ $usuario->name }}</p>
 
                     <!-- Formulario para ingresar datos de la mascota -->
@@ -30,8 +30,9 @@
                             <input type="number" name="edad" id="edad" class="form-input block w-full mt-1">
                         </div>
                         <div class="mt-4">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Guardar Mascota</button>
+                            <button type="submit" class="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded">Guardar Mascota</button>
                         </div>
+
                     </form>
                 </div>
             </div>
