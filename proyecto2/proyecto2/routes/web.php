@@ -36,7 +36,10 @@ Route::get('/fechas-reservadas', [ReservationController::class, 'fechasReservada
 
 Route::post('/guardar-consulta', [ConsultaController::class, 'guardarConsulta'])->name('guardar-consulta');
 
-Route::get('/consultas', [ConsultaController::class, 'mostrar'])->name('mostrar-consultas');
+Route::get('/mostrar-consultas', [ConsultaController::class, 'mostrar'])->name('mostrar-consultas');
+
+Route::delete('/consultas/{consulta}', [ConsultaController::class, 'destroy'])->name('consultas.destroy');
+
 
 Route::get('/usuarios', [UserController::class, 'index'])->middleware(['auth'])->name('usuarios.index');
 

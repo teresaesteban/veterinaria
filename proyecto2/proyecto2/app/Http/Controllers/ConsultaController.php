@@ -35,4 +35,9 @@ class ConsultaController extends Controller
         // Mostrar la vista de consultas con los datos
         return view('consultas', ['consultas' => $consultas]);
     }
+    public function destroy(Consulta $consulta)
+    {
+        $consulta->delete();
+        return redirect()->route('mostrar-consultas')->with('success', 'Consulta eliminada correctamente.');
+    }
 }
