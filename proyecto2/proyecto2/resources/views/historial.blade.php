@@ -69,3 +69,4 @@
         </div>
     </div>
 </x-app-layout>
+@include('registro.footer')
