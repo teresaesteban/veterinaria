@@ -10,7 +10,7 @@
             <div class="bg-dark overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
-                    <form action="{{ route('enviar-consulta') }}" method="POST">
+                    <form action="{{ route('guardar-consulta') }}" method="POST">
                         @csrf
                         <div class="mb-4">
                             <label for="nombre" class="block text-gray-700 text-white font-bold mb-2">Nombre de tu mascota:</label>
@@ -34,7 +34,6 @@
                         </div>
                         <div class="flex items-center justify-between">
                             <button type="submit" class="bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-gray-900 dark:bg-black dark:text-gray-300 dark:hover:bg-gray-800">Enviar consulta</button>
-
                         </div>
                     </form>
                 </div>
@@ -43,3 +42,4 @@
     </div>
 </x-app-layout>
 @include('registro.footer')
+

@@ -9,7 +9,7 @@ class ConsultaController extends Controller
 {
     public function guardarConsulta(Request $request)
     {
-        // Validación de datos, puedes hacerla aquí
+       // Validación de datos, puedes hacerla aquí
 
         // Crear una nueva instancia del modelo Consulta
         $consulta = new Consulta();
@@ -25,6 +25,14 @@ class ConsultaController extends Controller
         $consulta->save();
 
         // Redireccionar a donde quieras después de guardar
-        return redirect()->back()->with('success', 'Consulta enviada correctamente');
+        return redirect()->route('mostrar-consultas')->with('success', 'Consulta enviada correctamente');
+    }
+    public function mostrar()
+    {
+        // Obtener todas las consultas
+        $consultas = Consulta::all();
+
+        // Mostrar la vista de consultas con los datos
+        return view('consultas', ['consultas' => $consultas]);
     }
 }

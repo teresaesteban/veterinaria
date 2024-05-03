@@ -34,8 +34,9 @@ Route::post('full-calender/action', [FullCalenderController::class, 'action']);
 
 Route::get('/fechas-reservadas', [ReservationController::class, 'fechasReservadas']);
 
-Route::post('/enviar-consulta', [ConsultaController::class, 'guardarConsulta'])->name('enviar-consulta');
+Route::post('/guardar-consulta', [ConsultaController::class, 'guardarConsulta'])->name('guardar-consulta');
 
+Route::get('/consultas', [ConsultaController::class, 'mostrar'])->name('mostrar-consultas');
 
 Route::get('/usuarios', [UserController::class, 'index'])->middleware(['auth'])->name('usuarios.index');
 
