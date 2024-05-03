@@ -1,3 +1,5 @@
+<!-- historial.blade.php -->
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -28,6 +30,7 @@
                                 <tr>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">{{ __('Nombre') }}</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">{{ __('Email') }}</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">{{ __('Mascota') }}</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">{{ __('Acciones') }}</th> <!-- Agregamos una columna para las acciones -->
                                 </tr>
                             </thead>
@@ -40,6 +43,15 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm text-white">{{ $usuario->email }}</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        @if ($usuario->mascota)
+                                            <div class="text-sm text-white">Nombre: {{ $usuario->mascota->nombre }}</div>
+                                            <div class="text-sm text-white">Tipo: {{ $usuario->mascota->tipo }}</div>
+                                            <div class="text-sm text-white">Edad: {{ $usuario->mascota->edad }}</div>
+                                        @else
+                                            <div class="text-sm text-white">Sin mascota</div>
+                                        @endif
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <!-- Botón para añadir mascota, que redirige a la ruta para agregar mascota con el ID del usuario -->

@@ -44,8 +44,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    public function pet()
-{
-    return $this->hasOne(Mascota::class);
-}
+    public function mascota()
+    {
+        return $this->hasOne(Mascota::class, 'usuario_id');
+    }
 }

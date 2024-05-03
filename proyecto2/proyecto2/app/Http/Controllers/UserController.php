@@ -15,6 +15,7 @@ class UserController extends Controller
         // Lógica de búsqueda
         $usuarios = User::where('name', 'like', '%'.$searchTerm.'%')
                         ->orWhere('email', 'like', '%'.$searchTerm.'%')
+                        ->with('mascota') // Cargar la relación 'mascota'
                         ->get();
 
         // Pasar los usuarios encontrados a la vista
@@ -27,4 +28,11 @@ class UserController extends Controller
         // Por ahora, simplemente pasaremos a una vista para mostrar que la mascota ha sido agregada
         return view('mascota.agregada', ['usuario' => $usuario]);
     }
+    public function perfil(User $usuario)
+{
+    // Cargar la relación 'mascota' si existe
+    $usuario->load('mascota');
+
+    return view('perfil', compact('usuario'));
+}
 }
