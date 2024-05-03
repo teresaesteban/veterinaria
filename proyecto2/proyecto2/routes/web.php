@@ -32,9 +32,6 @@ Route::get('full-calender', [FullCalenderController::class, 'index']);
 
 Route::post('full-calender/action', [FullCalenderController::class, 'action']);
 
-Route::post('/guardar-hora', [HoraController::class, 'store']);
-// routes/web.php
-
 Route::get('/fechas-reservadas', [ReservationController::class, 'fechasReservadas']);
 
 Route::post('/enviar-consulta', [ConsultaController::class, 'guardarConsulta'])->name('enviar-consulta');
