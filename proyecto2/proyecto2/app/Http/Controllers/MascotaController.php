@@ -30,5 +30,13 @@ public function guardar(Request $request)
     // Redirigir a la página de historial con un mensaje de éxito
     return Redirect::route('usuarios.search')->with('success', 'Mascota agregada correctamente.');
 }
+public function show($usuario)
+{
+    // Lógica para mostrar la información de la mascota
+    // Por ejemplo, puedes buscar la mascota relacionada con el usuario y pasarla a la vista
+    $mascota = Mascota::where('usuario_id', $usuario)->first();
+
+    return view('mascota.show', ['mascota' => $mascota]);
+}
 
 }

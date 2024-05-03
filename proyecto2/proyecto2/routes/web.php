@@ -48,6 +48,13 @@ Route::get('/usuarios/{usuario}/agregar-mascota', [UserController::class, 'agreg
 
 Route::post('/mascota/guardar', [MascotaController::class, 'guardar'])->name('mascota.guardar');
 
+Route::group(['middleware' => ['auth']], function () {
+    // Otras rutas de usuarios aquí
+
+    // Ruta para el detalle de la mascota
+    Route::get('/usuarios/{usuario}/mascota', [MascotaController::class, 'show'])->name('usuarios.mascota');
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

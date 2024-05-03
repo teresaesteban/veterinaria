@@ -39,7 +39,8 @@
                                 @foreach($usuarios as $usuario)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-white">{{ $usuario->name }}</div>
+                                        <!-- Enlace al detalle de la mascota -->
+                                        <a href="{{ route('usuarios.mascota', ['usuario' => $usuario->id]) }}" class="text-white hover:text-gray-400">{{ $usuario->name }}</a>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm text-white">{{ $usuario->email }}</div>
