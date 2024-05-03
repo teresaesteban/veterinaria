@@ -11,6 +11,7 @@ use App\Http\Controllers\HoraController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MascotaController;
 Route::get('/', function () {
     return view('all');
 });
@@ -42,6 +43,11 @@ Route::post('/enviar-consulta', [ConsultaController::class, 'guardarConsulta'])-
 Route::get('/usuarios', [UserController::class, 'index'])->middleware(['auth'])->name('usuarios.index');
 
 Route::get('/usuarios/buscar', [UserController::class, 'search'])->name('usuarios.search');
+
+Route::get('/usuarios/{usuario}/agregar-mascota', [UserController::class, 'agregarMascota'])->name('usuarios.agregar-mascota');
+
+Route::post('/mascota/guardar', [MascotaController::class, 'guardar'])->name('mascota.guardar');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

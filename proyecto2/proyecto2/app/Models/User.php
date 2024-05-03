@@ -46,6 +46,6 @@ class User extends Authenticatable
     }
     public function pet()
 {
-    return $this->hasOne(Pet::class);
+    return $this->hasOne(Mascota::class);
 }
 }

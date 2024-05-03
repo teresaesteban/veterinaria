@@ -17,11 +17,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('user_type')->default('normal'); // Nuevo campo user_type
-            $table->string('pet_type')->nullable(); // Nuevo campo pet_type
-            $table->string('pet_name')->nullable(); // Nuevo campo pet_name
-            $table->integer('pet_age')->nullable(); // Nuevo campo pet_age
-            $table->string('pet_sex')->nullable(); // Nuevo campo pet_sex
             $table->rememberToken();
             $table->timestamps();
         });

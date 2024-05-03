@@ -1,4 +1,3 @@
-<!-- usuarios/index.blade.php -->
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -29,10 +28,10 @@
                                 <tr>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">{{ __('Nombre') }}</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">{{ __('Email') }}</th>
-                                    <!-- Puedes agregar más columnas según tus necesidades -->
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">{{ __('Acciones') }}</th> <!-- Agregamos una columna para las acciones -->
                                 </tr>
                             </thead>
-                            <tbody class="bg-gray-900 ">
+                            <tbody class="bg-gray-900">
                                 <!-- Ejemplo de fila, reemplazar con registros reales de usuarios -->
                                 @foreach($usuarios as $usuario)
                                 <tr>
@@ -42,7 +41,10 @@
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm text-white">{{ $usuario->email }}</div>
                                     </td>
-                                    <!-- Puedes agregar más columnas aquí según tus necesidades -->
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <!-- Botón para añadir mascota, que redirige a la ruta para agregar mascota con el ID del usuario -->
+                                        <a href="{{ route('usuarios.agregar-mascota', ['usuario' => $usuario->id]) }}" class="text-white hover:text-gray-400">Añadir mascota</a>
+                                    </td>
                                 </tr>
                                 @endforeach
                                 <!-- Fin del ejemplo de fila -->
