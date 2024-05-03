@@ -32,11 +32,23 @@ public function guardar(Request $request)
 }
 public function show($usuario)
 {
-    // Lógica para mostrar la información de la mascota
-    // Por ejemplo, puedes buscar la mascota relacionada con el usuario y pasarla a la vista
+    // Buscar la mascota relacionada con el usuario
     $mascota = Mascota::where('usuario_id', $usuario)->first();
 
-    return view('mascota.show', ['mascota' => $mascota]);
+    // Verificar si se encontró la mascota
+    if ($mascota) {
+        // Obtener todas las citas asociadas a esta mascota
+        $citas = $mascota->citas;
+        // Pasar la mascota y las citas a la vista
+        return view('mascota.show', compact('mascota', 'citas'));
+    } else {
+        // Si no se encuentra la mascota, redirigir o mostrar un mensaje de error
+        // Por ejemplo:
+        return redirect()->route('pagina_de_error');
+        // O
+        // return view('error');
+    }
 }
+
 
 }

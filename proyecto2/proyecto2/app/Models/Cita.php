@@ -9,4 +9,9 @@ class Cita extends Model
 {
     protected $table = 'citas'; // Ajusta el nombre de la tabla si es necesario
     // Resto del modelo
+    public function mascota()
+    {
+        return $this->belongsTo(Mascota::class);
+    }
 }
+

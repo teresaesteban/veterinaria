@@ -14,10 +14,12 @@ class CreateCitasTable extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('mascota_id')->constrained()->onDelete('cascade');
+            // Aquí agrega otras columnas necesarias para tu tabla de citas
             $table->date('fecha');
-            $table->string('motivo');
-            $table->text('diagnostico');
-            $table->text('tratamiento');
+            $table->text('motivo');
+            $table->text('diagnostico')->nullable();
+            $table->text('tratamiento')->nullable();
             $table->timestamps();
         });
     }
@@ -32,4 +34,3 @@ class CreateCitasTable extends Migration
         Schema::dropIfExists('citas');
     }
 }
-

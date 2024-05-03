@@ -18,4 +18,11 @@ class Mascota extends Model
     {
         return $this->belongsTo(User::class, 'usuario_id');
     }
+    // En tu modelo Mascota.php
+
+public function citas()
+{
+    return $this->hasMany(Cita::class);
+}
+
 }
