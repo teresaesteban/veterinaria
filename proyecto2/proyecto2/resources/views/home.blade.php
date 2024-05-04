@@ -11,12 +11,12 @@
       <div class="bg-dark overflow-hidden shadow-lg sm:rounded-lg"> <!-- Mantuve el fondo oscuro -->
         <div class="p-6 text-white dark:text-white"> <!-- Cambié el color del texto a blanco -->
           <!-- Contenido de la página de inicio -->
-          @role('employee')
+
           <div class="text-center">
             <h1 class="text-4xl font-bold mb-4">Bienvenido a la Clínica Veterinaria</h1>
             <p class="text-lg mb-8">Cuidando de tus mascotas como si fueran de la familia</p>
-            @endrole
-            @role('user')
+
+
             <!-- Añadí un espacio para el carrusel de imágenes -->
             <div id="carouselExampleIndicators" class="carousel slide mb-8" data-bs-ride="carousel">
               <div class="carousel-inner">
@@ -31,7 +31,7 @@
                 </div>
                 <!-- Añade más imágenes según necesites -->
               </div>
-              @endrole
+
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
