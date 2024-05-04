@@ -14,8 +14,6 @@ class CreateCitasTable extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('mascota_id')->constrained()->onDelete('cascade');
-            // Aquí agrega otras columnas necesarias para tu tabla de citas
             $table->date('fecha');
             $table->text('motivo');
             $table->text('diagnostico')->nullable();

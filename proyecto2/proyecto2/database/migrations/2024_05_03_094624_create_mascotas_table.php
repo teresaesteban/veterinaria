@@ -18,7 +18,8 @@ class CreateMascotasTable extends Migration
             $table->string('nombre');
             $table->string('tipo');
             $table->integer('edad');
-            $table->foreignId('usuario_id')->constrained('users'); // Añade una clave foránea a la tabla 'users'
+            $table->unsignedBigInteger('usuario_id');
+            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade'); // Cambiado 'usuarios' a 'users'
             $table->timestamps();
         });
     }
