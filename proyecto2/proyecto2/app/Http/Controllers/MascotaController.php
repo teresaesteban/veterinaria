@@ -44,7 +44,7 @@ public function show($usuario)
     } else {
         // Si no se encuentra la mascota, redirigir o mostrar un mensaje de error
         // Por ejemplo:
-        return redirect()->route('pagina_de_error');
+        return redirect()->route('usuarios.agregar-mascota', ['usuario' => $usuario]);
         // O
         // return view('error');
     }
