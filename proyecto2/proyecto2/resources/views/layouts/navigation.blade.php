@@ -34,13 +34,13 @@
                         </x-nav-link>
                     </div>
                 @endrole
-                @role('user')
+                @if(!Auth::user()->hasRole('employee'))
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                         <x-nav-link :href="url('quelepasa')" :active="request()->routeIs('quelepasa')">
                             {{ __('¿Qué le pasa a mi mascota?') }}
                         </x-nav-link>
                     </div>
-                @endrole
+                @endif
             </div>
 
             <!-- Settings Dropdown -->

@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-dark overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-white">
-                    @if(auth()->user()->hasRole('user'))
+                    @if(!Auth::user()->hasRole('employee'))
                         <!-- Mostrar usuario con identificador -->
                         <div class="mt-8">
                             <h3 class="text-lg font-semibold mb-4">{{ __('Tu Usuario') }}</h3>
