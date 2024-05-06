@@ -4,22 +4,8 @@
             {{ __('CALENDARIO') }}
         </h2>
     </x-slot>
-
-    <br>
-
-    <div class="grid grid-cols-3 gap-4">
-        <div class="col-span-2">
-            <div id="calendar"></div>
-        </div>
-        <div class="col-span-1">
-            <div class="next-appointments">
-                <h3>Citas Próximas</h3>
-                <ul id="next-appointments-list">
-                    <!-- Aquí se llenarán las citas próximas -->
-                </ul>
-            </div>
-        </div>
-    </div>
+ <br>
+    <div id="calendar"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" />
@@ -130,26 +116,6 @@
                     }
                 }
             });
-
-            // Función para cargar las citas próximas
-            function loadNextAppointments() {
-                $.ajax({
-                    url: "/next-appointments", // Ruta para obtener las citas próximas
-                    type: "GET",
-                    success: function (data) {
-                        var appointments = data.appointments;
-                        var appointmentsList = $('#next-appointments-list');
-                        appointmentsList.empty(); // Limpiar la lista antes de agregar citas nuevas
-                        appointments.forEach(function (appointment) {
-                            var listItem = '<li class="appointment-item">' + appointment.title + ' - ' + appointment.start + '</li>';
-                            appointmentsList.append(listItem);
-                        });
-                    }
-                });
-            }
-
-            // Llamar a la función para cargar las citas próximas al inicio
-            loadNextAppointments();
         });
     </script>
     <br>
