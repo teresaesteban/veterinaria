@@ -12,6 +12,52 @@
  *//* Contenido de public/css/styles.css */
 
 /* Estilos personalizados */
+#calendar {
+  max-width: 75%;
+  margin: 20px auto;
+  background-color:#416881;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(107, 98, 98, 0.1);
+  padding: 20px;
+}
+
+/* Estilo para el título del evento */
+.fc-title {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilo para los botones de navegación */
+.fc-toolbar.fc-header-toolbar {
+  margin-bottom: 20px;
+}
+
+/* Estilo para los eventos */
+.fc-event {
+  background-color: #416881;
+  color: #ddd;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Cambiar el color del tema del calendario */
+.fc {
+  --fc-theme-foreground: #333;
+  --fc-border-color: #dddddd;
+  --fc-button-text-color: #333;
+  --fc-button-background-color: #fff;
+  --fc-button-border-color: #ddd;
+  --fc-state-default-background-color: #fff;
+  --fc-state-default-border-color: #ddd;
+  --fc-state-hover-background-color: #f5f5f5;
+  --fc-state-hover-border-color: #ccc;
+  --fc-state-active-background-color: #e5e5e5;
+  --fc-state-active-border-color: #ccc;
+  --fc-state-highlight-background-color: #f5f5f5;
+  --fc-state-highlight-border-color: #ccc;
+}
 body {
   color: #fff;
   font-family: Recoleta-Regular, Georgia, Times New Roman, serif;

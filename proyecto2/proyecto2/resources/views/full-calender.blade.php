@@ -5,21 +5,27 @@
         </h2>
     </x-slot>
 
-    <style>
-        /* Estilo para el calendario */
-        #calendar {
-            max-width: 50%; /* Ancho máximo */
-            margin: 0 auto; /* Centrado horizontal */
-        }
-    </style>
- <br>
-    <div id="calendar"></div>
+    <br>
+
+    <div class="grid grid-cols-3 gap-4">
+        <div class="col-span-2">
+            <div id="calendar"></div>
+        </div>
+        <div class="col-span-1">
+            <div class="next-appointments">
+                <h3>Citas Próximas</h3>
+                <ul id="next-appointments-list">
+                    <!-- Aquí se llenarán las citas próximas -->
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
-
+    <link href="css/styles.css" rel="stylesheet" />
     <script>
         $(document).ready(function () {
             $.ajaxSetup({
@@ -124,6 +130,26 @@
                     }
                 }
             });
+
+            // Función para cargar las citas próximas
+            function loadNextAppointments() {
+                $.ajax({
+                    url: "/next-appointments", // Ruta para obtener las citas próximas
+                    type: "GET",
+                    success: function (data) {
+                        var appointments = data.appointments;
+                        var appointmentsList = $('#next-appointments-list');
+                        appointmentsList.empty(); // Limpiar la lista antes de agregar citas nuevas
+                        appointments.forEach(function (appointment) {
+                            var listItem = '<li class="appointment-item">' + appointment.title + ' - ' + appointment.start + '</li>';
+                            appointmentsList.append(listItem);
+                        });
+                    }
+                });
+            }
+
+            // Llamar a la función para cargar las citas próximas al inicio
+            loadNextAppointments();
         });
     </script>
     <br>

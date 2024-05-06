@@ -134,7 +134,7 @@
             </div>
           </div>
         </section>
-
+        @include('calendario')
 
 </x-app-layout>
 @include('registro.footer')
