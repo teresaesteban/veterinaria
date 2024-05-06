@@ -47,6 +47,7 @@
 
 
                     </div>
+                    <p class="bg-black text-end text-white"><a href="http://www.freepik.com">Designed by rawpixel.com / Freepik</a></p>
                 </div>
             </div>
         </div>
@@ -94,51 +95,37 @@
  <div id="calendar"></div>
 
  <br>
- <!-- Call to Action-->
- <section class="call-to-action text-white text-center" id="signup">
+ <!-- Call to Action--><!-- Call to Action-->
+<section class="call-to-action text-white text-center" id="contact">
     <div class="container position-relative">
         <div class="row justify-content-center">
             <div class="col-xl-6">
-                <h2 class="mb-4">Ready to get started? Sign up now!</h2>
-                <!-- Signup form-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
+                <h2 class="mb-4">¿Has tenido algún problema? Introduce tu correo electrónico y nos pondremos en contacto</h2>
+                <!-- Contact form-->
+                <form class="form-subscribe" id="contactFormFooter" method="POST" action="{{ route('contact.store') }}">
+                    @csrf
                     <!-- Email address input-->
                     <div class="row">
                         <div class="col">
-                            <input class="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Email Address" data-sb-validations="required,email" />
-                            <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email Address is required.</div>
-                            <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email Address Email is not valid.</div>
+                            <input class="form-control form-control-lg" name="email" id="emailAddressBelow" type="email" placeholder="Correo electrónico" required />
                         </div>
-                        <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                        <div class="col-auto"><button class="btn btn-primary btn-lg" type="submit">Enviar</button></div>
                     </div>
                     <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
                     <div class="d-none" id="submitSuccessMessage">
                         <div class="text-center mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            <p>To activate this form, sign up at</p>
-                            <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            <div class="fw-bolder">¡Correo electrónico enviado con éxito!</div>
+                            <p>Nos pondremos en contacto contigo pronto.</p>
                         </div>
                     </div>
                     <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">¡Error al enviar el correo electrónico!</div></div>
                 </form>
             </div>
         </div>
     </div>
 </section>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

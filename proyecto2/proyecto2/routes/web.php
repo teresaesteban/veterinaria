@@ -12,6 +12,7 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MascotaController;
+use App\Http\Controllers\ContactController;
 Route::get('/', function () {
     return view('all');
 });
@@ -48,6 +49,9 @@ Route::get('/usuarios/buscar', [UserController::class, 'search'])->name('usuario
 Route::get('/usuarios/{usuario}/agregar-mascota', [UserController::class, 'agregarMascota'])->name('usuarios.agregar-mascota');
 
 Route::post('/mascota/guardar', [MascotaController::class, 'guardar'])->name('mascota.guardar');
+
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 Route::group(['middleware' => ['auth']], function () {
     // Otras rutas de usuarios aquí
