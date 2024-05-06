@@ -4,8 +4,14 @@
             {{ __('CALENDARIO') }}
         </h2>
     </x-slot>
+ <br>  <h1 class="display-5 lh-6 mb-3 text-center">Calendario clínica veterinaria</h1>
+ <!-- Agrega un contenedor para centrar la imagen -->
+ <div class="d-flex justify-content-center">
+     <img src="images/title.jpg" alt="Calendario" style="width: 10%;" />
+ </div>
+ <div id="calendar"></div>
+
  <br>
-    <div id="calendar"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" />
@@ -118,6 +124,5 @@
             });
         });
     </script>
-    <br>
 </x-app-layout>
 @include('registro.footer')
