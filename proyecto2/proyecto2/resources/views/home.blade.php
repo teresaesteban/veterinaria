@@ -64,46 +64,54 @@
         </div>
     </div>
 </aside>
-
-     <!-- App features section-->
+<!-- App features section-->
 <section id="features">
   <div class="container px-5">
-    <div class="row gx-5 justify-content-center">
-      <div class="col-md-6 mb-5">
+    <div class="row justify-content-center"> <!-- Quité gx-5 para centrar el contenido -->
+      <div class="col-lg-6 col-md-6 mb-5"> <!-- Cambié col-md-6 por col-lg-6 -->
         <!-- Feature item: Calendario -->
-        <div class="text-center">
-          <i class="bi-calendar icon-feature text-gradient d-block mb-3"></i>
-          <h3 class="font-alt">Calendario</h3>
-          <p class="text-muted mb-0">Organiza citas y recordatorios importantes para tu mascota.</p>
-        </div>
+        <x-nav-link :href="url('full-calender')" :active="request()->routeIs('full-calender')">
+          <div class="text-center">
+            <i class="bi-calendar icon-feature text-gradient d-block mb-3"></i>
+            <h3 class="font-alt">Calendario</h3>
+            <p class="text-muted mb-0">Organiza citas y recordatorios importantes para tu mascota.</p>
+          </div>
+        </x-nav-link>
       </div>
-      <div class="col-md-6 mb-5">
+      <div class="col-lg-6 col-md-6 mb-5"> <!-- Cambié col-md-6 por col-lg-6 -->
         <!-- Feature item: Historial Clínico -->
-        <div class="text-center">
-          <i class="bi-file-earmark-medical icon-feature text-gradient d-block mb-3"></i>
-          <h3 class="font-alt">Historial Clínico</h3>
-          <p class="text-muted mb-0">Mantén un registro detallado de las visitas al veterinario, tratamientos y más.</p>
-        </div>
+        <x-nav-link :href="route('usuarios.search')" :active="request()->routeIs('usuarios.search')">
+          <div class="text-center">
+            <i class="bi-file-earmark-medical icon-feature text-gradient d-block mb-3"></i>
+            <h3 class="font-alt">Historial Clínico</h3>
+            <p class="text-muted mb-0">Mantén un registro detallado de las visitas al veterinario, tratamientos y más.</p>
+          </div>
+        </x-nav-link>
       </div>
-      <div class="col-md-6 mb-5">
+      <div class="col-lg-6 col-md-6 mb-5"> <!-- Cambié col-md-6 por col-lg-6 -->
         <!-- Feature item: Free to Use -->
-        <div class="text-center">
-          <i class="bi bi-heart icon-feature text-gradient d-block mb-3"></i>
-          <h3 class="font-alt">¿Qué le pasa a tu Mascota?</h3>
-          <p class="text-muted mb-0">Pregunta a nuestros especialistas cualquier duda que te pueda surgir en el cuidado de tu mascota</p>
-        </div>
+        <x-nav-link :href="url('quelepasa')" :active="request()->routeIs('quelepasa')">
+          <div class="text-center">
+            <i class="bi bi-heart icon-feature text-gradient d-block mb-3"></i>
+            <h3 class="font-alt">¿Qué le pasa a tu Mascota?</h3>
+            <p class="text-muted mb-0">Pregunta a nuestros especialistas cualquier duda que te pueda surgir en el cuidado de tu mascota</p>
+          </div>
+        </x-nav-link>
       </div>
-      <div class="col-md-6 mb-5">
+      <div class="col-lg-6 col-md-6 mb-5"> <!-- Cambié col-md-6 por col-lg-6 -->
         <!-- Feature item: ¿Qué le pasa a tu Mascota? -->
-        <div class="text-center">
-          <i class="bi bi-house-door icon-feature text-gradient d-block mb-3"></i>
-          <h3 class="font-alt">Sobre Nosotros</h3>
-          <p class="text-muted mb-0">En la página principal podrás encontrar la información general de su funcionamiento</p>
-        </div>
+        <x-nav-link :href="url('home')" :active="request()->routeIs('home')">
+          <div class="text-center">
+            <i class="bi bi-house-door icon-feature text-gradient d-block mb-3"></i>
+            <h3 class="font-alt">Sobre Nosotros</h3>
+            <p class="text-muted mb-0">En la página principal podrás encontrar la información general de su funcionamiento</p>
+          </div>
+        </x-nav-link>
       </div>
     </div>
   </div>
 </section>
+
         <!-- Basic features section-->
 
         <section class="bg-gradient-primary-to-secondary">
