@@ -6,13 +6,7 @@
     <title>Calendario clínica veterinaria</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" />
     <link href="css/styles.css" rel="stylesheet" />
-    <style>
-        /* Estilo para reducir el ancho del calendario */
-        #calendar {
-            max-width: 50%; /* ajusta este valor según tus necesidades */
-        }
 
-    </style>
 </head>
 <body>
     <br>

@@ -33,6 +33,7 @@
                     <div class="mb-7 mb-lg-0 text-center text-lg-start">
                         <h1 class="display-1 lh-1 mb-3">Bienvenido a la Clínica Veterinaria</h1>
                         <p class="lead fw-normal text-muted mb-5">Cuidando de tus mascotas como si fueran de la familia</p>
+                        <a href="#section2" class="btn btn-primary">Saber más</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -63,12 +64,11 @@
             </div>
         </div>
     </div>
-</aside>
-<!-- App features section-->
+</aside><!-- App features section-->
 <section id="features">
   <div class="container px-5">
     <div class="row justify-content-center"> <!-- Quité gx-5 para centrar el contenido -->
-      <div class="col-lg-6 col-md-6 mb-5"> <!-- Cambié col-md-6 por col-lg-6 -->
+      <div class="col-lg-4 col-md-6 mb-5"> <!-- Cambié col-md-6 por col-lg-4 -->
         <!-- Feature item: Calendario -->
         <x-nav-link :href="url('full-calender')" :active="request()->routeIs('full-calender')">
           <div class="text-center">
@@ -78,7 +78,7 @@
           </div>
         </x-nav-link>
       </div>
-      <div class="col-lg-6 col-md-6 mb-5"> <!-- Cambié col-md-6 por col-lg-6 -->
+      <div class="col-lg-4 col-md-6 mb-5"> <!-- Cambié col-md-6 por col-lg-4 -->
         <!-- Feature item: Historial Clínico -->
         <x-nav-link :href="route('usuarios.search')" :active="request()->routeIs('usuarios.search')">
           <div class="text-center">
@@ -88,7 +88,7 @@
           </div>
         </x-nav-link>
       </div>
-      <div class="col-lg-6 col-md-6 mb-5"> <!-- Cambié col-md-6 por col-lg-6 -->
+      <div class="col-lg-4 col-md-6 mb-5"> <!-- Cambié col-md-6 por col-lg-4 -->
         <!-- Feature item: Free to Use -->
         <x-nav-link :href="url('quelepasa')" :active="request()->routeIs('quelepasa')">
           <div class="text-center">
@@ -98,8 +98,8 @@
           </div>
         </x-nav-link>
       </div>
-      <div class="col-lg-6 col-md-6 mb-5"> <!-- Cambié col-md-6 por col-lg-6 -->
-        <!-- Feature item: ¿Qué le pasa a tu Mascota? -->
+      <div class="col-lg-4 col-md-6 mb-5"> <!-- Cambié col-md-6 por col-lg-4 -->
+        <!-- Feature item: Sobre Nosotros -->
         <x-nav-link :href="url('home')" :active="request()->routeIs('home')">
           <div class="text-center">
             <i class="bi bi-house-door icon-feature text-gradient d-block mb-3"></i>
@@ -112,14 +112,15 @@
   </div>
 </section>
 
-        <!-- Basic features section-->
 
+        <!-- Basic features section-->
+        <div id="section2" class="section">
         <section class="bg-gradient-primary-to-secondary">
           <div class="container px-5">
             <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
               <div class="col-sm-8 col-md-6">
                 <div class="px-5 px-sm-0">
-                  <img class="img-fluid" src="images/vet-assistant-png-dog-lady-people-pets-veterinarian-clipart-1212.png" alt="Imagen Sobre Nosotros" />
+                  <img class="img-fluid" src="images/vet-assistant-png-dog-lady-people-pets-veterinarian-clipart-1212.png" alt="Imagen Sobre Nosotros" width="70%"/>
                 </div>
               </div>
               <div class="col-12 col-lg-5">
@@ -134,6 +135,7 @@
             </div>
           </div>
         </section>
+        </div>
         @include('calendario')
 
 </x-app-layout>
