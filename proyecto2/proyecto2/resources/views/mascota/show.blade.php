@@ -67,34 +67,51 @@
                         </button>
 
                     </div>
+                    <div id="formularioCita" class="hidden p-6 bg-gray-800 dark:bg-gray-700 border-b border-gray-600 dark:border-gray-600">
+                    <section class="py-5">
+                        <div class="container px-5">
+                            <!-- Contact form-->
+                            <div class="rounded-4 py-5 px-4 px-md-5">
+                                <div class="text-center mb-5">
+                                    <h1 class="fw-bolder">Agregar cita</h1>
+                                    <p class="lead fw-normal text-muted mb-0">Explica detenidamente el motivo de la Cita</p>
+                                </div>
+
+
+                                            <h3 class="text-lg font-semibold mb-4 text-white">{{ __('Agregar Cita') }}</h3>
+                                            <form action="{{ route('citas.store') }}" method="POST">
+                                                @csrf
+                                                <div class="mb-4">
+                                                    <label for="fecha" class="block text-sm font-medium text-gray-300">{{ __('Fecha de la Cita:') }}</label>
+                                                    <input type="date" name="fecha" id="fecha" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black">
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label for="motivo" class="block text-sm font-medium text-gray-300">{{ __('Motivo de la Cita:') }}</label>
+                                                    <textarea name="motivo" id="motivo" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black"></textarea>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label for="diagnostico" class="block text-sm font-medium text-gray-300">{{ __('Diagnóstico:') }}</label>
+                                                    <textarea name="diagnostico" id="diagnostico" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black"></textarea>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label for="tratamiento" class="block text-sm font-medium text-gray-300">{{ __('Tratamiento:') }}</label>
+                                                    <textarea name="tratamiento" id="tratamiento" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black"></textarea>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:border-indigo-700 focus:ring focus:ring-indigo-300 transition">
+                                                        {{ __('Guardar Cita') }}
+                                                    </button>
+
+                                            </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
                      <!-- Contenedor del formulario de agregar cita -->
-        <div id="formularioCita" class="hidden p-6 bg-gray-800 dark:bg-gray-700 border-b border-gray-600 dark:border-gray-600">
-            <h3 class="text-lg font-semibold mb-4 text-white">{{ __('Agregar Cita') }}</h3>
-            <form action="{{ route('citas.store') }}" method="POST">
-                @csrf
-                <div class="mb-4">
-                    <label for="fecha" class="block text-sm font-medium text-gray-300">{{ __('Fecha de la Cita:') }}</label>
-                    <input type="date" name="fecha" id="fecha" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black">
-                </div>
-                <div class="mb-4">
-                    <label for="motivo" class="block text-sm font-medium text-gray-300">{{ __('Motivo de la Cita:') }}</label>
-                    <textarea name="motivo" id="motivo" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black"></textarea>
-                </div>
-                <div class="mb-4">
-                    <label for="diagnostico" class="block text-sm font-medium text-gray-300">{{ __('Diagnóstico:') }}</label>
-                    <textarea name="diagnostico" id="diagnostico" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black"></textarea>
-                </div>
-                <div class="mb-4">
-                    <label for="tratamiento" class="block text-sm font-medium text-gray-300">{{ __('Tratamiento:') }}</label>
-                    <textarea name="tratamiento" id="tratamiento" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black"></textarea>
-                </div>
-                <div>
-                    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:border-indigo-700 focus:ring focus:ring-indigo-300 transition">
-                        {{ __('Guardar Cita') }}
-                    </button>
-                </div>
-            </form>
-        </div>
+
     </div>
                     <!-- Experience Cards for Citas-->
                     @foreach($citas as $cita)
