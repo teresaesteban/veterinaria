@@ -23,42 +23,6 @@
             <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
             <!-- Core theme CSS (includes Bootstrap)-->
             <link href="css/styles.css" rel="stylesheet" />
-            <style>
-                 .portfolio-item p {
-        display: none;
-    }
-                /* Estilos para los cuadrados */
-                .portfolio-item {
-                    background-color: #f8f9fa;
-                    border: 1px solid #dee2e6;
-                    padding: 20px;
-                    margin-bottom: 20px;
-                    text-decoration: none;
-                    color: #212529;
-                    display: block;
-                    transition: all 0.3s ease;
-                }
-
-                .portfolio-item:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-                }
-
-                /* Estilos para el contenido */
-                .caption {
-                    text-align: center;
-                }
-
-                .h2 {
-                    font-size: 24px;
-                    font-weight: bold;
-                    margin-bottom: 10px;
-                }
-
-                .mb-0 {
-                    font-size: 16px;
-                }
-            </style>
           </head>
           <section class="content-section" id="portfolio">
             <div class="container px-4 px-lg-5">
