@@ -16,7 +16,7 @@
             @endif</button>
         </div>
     </div>
-    <img src="{{ asset('images/5bajoknk3a_3bnswwd8oi_peop2417.png') }}" alt="Veterinary Physician Preparing Hypodermic Needle Injection Sedative for Cat" class="content-image">
+    <img src="{{ asset('images/portada.png') }}" alt="Veterinary Physician Preparing Hypodermic Needle Injection Sedative for Cat" class="content-image">
 
 </div>
 <p class="text-end text-white">Vector Illustration of Veterinary Physician Preparing Hypodermic Needle Injection Sedative for Cat</p>

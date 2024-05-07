@@ -49,7 +49,7 @@
                             <circle cx="50" cy="50" r="50" fill="url(#circleGradient)"></circle>
                         </svg>
                         <!-- Imagen encima del círculo -->
-                        <img class="position-relative" src="images/image_processing20200423-26081-c7tp2o.png" alt=""width="60%">
+                        <img class="position-relative" src="images/foto2.png" alt=""width="50%">
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
             <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
               <div class="col-sm-8 col-md-6">
                 <div class="px-5 px-sm-0">
-                  <img class="img-fluid" src="images/vet-assistant-png-dog-lady-people-pets-veterinarian-clipart-1212.png" alt="Imagen Sobre Nosotros" width="70%"/>
+                  <img class="img-fluid" src="images/foto1.png" alt="Imagen Sobre Nosotros" width="70%"/>
                 </div>
               </div>
               <div class="col-12 col-lg-5">
