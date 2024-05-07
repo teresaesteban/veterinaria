@@ -66,11 +66,11 @@
                     <h3 class="text-secondary mb-0">Pasa el cursor</h3>
                     <h2 class="mb-5">Preguntas Frecuentes</h2>
                 </div>
-                <div class="row gx-0">
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!" onmouseover="showParagraph(this)">
-                            <div class="caption">
-                                <div class="caption-content">
+                <div class="row gx-0 ">
+                    <div class="col-lg-6 ">
+                        <a class="portfolio-item bg-gradient-primary-to-secondary" href="#!" onmouseover="showParagraph(this)">
+                            <div class="caption ">
+                                <div class="caption-content text-white">
                                     <div class="h2">¿Por qué esterilizar a mi mascota antes de los dos años?</div>
                                     <p class="mb-0">Si tenemos decidido no criar con ellas, los beneficios a largo plazo son muchos si decidimos esterilizarlas entre los siete meses y los dos años.
 
@@ -84,9 +84,9 @@
                         </a>
                     </div>
                     <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!" onmouseover="showParagraph(this)">
+                        <a class="portfolio-item bg-gradient-primary-to-secondary" href="#!" onmouseover="showParagraph(this)">
                             <div class="caption">
-                                <div class="caption-content">
+                                <div class="caption-content text-white">
                                     <div class="h2">¿Cómo evolucionan los problemas dentales de los perros/gatos?</div>
                                     <p class="mb-0">Dientes sanos: son blancos y no presentan acumulaciones o decoloraciones, especialmente en los caninos e incisivos. Además, las encías son rosas y el aliento fresco.
 
@@ -100,9 +100,9 @@
                         </a>
                     </div>
                     <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!" onmouseover="showParagraph(this)">
+                        <a class="portfolio-item bg-gradient-primary-to-secondary" href="#!" onmouseover="showParagraph(this)">
                             <div class="caption">
-                                <div class="caption-content">
+                                <div class="caption-content text-white">
                                     <div class="h2">¿Cómo combatir de las pulgas a mi mascota?</div>
                                     <p class="mb-0">Es muy importante combatirlos, pues son parásitos y transmiten enfermedades a las mascotas y a las personas.
                                         Nuestros consejos son:
@@ -114,9 +114,9 @@
                         </a>
                     </div>
                     <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!" onmouseover="showParagraph(this)">
+                        <a class="portfolio-item bg-gradient-primary-to-secondary" href="#!" onmouseover="showParagraph(this)">
                             <div class="caption">
-                                <div class="caption-content">
+                                <div class="caption-content text-white">
                                     <div class="h2">¿Cuándo le pongo el collar antiparasitario a mi perro?</div>
                                     <p class="mb-0">Debido al cambio climático ya no existe estacionalidad, por lo tanto es recomendable que lleve collar antiparasitario todo el año o cualquier presentación de antiparasitario externo, es decir, pipetas, sprays …</p>
                                 </div>
@@ -124,9 +124,9 @@
                         </a>
                     </div>
                     <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!" onmouseover="showParagraph(this)">
+                        <a class="portfolio-item bg-gradient-primary-to-secondary" href="#!" onmouseover="showParagraph(this)">
                             <div class="caption">
-                                <div class="caption-content">
+                                <div class="caption-content text-white">
                                     <div class="h2">¿Mi perr@ o mi gat@ tendrán problemas de comportamiento si no los esterilizo?</div>
                                     <p class="mb-0">Problemas de comportamiento
 
@@ -142,10 +142,10 @@
                         </a>
                     </div>
                     <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!" onmouseover="showParagraph(this)">
+                        <a class="portfolio-item bg-gradient-primary-to-secondary" href="#!" onmouseover="showParagraph(this)">
                             <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Si mi perro tiene sarro en los dientes, ¿qué debería de hacer? </div>
+                                <div class="caption-content text-white ">
+                                    <div class="h2 text-white">Si mi perro tiene sarro en los dientes, ¿qué debería de hacer? </div>
                                     <p class="mb-0">El sarro está pegado al diente y aparece como consecuencia de no haber eliminado la placa bacteriana inicial. Dicho sarro se va acumulando y va provocando una retracción de la encía hasta llegar incluso a provocar la caída de la pieza dental.
 
                                         Para quitar totalmente la placa de sarro se tiene que realizar una limpieza dental mediante ultrasonidos. Estas limpiezas las realizamos en Zarpa previa sedación de la mascota. Primero quitamos la placa de sarro con ultrasonidos, despues eliminamos la placa bacteriana entre el diente y la encía y finalmente pulimos los dientes para reparar los daños en el esmalte dental.
