@@ -37,6 +37,7 @@
 
                     </div>
                 </div>
+
                 <div class="col-xxl-7">
                     <!-- Header profile picture-->
                     <div class="d-flex justify-content-center mt-5 mt-xxl-0">
@@ -167,8 +168,8 @@
             <!-- Contact form-->
             <div class="rounded-4 py-5 px-4 px-md-5">
                 <div class="text-center mb-5">
-                    <div class="text-center">
-                        <i class="bi bi-envelope icon-feature text-gradient d-block mb-3"></i>
+                    <div class="d-flex justify-content-center text-center">
+                         <img class="profile-img" src="images/pikaso_reimagine_digital-painting-A-chubby-gray-cat-with-a-cute-fri__1_-removebg-preview.png" alt="..." width="15%"/>
                     </div>
                     <h1 class="fw-bolder">¿Qué le ocurre a tu mascota?</h1>
                     <p class="lead fw-normal text-muted mb-0">Si tienes alguna duda puedes ponerte en contacto con nuestros especialistas</p>
