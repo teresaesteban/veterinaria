@@ -47,14 +47,6 @@
                                     <th scope="row">Raza</th>
                                     <td>{{ $mascota->tipo }}</td>
                                 </tr>
-                                <tr class="text-white">
-                                    <th scope="row">Color</th>
-                                    <td>Dorado</td>
-                                </tr>
-                                <tr class="text-white">
-                                    <th scope="row">Peso</th>
-                                    <td>30 kg</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
