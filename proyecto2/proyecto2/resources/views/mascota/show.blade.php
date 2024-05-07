@@ -4,17 +4,69 @@
             Información de la mascota
         </h2>
     </x-slot>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>New Age - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+
+      </head>
     <!-- Page Content-->
-    <div class="container px-5 my-5">
-        <div class="text-center mb-5">
-            <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Resume</span></h1>
+    <div class="container px-5">
+        <br>
+        <!-- Información de la mascota -->
+        <div class="row gx-5 justify-content-center mb-5">
+            <div class="col-lg-6 ">
+                <div class="card shadow border-0 rounded-4 bg-gradient-primary-to-secondary">
+                    <div class="card-body p-5">
+                        <h2 class="text-white fw-bolder mb-4">Información de la Mascota</h2>
+                        <table class=" table">
+                            <tbody>
+                                <tr class="text-white">
+                                    <th scope="row">Nombre</th>
+                                    <td>{{ $mascota->nombre }}</td>
+                                </tr>
+                                <tr class="text-white">
+                                    <th scope="row">Edad</th>
+                                    <td>{{ $mascota->edad }}</td>
+                                </tr>
+                                <tr class="text-white">
+                                    <th scope="row">Raza</th>
+                                    <td>{{ $mascota->tipo }}</td>
+                                </tr>
+                                <tr class="text-white">
+                                    <th scope="row">Color</th>
+                                    <td>Dorado</td>
+                                </tr>
+                                <tr class="text-white">
+                                    <th scope="row">Peso</th>
+                                    <td>30 kg</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row gx-5 justify-content-center">
             <div class="col-lg-11 col-xl-9 col-xxl-8">
                 <!-- Experience Section-->
                 <section>
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h2 class="text-primary fw-bolder mb-0">Historial</h2>
+                        <h2 class="text-white fw-bolder mb-0">Historial</h2>
                         <!-- Download resume button-->
                         <!-- Note: Set the link href target to a PDF file within your project-->
 
@@ -104,9 +156,6 @@
             </form>
         </div>
     </div>
-
-    <!-- Contenedor de las citas -->
-
 </x-app-layout>
 @include('registro.footer')
 
