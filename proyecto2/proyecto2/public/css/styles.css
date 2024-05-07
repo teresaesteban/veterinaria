@@ -12,6 +12,40 @@
  *//* Contenido de public/css/styles.css */
 
 /* Estilos personalizados */
+.button-box {
+  display: inline-block;
+  padding: 40px 40px; /* Aumentar el padding para hacer las cajitas más grandes */
+  color: #fff; /* Color del texto del botón */
+  border-radius: 10px; /* Bordes redondeados */
+  text-align: center; /* Alinear texto al centro */
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+  margin-right: 20px; /* Espacio entre las cajitas */
+}
+
+.button-box a {
+  text-decoration: none; /* Eliminar subrayado del enlace */
+}
+
+/* Estilos para la primera cajita */
+.red {
+  background-color: #a36161; /* Color rojo */
+}
+
+/* Estilos para la segunda cajita */
+.blue {
+  background-color: #4f6780; /* Color azul */
+}
+
+/* Estilos para la tercera cajita */
+.green {
+  background-color: #c1c9d6; /* Color verde */
+}
+
+.button-box:hover {
+  opacity: 0.8; /* Reducir opacidad al pasar el ratón */
+}
+
+
 .bg-custom-blue {
   background-color: #416881;
 }

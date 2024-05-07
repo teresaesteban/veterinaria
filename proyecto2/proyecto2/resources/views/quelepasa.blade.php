@@ -24,7 +24,46 @@
             <!-- Core theme CSS (includes Bootstrap)-->
             <link href="css/styles.css" rel="stylesheet" />
           </head>
-          <section class="content-section" id="portfolio">
+
+      <header class="py-5">
+        <div class="container px-5 pb-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-xxl-5">
+                    <!-- Header text content-->
+                    <div class="text-center text-xxl-start">
+                        <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">preguntas</div></div>
+                        <div class="fs-3 fw-light text-muted">Podrás ver las preguntas frecuentes, aceder a las últimas consultas o hacer tu própia pregunta</div>
+                        <h1 class="display-3 fw-bolder mb-5"><span class="text-white d-inline">Solicita información de nuestros especialistas </span></h1>
+
+                    </div>
+                </div>
+                <div class="col-xxl-7">
+                    <!-- Header profile picture-->
+                    <div class="d-flex justify-content-center mt-5 mt-xxl-0">
+
+                        <!-- Primera "cajita" -->
+                        <div class="button-box red">
+                            <a href="#preguntas-frecuentes" class="text-white">Preguntas Frecuentes</a>
+                        </div>
+
+                        <!-- Segunda "cajita" -->
+                        <div class="button-box blue">
+                            <x-nav-link :href="route('mostrar-consultas')" :active="request()->routeIs('mostrar-consultas')" class="text-white">
+                                Consultas
+                            </x-nav-link>
+                        </div>
+
+                        <!-- Tercera "cajita" -->
+                        <div class="button-box green">
+                            <a href="#consultas" class="text-white">Haz tu propia consulta</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="content-section" id="preguntas-frecuentes">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading text-center">
                     <h3 class="text-secondary mb-0">Pasa el cursor</h3>
@@ -123,7 +162,7 @@
             </div>
         </section>
 
-    <section class="py-5">
+        <section class="py-5" id="consultas">
         <div class="container px-5">
             <!-- Contact form-->
             <div class="rounded-4 py-5 px-4 px-md-5">
