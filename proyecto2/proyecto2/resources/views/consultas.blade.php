@@ -38,6 +38,9 @@
                         <p class="mb-2"><strong>Edad:</strong> {{ $consulta->edad }}</p>
                         <p class="mb-2"><strong>Síntomas:</strong> {{ $consulta->sintomas }}</p>
                         <p class="mb-2"><strong>Comentarios adicionales:</strong> {{ $consulta->comentarios }}</p>
+                        @if ($consulta->respuesta)
+                        <p class="mb-2"><strong>Respuesta:</strong> {{ $consulta->respuesta }}</p>
+                    @endif
                         <form action="{{ route('consultas.destroy', $consulta->id) }}" method="POST" class="text-right">
                             @csrf
                             @method('DELETE')
@@ -46,10 +49,25 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
-                        </form>
-                    </div>
-                    <br>
-                    @endforeach
+                         <form action="{{ route('responder.consulta', $consulta->id) }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="consulta_id" value="{{ $consulta->id }}">
+
+                    </form>
+                    @if(auth()->user()->hasRole('employee'))
+                    <form action="{{ route('responder.consulta') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="consulta_id" value="{{ $consulta->id }}">
+                        <div class="form-group">
+                            <label for="respuesta">Respuesta:</label>
+                            <textarea class="form-control" id="respuesta" name="respuesta" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Respuesta</button>
+                    </form>
+                    @endif
+                </div>
+                <br>
+                @endforeach
                 </div>
             </div>
         </div>

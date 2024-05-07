@@ -50,6 +50,8 @@ Route::get('/usuarios/{usuario}/agregar-mascota', [UserController::class, 'agreg
 
 Route::post('/mascota/guardar', [MascotaController::class, 'guardar'])->name('mascota.guardar');
 
+Route::post('/responder-consulta', 'App\Http\Controllers\ConsultaController@responder')->name('responder.consulta');
+
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
