@@ -79,9 +79,19 @@
 
                                                         @foreach (auth()->user()->mascota as $mascota)
 
-                                                            <div class="text-white">Nombre: {{ $mascota->nombre }}</div>
-                                                            <div class="text-white">Tipo: {{ $mascota->tipo }}</div>
-                                                            <div class="text-white">Edad: {{ $mascota->edad }}</div>
+                                                        <div class="container mt-5">
+
+
+                                                                <div class="card bg-gradient-primary-to-secondary ">
+                                                                  <div class="card-body text-black">
+                                                                    <div class="text-white">Nombre: {{ $mascota->nombre }}</div>
+                                                                    <div class="text-white">Tipo: {{ $mascota->tipo }}</div>
+                                                                    <div class="text-white">Edad: {{ $mascota->edad }}</div>
+                                                                  </div>
+
+
+                                                            </div>
+                                                          </div>
 
                                                         @endforeach
 
@@ -154,10 +164,15 @@
                                                         <div class="text-sm text-white">{{ $usuario->email }}</div>
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap">
-                                                        @if ($usuario->mascota->count() > 0) <!-- Check if there are any mascotas -->
-                                                            <div class="text-sm text-white">Nombre: {{ $usuario->mascota->first()->nombre }}</div>
-                                                            <div class="text-sm text-white">Tipo: {{ $usuario->mascota->first()->tipo }}</div>
-                                                            <div class="text-sm text-white">Edad: {{ $usuario->mascota->first()->edad }}</div>
+                                                        @if ($usuario->mascota->count() > 0)
+                                                        <td> <!-- Check if there are any mascotas -->
+                                                            <div class="card bg-gradient-primary-to-secondary ">
+                                                                <div class="card-body text-black">
+                                                                  <div class="text-white">Nombre: {{ $mascota->nombre }}</div>
+                                                                  <div class="text-white">Tipo: {{ $mascota->tipo }}</div>
+                                                                  <div class="text-white">Edad: {{ $mascota->edad }}</div>
+                                                                </div>
+                                                        </td>
                                                         @else
                                                             <div class="text-sm text-white">Sin mascota</div>
                                                         @endif
