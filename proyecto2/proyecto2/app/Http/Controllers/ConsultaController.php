@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Mascota;
 use Illuminate\Http\Request;
 use App\Models\Consulta; // Ajusta esto según el nombre de tu modelo de consulta
 
@@ -47,6 +47,8 @@ class ConsultaController extends Controller
         // Mostrar la vista de consultas con los datos
         return view('consultas', ['consultas' => $consultas]);
     }
+
+
     public function destroy(Consulta $consulta)
     {
         $consulta->delete();

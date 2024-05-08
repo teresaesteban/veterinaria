@@ -48,6 +48,6 @@ class User extends Authenticatable
     }
     public function mascota()
     {
-        return $this->hasOne(Mascota::class, 'usuario_id');
+        return $this->hasMany(Mascota::class, 'usuario_id');
     }
 }

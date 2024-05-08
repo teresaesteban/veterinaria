@@ -66,18 +66,30 @@
                                                 <tr>
                                                     <td>
                                                         <a href="{{ route('usuarios.mascota', ['usuario' => auth()->user()->id]) }}" class="text-white">{{ auth()->user()->name }}</a>
+
+
                                                     </td>
                                                     <td>
                                                         <div class="text-white">{{ auth()->user()->email }}</div>
                                                     </td>
                                                     <td>
-                                                        @if (auth()->user()->mascota)
-                                                            <div class="text-white">Nombre: {{ auth()->user()->mascota->nombre }}</div>
-                                                            <div class="text-white">Tipo: {{ auth()->user()->mascota->tipo }}</div>
-                                                            <div class="text-white">Edad: {{ auth()->user()->mascota->edad }}</div>
-                                                        @else
-                                                            <div class="text-white">Sin mascota</div>
-                                                        @endif
+                                                        @if (auth()->user()->mascota()->count() > 0)
+
+                                                        <div class="text-white">Mascotas:</div>
+
+                                                        @foreach (auth()->user()->mascota as $mascota)
+
+                                                            <div class="text-white">Nombre: {{ $mascota->nombre }}</div>
+                                                            <div class="text-white">Tipo: {{ $mascota->tipo }}</div>
+                                                            <div class="text-white">Edad: {{ $mascota->edad }}</div>
+
+                                                        @endforeach
+
+                                                    @else
+
+                                                        <div class="text-white">Sin mascotas</div>
+
+                                                    @endif
                                                     </td>
                                                     <td>
                                                         <a href="{{ route('usuarios.agregar-mascota', ['usuario' => auth()->user()->id]) }}" class="btn btn-primary">Añadir mascota</a>

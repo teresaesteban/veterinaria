@@ -27,6 +27,10 @@ Route::get('/quelepasa', function () {
 });
 Route::resource('citas', CitaController::class);
 
+
+Route::get('/mascotas/{usuario}/show', [MascotaController::class, 'show'])->name('mascota.show');
+
+
 Route::get('/historial', [HistorialController::class, 'index'])->name('historial.index');
 
 Route::get('full-calender', [FullCalenderController::class, 'index']);

@@ -15,24 +15,23 @@ class CitaController extends Controller
             'motivo' => 'required|string',
             'diagnostico' => 'required|string',
             'tratamiento' => 'required|string',
+            'mascota_id' => 'required|exists:mascotas,id', // Ensure mascota_id exists in mascotas table
         ]);
 
-        // Obtiene la mascota asociada al usuario autenticado
-        $mascota = Auth::user()->mascota;
-
-        // Crea una nueva cita
+        // Create a new cita
         $cita = new Cita();
-        $cita->fecha = $request->fecha;
-        $cita->motivo = $request->motivo;
-        $cita->diagnostico = $request->diagnostico;
-        $cita->tratamiento = $request->tratamiento;
+        $cita->fecha = $request->input('fecha');
+        $cita->motivo = $request->input('motivo');
+        $cita->diagnostico = $request->input('diagnostico');
+        $cita->tratamiento = $request->input('tratamiento');
+        $cita->mascota_id = $request->input('mascota_id'); // Assign the mascota_id
 
-        // Asocia la cita con la mascota
-        $cita->mascota()->associate($mascota);
-
-        // Guarda la cita en la base de datos
+        // Save the cita
         $cita->save();
 
+        // Redirect to the show route with the mascota_id
         return redirect()->back()->with('success', 'Cita agregada exitosamente.');
     }
-}
+    }
+
+
