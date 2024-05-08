@@ -154,12 +154,12 @@
                                                         <div class="text-sm text-white">{{ $usuario->email }}</div>
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap">
-                                                        @if ($usuario->mascota)
-                                                        <div class="text-sm text-white">Nombre: {{ $usuario->mascota->nombre }}</div>
-                                                        <div class="text-sm text-white">Tipo: {{ $usuario->mascota->tipo }}</div>
-                                                        <div class="text-sm text-white">Edad: {{ $usuario->mascota->edad }}</div>
+                                                        @if ($usuario->mascota->count() > 0) <!-- Check if there are any mascotas -->
+                                                            <div class="text-sm text-white">Nombre: {{ $usuario->mascota->first()->nombre }}</div>
+                                                            <div class="text-sm text-white">Tipo: {{ $usuario->mascota->first()->tipo }}</div>
+                                                            <div class="text-sm text-white">Edad: {{ $usuario->mascota->first()->edad }}</div>
                                                         @else
-                                                        <div class="text-sm text-white">Sin mascota</div>
+                                                            <div class="text-sm text-white">Sin mascota</div>
                                                         @endif
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap">
