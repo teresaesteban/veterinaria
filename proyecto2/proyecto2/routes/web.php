@@ -61,11 +61,11 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 
 Route::group(['middleware' => ['auth']], function () {
     // Otras rutas de usuarios aquí
-
+    Route::get('usuarios/{usuario}/mascota', [MascotaController::class, 'show'])->name('usuarios.mascota');
+    Route::post('usuarios/{usuario}/mascota', [MascotaController::class, 'seleccionarMascota'])->name('usuarios.seleccionar-mascota');
     // Ruta para el detalle de la mascota
-    Route::get('/usuarios/{usuario}/mascota', [MascotaController::class, 'show'])->name('usuarios.mascota');
 });
-
+Route::post('/seleccionar-mascota', [MascotaController::class, 'seleccionarMascota'])->name('seleccionar_mascota');
 
 Route::get('/home', function () {
     return view('home');

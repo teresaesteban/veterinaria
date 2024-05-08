@@ -6,54 +6,66 @@
     </x-slot>
     <!DOCTYPE html>
     <html lang="en">
-      <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>New Age - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Google fonts-->
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-      </head>
-      <body id="page-top">
-        <!-- Navigation-->
-    <!-- Page Content-->
-    <div class="container px-5">
-        <br>
-        <!-- Información de la mascota -->
-        <div class="row gx-5 justify-content-center mb-5">
-            <div class="col-lg-6">
-                <div class="card shadow border-0 rounded-4 bg-gradient-primary-to-secondary">
-                    <div class="card-body p-5">
-                        <h2 class="text-white fw-bolder mb-4">Información de la Mascota</h2>
-                        <table class="table">
-                            <tbody>
-                                <tr class="text-white">
-                                    <th scope="row">Nombre</th>
-                                    <td>{{ $mascota->nombre }}</td>
-                                </tr>
-                                <tr class="text-white">
-                                    <th scope="row">Edad</th>
-                                    <td>{{ $mascota->edad }}</td>
-                                </tr>
-                                <tr class="text-white">
-                                    <th scope="row">Raza</th>
-                                    <td>{{ $mascota->tipo }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+            <meta name="description" content="" />
+            <meta name="author" content="" />
+            <title>New Age - Start Bootstrap Theme</title>
+            <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+            <!-- Bootstrap icons-->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+            <!-- Google fonts-->
+            <link rel="preconnect" href="https://fonts.gstatic.com" />
+            <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+            <!-- Core theme CSS (includes Bootstrap)-->
+            <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+
+          </head>
+          <div class="container px-5">
+            <br>
+            <!-- Selector de mascotas -->
+            <div class="mb-5">
+                <form action="{{ route('usuarios.seleccionar-mascota', ['usuario' => $usuario]) }}" method="POST" id="formSeleccionarMascota">
+                    @csrf
+                    <label for="mascota">Seleccionar Mascota:</label>
+                    <select name="mascota_id" id="mascota" onchange="this.form.submit()">
+                        @foreach($mascotas as $m)
+                            <option value="{{ $m->id }}" @if($m->id == $mascota->id) selected @endif>{{ $m->nombre }}</option>
+                        @endforeach
+                    </select>
+                </form>
+            </div>
+
+            <!-- Información de la mascota seleccionada -->
+            <div class="row gx-5 justify-content-center mb-5">
+                <div class="col-lg-6">
+                    <div class="card shadow border-0 rounded-4 bg-gradient-primary-to-secondary">
+                        <div class="card-body p-5">
+                            <h2 class="text-white fw-bolder mb-4">Información de la Mascota</h2>
+                            <table class="table">
+                                <tbody>
+                                    <tr class="text-white">
+                                        <th scope="row">Nombre</th>
+                                        <td>{{ $mascota->nombre }}</td>
+                                    </tr>
+                                    <tr class="text-white">
+                                        <th scope="row">Edad</th>
+                                        <td>{{ $mascota->edad }}</td>
+                                    </tr>
+                                    <tr class="text-white">
+                                        <th scope="row">Tipo</th>
+                                        <td>{{ $mascota->tipo }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
 
         <div class="row gx-5 justify-content-center">
             <div class="col-lg-11 col-xl-9 col-xxl-8">

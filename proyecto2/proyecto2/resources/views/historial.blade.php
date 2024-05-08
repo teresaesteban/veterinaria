@@ -154,35 +154,37 @@
                                             </thead>
                                             <tbody class="bg-gray-900">
                                                 <!-- Ejemplo de fila, reemplazar con registros reales de usuarios -->
+
                                                 @foreach($usuarios as $usuario)
                                                 <tr>
                                                     <td class="px-6 py-4 whitespace-nowrap">
-                                                        <!-- Enlace al detalle de la mascota -->
                                                         <a href="{{ route('usuarios.mascota', ['usuario' => $usuario->id]) }}" class="text-white hover:text-gray-400">{{ $usuario->name }}</a>
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap">
                                                         <div class="text-sm text-white">{{ $usuario->email }}</div>
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap">
-                                                        @if ($usuario->mascota->count() > 0)
-                                                        <td> <!-- Check if there are any mascotas -->
-                                                            <div class="card bg-gradient-primary-to-secondary ">
-                                                                <div class="card-body text-black">
-                                                                  <div class="text-white">Nombre: {{ $mascota->nombre }}</div>
-                                                                  <div class="text-white">Tipo: {{ $mascota->tipo }}</div>
-                                                                  <div class="text-white">Edad: {{ $mascota->edad }}</div>
+                                                        @if ($usuario->mascota && $usuario->mascota->count() > 0) <!-- Check if $usuario->mascotas is not null -->
+                                                            <!-- Iterating over the mascotas -->
+                                                            @foreach($usuario->mascota as $mascota)
+                                                                <div class="card bg-gradient-primary-to-secondary">
+                                                                    <div class="card-body text-black">
+                                                                        <div class="text-white">Nombre: {{ $mascota->nombre }}</div>
+                                                                        <div class="text-white">Tipo: {{ $mascota->tipo }}</div>
+                                                                        <div class="text-white">Edad: {{ $mascota->edad }}</div>
+                                                                    </div>
                                                                 </div>
-                                                        </td>
+                                                            @endforeach
                                                         @else
-                                                            <div class="text-sm text-white">Sin mascota</div>
+                                                            <div class="text-sm text-white">Sin mascotas</div>
                                                         @endif
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap">
-                                                        <!-- Botón para añadir mascota, que redirige a la ruta para agregar mascota con el ID del usuario -->
-                                                        <a href="{{ route('usuarios.agregar-mascota', ['usuario' => auth()->user()->id]) }}" class="btn btn-primary">Añadir mascota</a>
+                                                        <a href="{{ route('usuarios.agregar-mascota', ['usuario' => $usuario->id]) }}" class="btn btn-primary">Añadir mascota</a>
                                                     </td>
                                                 </tr>
-                                                @endforeach
+                                            @endforeach
+
                                                 <!-- Fin del ejemplo de fila -->
                                             </tbody>
                                         </table>
