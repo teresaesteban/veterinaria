@@ -177,33 +177,49 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-8 col-xl-6">
 
-                    <form action="{{ route('guardar-consulta') }}" method="POST">
-                        @csrf
-                        <div class="mb-4">
-                            <label for="nombre" class="block text-gray-700 text-white font-bold mb-2">Nombre de tu mascota:</label>
-                            <input type="text" name="nombre" id="nombre" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300">
-                        </div>
-                        <div class="mb-4">
-                            <label for="especie" class="block text-gray-700 text-white font-bold mb-2">Especie:</label>
-                            <input type="text" name="especie" id="especie" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300">
-                        </div>
-                        <div class="mb-4">
-                            <label for="edad" class="block text-gray-700 text-white font-bold mb-2">Edad:</label>
-                            <input type="number" name="edad" id="edad" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300">
-                        </div>
-                        <div class="mb-4">
-                            <label for="sintomas" class="block text-gray-700 text-white font-bold mb-2">Síntomas:</label>
-                            <textarea name="sintomas" id="sintomas" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300"></textarea>
-                        </div>
-                        <div class="mb-4">
-                            <label for="comentarios" class="block text-gray-700 text-white font-bold mb-2">Comentarios adicionales:</label>
-                            <textarea name="comentarios" id="comentarios" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300"></textarea>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <button type="submit" class="bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-gray-900 dark:bg-black dark:text-gray-300 dark:hover:bg-gray-800">Enviar consulta</button>
-                        </div>
-                    </form>
+                        <form action="{{ route('guardar-consulta') }}" method="POST">
+                            @csrf
+                            <div class="mb-4">
+                                <label for="nombre" class="block text-gray-700 text-white font-bold mb-2">Nombre de tu mascota:</label>
+                                <input type="text" name="nombre" id="nombre" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300" required>
+                                @error('nombre')
+                                    <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="mb-4">
+                                <label for="especie" class="block text-gray-700 text-white font-bold mb-2">Especie:</label>
+                                <input type="text" name="especie" id="especie" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300" required>
+                                @error('especie')
+                                    <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="mb-4">
+                                <label for="edad" class="block text-gray-700 text-white font-bold mb-2">Edad:</label>
+                                <input type="number" name="edad" id="edad" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300" required>
+                                @error('edad')
+                                    <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="mb-4">
+                                <label for="sintomas" class="block text-gray-700 text-white font-bold mb-2">Síntomas:</label>
+                                <textarea name="sintomas" id="sintomas" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300" required></textarea>
+                                @error('sintomas')
+                                    <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="mb-4">
+                                <label for="comentarios" class="block text-gray-700 text-white font-bold mb-2">Comentarios adicionales:</label>
+                                <textarea name="comentarios" id="comentarios" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300"></textarea>
+                                @error('comentarios')
+                                    <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <button type="submit" class="bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-gray-900 dark:bg-black dark:text-gray-300 dark:hover:bg-gray-800">Enviar consulta</button>
+                            </div>
                         </form>
+
+
                     </div>
                 </div>
             </div>

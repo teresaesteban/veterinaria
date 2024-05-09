@@ -21,7 +21,12 @@ class ConsultaController extends Controller
     }
     public function guardarConsulta(Request $request)
     {
-       // Validación de datos, puedes hacerla aquí
+        // Validación de datos
+        $request->validate([
+            'nombre' => 'required',
+            'especie' => 'required',
+            'sintomas' => 'required',
+        ]);
 
         // Crear una nueva instancia del modelo Consulta
         $consulta = new Consulta();
@@ -29,7 +34,7 @@ class ConsultaController extends Controller
         // Asignar los datos del formulario al modelo
         $consulta->nombre = $request->nombre;
         $consulta->especie = $request->especie;
-        $consulta->edad = $request->edad;
+        $consulta->edad = $request->edad ?? null;
         $consulta->sintomas = $request->sintomas;
         $consulta->comentarios = $request->comentarios;
 
@@ -39,6 +44,7 @@ class ConsultaController extends Controller
         // Redireccionar a donde quieras después de guardar
         return redirect()->route('mostrar-consultas')->with('success', 'Consulta enviada correctamente');
     }
+
     public function mostrar()
     {
         // Obtener todas las consultas
