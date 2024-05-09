@@ -31,7 +31,7 @@
                 <form action="{{ route('usuarios.seleccionar-mascota', ['usuario' => $usuario]) }}" method="POST" id="formSeleccionarMascota">
                     @csrf
                     <label for="mascota">Seleccionar Mascota:</label>
-                    <select name="mascota_id" id="mascota" onchange="this.form.submit()">
+                    <select name="mascota_id" id="mascota" class="text-black" onchange="this.form.submit()">
                         @foreach($mascotas as $m)
                             <option value="{{ $m->id }}" @if($m->id == $mascota->id) selected @endif>{{ $m->nombre }}</option>
                         @endforeach
