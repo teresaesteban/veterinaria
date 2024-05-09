@@ -124,7 +124,7 @@
                 </div>
               </div>
               <div class="col-12 col-lg-5">
-                <h2 class="display-4 lh-1 mb-4">Sobre Nosotros</h2>
+                <h2 class="display-4 lh-1 mb-4 text-white">Sobre Nosotros</h2>
                 <p class="text-white mb-5">
                   En VetClinic, nos esforzamos por brindar un entorno amigable y eficiente para que los veterinarios puedan registrar y acceder fácilmente a la información de los pacientes, administrar citas, llevar un historial clínico completo, y proporcionar un seguimiento más preciso y personalizado del estado de salud de las mascotas.
                 </p>

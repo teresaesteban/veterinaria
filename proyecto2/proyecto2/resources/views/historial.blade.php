@@ -41,7 +41,7 @@
                                 <!-- Header text content-->
                                 <div class="text-center text-xxl-start">
                                     <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">{{ auth()->user()->name }}</div></div>
-                                    <div class="fs-3 fw-light text-muted"> Para crear una nueva mascota, haz clic en el botón verde. Para ver el historial de tu mascota, haz clic en tu perfil. </div>
+                                    <div class="fs-3 fw-light text-muted"> Para crear una nueva mascota, haz clic en el botón azul. Para ver el historial de tu mascota, haz clic en tu perfil. </div>
                                     <h1 class="display-3 fw-bolder mb-5"><span class="text-white d-inline">Bienvenido al historial clínico de tu mascota </span></h1>
                                 </div>
                             </div>

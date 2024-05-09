@@ -573,7 +573,7 @@ th {
   text-align: inherit;
   text-align: -webkit-match-parent;
 }
-
+a{text-decoration: none;}
 thead,
 tbody,
 tfoot,
