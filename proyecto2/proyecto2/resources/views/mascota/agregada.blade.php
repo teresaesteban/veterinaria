@@ -50,15 +50,15 @@
                         <input type="hidden" name="usuario_id" value="{{ $usuario->id }}">
                         <div class="mt-4">
                             <label for="nombre">Nombre de la mascota:</label>
-                            <input type="text" name="nombre" id="nombre" class="form-input block w-full mt-1">
+                            <input type="text" name="nombre" id="nombre" class="form-input block w-full mt-1 text-black"required>
                         </div>
                         <div class="mt-4">
                             <label for="tipo">Tipo de mascota:</label>
-                            <input type="text" name="tipo" id="tipo" class="form-input block w-full mt-1">
+                            <input type="text" name="tipo" id="tipo" class="form-input block w-full mt-1 text-black"required>
                         </div>
                         <div class="mt-4">
                             <label for="edad">Edad de la mascota:</label>
-                            <input type="number" name="edad" id="edad" class="form-input block w-full mt-1">
+                            <input type="number" name="edad" id="edad" class="form-input block w-full mt-1 text-black"required>
                         </div>
                         <div class="mt-4">
                             <button type="submit" class="bg-primary hover:bg-gray-800 text-white font-bold py-2 px-4 rounded">Guardar Mascota</button>

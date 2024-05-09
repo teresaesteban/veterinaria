@@ -95,22 +95,34 @@
 
                                         <div class="mb-4">
                                             <label for="fecha" class="block text-sm font-medium text-gray-300">{{ __('Fecha de la Cita:') }}</label>
-                                            <input type="date" name="fecha" id="fecha" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black">
+                                            <input type="date" name="fecha" id="fecha" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black"required>
+                                            @error('fecha')
+                                                <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                                            @enderror
                                         </div>
 
                                         <div class="mb-4">
                                             <label for="motivo" class="block text-sm font-medium text-gray-300">{{ __('Motivo de la Cita:') }}</label>
-                                            <textarea name="motivo" id="motivo" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black"></textarea>
+                                            <textarea name="motivo" id="motivo" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black"required></textarea>
+                                            @error('motivo')
+                                                <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                                            @enderror
                                         </div>
 
                                         <div class="mb-4">
                                             <label for="diagnostico" class="block text-sm font-medium text-gray-300">{{ __('Diagnóstico:') }}</label>
-                                            <textarea name="diagnostico" id="diagnostico" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black"></textarea>
+                                            <textarea name="diagnostico" id="diagnostico" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black"required></textarea>
+                                            @error('diagnostico')
+                                                <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                                            @enderror
                                         </div>
 
                                         <div class="mb-4">
                                             <label for="tratamiento" class="block text-sm font-medium text-gray-300">{{ __('Tratamiento:') }}</label>
-                                            <textarea name="tratamiento" id="tratamiento" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black"></textarea>
+                                            <textarea name="tratamiento" id="tratamiento" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-800 text-black"required></textarea>
+                                            @error('tratamiento')
+                                                <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                                            @enderror
                                         </div>
 
                                         <!-- Campo oculto para el ID de la mascota -->
@@ -122,6 +134,7 @@
                                             </button>
                                         </div>
                                     </form>
+
                                 </div>
                             </div>
                         </section>
