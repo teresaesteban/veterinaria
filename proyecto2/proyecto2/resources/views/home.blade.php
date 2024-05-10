@@ -103,7 +103,7 @@
         <x-nav-link :href="url('home')" :active="request()->routeIs('home')">
           <div class="text-center">
             <i class="bi bi-house-door icon-feature text-gradient d-block mb-3"></i>
-            <h3 class="font-alt">Sobre Nosotros</h3>
+            <h3 class="font-alt text-white">Sobre Nosotros</h3>
             <p class="text-muted mb-0">En la página principal podrás encontrar la información general de su funcionamiento</p>
           </div>
         </x-nav-link>
