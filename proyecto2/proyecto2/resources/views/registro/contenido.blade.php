@@ -1,4 +1,4 @@
-<div class="black"><div class="content">
+<link href="css/styles.css" rel="stylesheet" /><div class="black"><div class="content">
     <div class="container">
         <div class="content-text">
             <p class="titulo">CUIDA A TUS MASCOTAS CON NOSOTROS</p>
@@ -9,7 +9,7 @@
                         <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Home</a>
                     @else
                         @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Registrar</a>
+                        <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 text-white">Registrar</a>
                     @endif
                     @endauth
                 </div>
@@ -19,5 +19,5 @@
     <img src="{{ asset('images/portada.png') }}" alt="Veterinary Physician Preparing Hypodermic Needle Injection Sedative for Cat" class="content-image">
 
 </div>
-<p class="text-end text-white">Vector Illustration of Veterinary Physician Preparing Hypodermic Needle Injection Sedative for Cat</p>
+
 </div>

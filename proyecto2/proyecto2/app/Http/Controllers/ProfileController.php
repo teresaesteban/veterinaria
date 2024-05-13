@@ -8,8 +8,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
-use App\Models\User;
-use App\Models\Pet;
 
 class ProfileController extends Controller
 {
@@ -28,37 +26,16 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $user = $request->user();
-        $user->fill($request->validated());
+        $request->user()->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {
-            $user->email_verified_at = null;
+            $request->user()->email_verified_at = null;
         }
 
-        $user->save();
-
-        // Obtener el valor de user_type del request
-        $userType = $request->input('user_type');
-
-        // Si el usuario es normal, guardar información de mascota
-        if ($userType === 'normal') {
-            $petData = [
-                'type' => $request->input('pet_type'),
-                'name' => $request->input('pet_name'),
-                'age' => $request->input('pet_age'),
-                'sex' => $request->input('pet_sex'),
-            ];
-
-            // Asociar la mascota con el usuario
-            $user->pet()->updateOrCreate([], $petData);
-        } else {
-            // Si el usuario es veterinario, asegúrate de eliminar cualquier registro de mascota asociado
-            $user->pet()->delete();
-        }
+        $request->user()->save();
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
-
 
     /**
      * Delete the user's account.

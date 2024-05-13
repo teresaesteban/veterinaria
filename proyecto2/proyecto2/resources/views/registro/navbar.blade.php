@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<link href="css/styles.css" rel="stylesheet" /><nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <!-- Logo a la izquierda -->
         <a class="navbar-brand" href="#" style="margin-right: auto;"> <!-- Ajustamos el margen derecho para mover el logo a la izquierda -->
@@ -12,7 +12,7 @@
                         @auth
                             <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Home</a>
                         @else
-                            <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Inicia sesión</a>
+                            <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white text-black">Inicia sesión</a>
                         @endauth
                     </div>
                 @endif
