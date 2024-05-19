@@ -60,8 +60,9 @@
                         <input type="hidden" name="consulta_id" value="{{ $consulta->id }}">
                         <div class="form-group">
                             <label for="respuesta">Respuesta:</label>
-                            <textarea class="form-control" id="respuesta" name="respuesta" rows="3"></textarea>
+                            <textarea class="form-control" id="respuesta" name="respuesta" rows="3">{{ auth()->user()->name }}:</textarea>
                         </div>
+
                         <button type="submit" class="btn btn-primary">Enviar Respuesta</button>
                     </form>
                     @endif
