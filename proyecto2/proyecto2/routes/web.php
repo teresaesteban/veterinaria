@@ -13,6 +13,7 @@ use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MascotaController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\EmployeeController;
 Route::get('/', function () {
     return view('all');
 });
@@ -66,7 +67,9 @@ Route::group(['middleware' => ['auth']], function () {
     // Ruta para el detalle de la mascota
 });
 Route::post('/seleccionar-mascota', [MascotaController::class, 'seleccionarMascota'])->name('seleccionar_mascota');
-
+Route::get('/employees', [EmployeeController::class, 'index'])->name('employees.index');
+Route::post('/employees/create', [EmployeeController::class, 'create'])->name('employees.create');
+Route::delete('/employees/{userId}', [EmployeeController::class, 'delete'])->name('employees.delete');
 Route::get('/home', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');
