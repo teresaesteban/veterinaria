@@ -117,6 +117,25 @@
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                 {{ __('Home') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="url('full-calender')" :active="request()->routeIs('full-calender')">
+                {{ __('Calendario') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-Link :href="route('usuarios.search')" :active="request()->routeIs('usuarios.search')">
+                {{ __('Historial Clínico') }}
+            </x-responsive-nav-Link>
+            @role('employee')
+            <x-responsive-nav-link :href="route('mostrar-consultas')" :active="request()->routeIs('mostrar-consultas')">
+                {{ __('Consultas') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-Link :href="route('employees.index')" :active="request()->routeIs('employees.index')">
+                {{ __('Gestión de Empleados') }}
+            </x-responsive-nav-Link>
+            @endrole
+            @if(!Auth::user()->hasRole('employee'))
+            <x-responsive-nav-Link :href="url('quelepasa')" :active="request()->routeIs('quelepasa')">
+                {{ __('¿Qué le pasa a mi mascota?') }}
+            </x-responsive-nav-Link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

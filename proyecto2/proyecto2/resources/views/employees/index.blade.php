@@ -4,6 +4,39 @@
             {{ __('GESTION DE EMPLEADOS') }}
         </h2>
     </x-slot>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>New Age - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+      </head>
+      <header class="py-5">
+        <div class="container px-5 pb-5">
+            <div class="row gx-5 align-items-center">
+
+                    <!-- Header text content-->
+
+                        <div class="text-uppercase">{{ auth()->user()->name }}</div>
+                        <div class="fs-3 fw-light text-muted"> Para crear una nueva empleado, introduce sus datos. Para ver los empleados mira al fondo de la página </div>
+                        <h1 class="display-3 fw-bolder mb-5"><span class="text-white d-inline">Bienvenido al gestor de empleados </span></h1>
+
+                </div></div></header>
+
+                    <!-- Header profile picture-->
+
     <!-- Formulario para crear un nuevo empleado -->
     <div class="container mt-4">
         <form action="{{ route('employees.create') }}" method="POST" class="row g-3">
@@ -54,5 +87,8 @@
         @endif
     </div>
     <BR>
+
+
+    @include('registro.footer')
 </x-app-layout>
-@include('registro.footer')
+
