@@ -29,9 +29,9 @@ class EmployeeController extends Controller
             ]);
             $user->assignRole(Role::where('name', 'employee')->first());
 
-            // Redirigir o devolver una respuesta de éxito
+            return back()->with('success', 'Empleado creado exitosamente.');
         } else {
-            // Redirigir o devolver una respuesta de error
+            return back()->with('error', 'No tienes permiso para crear empleados.');
         }
     }
 
@@ -46,12 +46,12 @@ class EmployeeController extends Controller
             })->first();
             if ($user) {
                 $user->delete();
-                // Redirigir o devolver una respuesta de éxito
+                return back()->with('success', 'Empleado eliminado exitosamente.');
             } else {
-                // Redirigir o devolver una respuesta de error
+                return back()->with('error', 'No se encontró el empleado a eliminar.');
             }
         } else {
-            // Redirigir o devolver una respuesta de error
+            return back()->with('error', 'No tienes permiso para eliminar empleados.');
         }
     }
 }
