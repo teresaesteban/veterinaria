@@ -95,35 +95,7 @@
 
  <br>
  <!-- Call to Action--><!-- Call to Action-->
-<section class="call-to-action text-white text-center" id="contact">
-    <div class="container position-relative">
-        <div class="row justify-content-center">
-            <div class="col-xl-6">
-                <h2 class="mb-4">¿Has tenido algún problema? Introduce tu correo electrónico y nos pondremos en contacto</h2>
-                <!-- Contact form-->
-                <form class="form-subscribe" id="contactFormFooter" method="POST" action="{{ route('contact.store') }}">
-                    @csrf
-                    <!-- Email address input-->
-                    <div class="row">
-                        <div class="col">
-                            <input class="form-control form-control-lg" name="email" id="emailAddressBelow" type="email" placeholder="Correo electrónico" required />
-                        </div>
-                        <div class="col-auto"><button class="btn btn-primary btn-lg" type="submit">Enviar</button></div>
-                    </div>
-                    <!-- Submit success message-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center mb-3">
-                            <div class="fw-bolder">¡Correo electrónico enviado con éxito!</div>
-                            <p>Nos pondremos en contacto contigo pronto.</p>
-                        </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">¡Error al enviar el correo electrónico!</div></div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" />
