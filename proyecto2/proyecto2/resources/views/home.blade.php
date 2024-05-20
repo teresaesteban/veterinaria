@@ -136,7 +136,6 @@
           </div>
         </section>
         </div>
-        @include('calendario')
 
  <!-- Call to Action--><!-- Call to Action-->
  <section class="call-to-action text-white text-center" id="contact">

@@ -130,30 +130,52 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
     <link href="css/styles.css" rel="stylesheet" />
-    <script>
-        $(document).ready(function () {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+        <script>
+            $(document).ready(function () {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
 
-            var calendar = $('#calendar').fullCalendar({
-                editable: true,
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
-                },
-                events: '/full-calender',
-                selectable: true,
-                selectHelper: true,
-                select: function (start, end, allDay) {
-                    var title = prompt('Motivo general de tu cita:');
+                var calendar = $('#calendar').fullCalendar({
+                    editable: true,
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,agendaWeek,agendaDay'
+                    },
+                    events: @json($events),
+                    selectable: true,
+                    selectHelper: true,
+                    select: function (start, end, allDay) {
+                        var title = prompt('Motivo general de tu cita:');
 
-                    if (title) {
-                        var start = $.fullCalendar.formatDate(start, 'Y-MM-DD HH:mm:ss');
-                        var end = $.fullCalendar.formatDate(end, 'Y-MM-DD HH:mm:ss');
+                        if (title) {
+                            var start = $.fullCalendar.formatDate(start, 'Y-MM-DD HH:mm:ss');
+                            var end = $.fullCalendar.formatDate(end, 'Y-MM-DD HH:mm:ss');
+
+                            $.ajax({
+                                url: "/full-calender/action",
+                                type: "POST",
+                                data: {
+                                    title: title,
+                                    start: start,
+                                    end: end,
+                                    type: 'add'
+                                },
+                                success: function (data) {
+                                    calendar.fullCalendar('renderEvent', data, true); // Renderiza el nuevo evento en el calendario
+                                    alert("Cita creada exitosamente");
+                                }
+                            })
+                        }
+                    },
+                    eventResize: function (event, delta) {
+                        var start = $.fullCalendar.formatDate(event.start, 'Y-MM-DD HH:mm:ss');
+                        var end = $.fullCalendar.formatDate(event.end, 'Y-MM-DD HH:mm:ss');
+                        var title = event.title;
+                        var id = event.id;
 
                         $.ajax({
                             url: "/full-calender/action",
@@ -162,80 +184,70 @@
                                 title: title,
                                 start: start,
                                 end: end,
-                                type: 'add'
+                                id: id,
+                                type: 'update'
                             },
-                            success: function (data) {
-                                calendar.fullCalendar('refetchEvents');
-                                alert("Cita creada exitosamente");
+                            success: function (response) {
+                                alert("Cita actualizada exitosamente");
                             }
                         })
-                    }
-                },
-                eventResize: function (event, delta) {
-                    var start = $.fullCalendar.formatDate(event.start, 'Y-MM-DD HH:mm:ss');
-                    var end = $.fullCalendar.formatDate(event.end, 'Y-MM-DD HH:mm:ss');
-                    var title = event.title;
-                    var id = event.id;
-
-                    $.ajax({
-                        url: "/full-calender/action",
-                        type: "POST",
-                        data: {
-                            title: title,
-                            start: start,
-                            end: end,
-                            id: id,
-                            type: 'update'
-                        },
-                        success: function (response) {
-                            calendar.fullCalendar('refetchEvents');
-                            alert("Cita creada exitosamente");
-                        }
-                    })
-                },
-                eventDrop: function (event, delta) {
-                    var start = $.fullCalendar.formatDate(event.start, 'Y-MM-DD HH:mm:ss');
-                    var end = $.fullCalendar.formatDate(event.end, 'Y-MM-DD HH:mm:ss');
-                    var title = event.title;
-                    var id = event.id;
-
-                    $.ajax({
-                        url: "/full-calender/action",
-                        type: "POST",
-                        data: {
-                            title: title,
-                            start: start,
-                            end: end,
-                            id: id,
-                            type: 'update'
-                        },
-                        success: function (response) {
-                            calendar.fullCalendar('refetchEvents');
-                            alert("Cita creada exitosamente");
-                        }
-                    })
-                },
-                eventClick: function (event) {
-                    if (confirm("¿Estás seguro de querer cambiarla?")) {
+                    },
+                    eventDrop: function (event, delta) {
+                        var start = $.fullCalendar.formatDate(event.start, 'Y-MM-DD HH:mm:ss');
+                        var end = $.fullCalendar.formatDate(event.end, 'Y-MM-DD HH:mm:ss');
+                        var title = event.title;
                         var id = event.id;
 
                         $.ajax({
                             url: "/full-calender/action",
                             type: "POST",
                             data: {
+                                title: title,
+                                start: start,
+                                end: end,
                                 id: id,
-                                type: "delete"
+                                type: 'update'
                             },
                             success: function (response) {
-                                calendar.fullCalendar('refetchEvents');
-                                alert("Cita borrada exitosamente");
+                                alert("Cita actualizada exitosamente");
                             }
                         })
-                    }
+                    },
+
+                    eventClick: function (event) {
+                        if (confirm("¿Estás seguro de querer cancelarla?")) {
+                            var id = event.id;
+
+                            $.ajax({
+                                url: "/full-calender/action",
+                                type: "POST",
+                                data: {
+                                    id: id,
+                                    type: "delete"
+                                },
+                                success: function (response) {
+                if (response.error) {
+                    alert(response.error);
+                } else {
+                    calendar.fullCalendar('removeEvents', event.id);
+                    alert("Cita borrada exitosamente");
                 }
+            },
+                                error: function (xhr, status, error) {
+                                    if (xhr.status == 403) {
+                                        alert("No tienes permiso para borrar este evento.");
+                                    } else {
+                                        alert("Error: " + xhr.responseText);
+                                    }
+                                }
+                            })
+                        }
+                    }
+                });
             });
-        });
-    </script>
+        </script>
+
+    </body>
 </x-app-layout>
 
 @include('registro.footer')

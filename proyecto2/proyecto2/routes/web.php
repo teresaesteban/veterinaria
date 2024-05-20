@@ -34,9 +34,8 @@ Route::get('/mascotas/{usuario}/show', [MascotaController::class, 'show'])->name
 
 Route::get('/historial', [HistorialController::class, 'index'])->name('historial.index');
 
-Route::get('full-calender', [FullCalenderController::class, 'index']);
-
-Route::post('full-calender/action', [FullCalenderController::class, 'action']);
+Route::get('full-calender', [FullCalenderController::class, 'index'])->name('full-calender.index');
+Route::post('full-calender/action', [FullCalenderController::class, 'action'])->name('full-calender.action');
 
 Route::get('/fechas-reservadas', [ReservationController::class, 'fechasReservadas']);
 

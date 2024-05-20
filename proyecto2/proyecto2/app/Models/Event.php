@@ -7,9 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
-  use HasFactory;
-  
-  protected $fillable = [
-    'title', 'start', 'end'
-  ];
+    use HasFactory;
+
+    protected $fillable = [
+        'title', 'start', 'end', 'user_id'  // Añade 'user_id' a los atributos fillable
+    ];
+
+    // Relación con el modelo User
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
+

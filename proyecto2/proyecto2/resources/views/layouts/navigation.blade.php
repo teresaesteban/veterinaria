@@ -18,9 +18,10 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('full-calender')" :active="request()->routeIs('full-calender')">
+                    <x-nav-link :href="route('full-calender.index')" :active="request()->routeIs('full-calender.index')">
                         {{ __('Calendario') }}
                     </x-nav-link>
+
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('usuarios.search')" :active="request()->routeIs('usuarios.search')">

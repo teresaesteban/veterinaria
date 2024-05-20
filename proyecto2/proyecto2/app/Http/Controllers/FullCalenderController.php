@@ -2,57 +2,59 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Models\Event;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FullCalenderController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-    	if($request->ajax())
-    	{
-    		$data = Event::whereDate('start', '>=', $request->start)
-                       ->whereDate('end',   '<=', $request->end)
-                       ->get(['id', 'title', 'start', 'end']);
-            return response()->json($data);
-    	}
-    	return view('full-calender');
+        // Obtén los eventos del usuario autenticado
+        $events = Event::all();
+        return view('full-calender', compact('events'));
     }
 
     public function action(Request $request)
     {
-    	if($request->ajax())
-    	{
-    		if($request->type == 'add')
-    		{
-    			$event = Event::create([
-    				'title'		=>	$request->title,
-    				'start'		=>	$request->start,
-    				'end'		=>	$request->end
-    			]);
+        $userId = Auth::id();
 
-    			return response()->json($event);
-    		}
+        if ($request->ajax()) {
+            if ($request->type == 'add') {
+                $event = Event::create([
+                    'title' => $request->title,
+                    'start' => $request->start,
+                    'end' => $request->end,
+                    'user_id' => $userId,
+                ]);
 
-    		if($request->type == 'update')
-    		{
-    			$event = Event::find($request->id)->update([
-    				'title'		=>	$request->title,
-    				'start'		=>	$request->start,
-    				'end'		=>	$request->end
-    			]);
+                return response()->json($event);
+            }
 
-    			return response()->json($event);
-    		}
+            if ($request->type == 'update') {
+                $event = Event::find($request->id);
+                if ($event->user_id == $userId) {
+                    $event->update([
+                        'title' => $request->title,
+                        'start' => $request->start,
+                        'end' => $request->end,
+                    ]);
 
-    		if($request->type == 'delete')
-    		{
-    			$event = Event::find($request->id)->delete();
+                    return response()->json($event);
+                }
+            }
 
-    			return response()->json($event);
-    		}
-    	}
+            if ($request->type == 'delete') {
+                $event = Event::find($request->id);
+                if ($event->user_id == $userId) {
+                    $event->delete();
+
+                    return response()->json($event);
+                }else {
+					return response()->json(['error' => 'No tienes permiso para borrar este evento.'], 403);
+				}
+            }
+        }
     }
 }
-?>
+
