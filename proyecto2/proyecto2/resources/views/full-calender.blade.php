@@ -62,7 +62,7 @@
                         <div class="text-center">
                             <i class="bi-plus-circle icon-feature text-gradient d-block mb-3"></i>
                             <h3 class="font-alt">Añadir Citas</h3>
-                            <p class="text-muted mb-0">Haz clic en el calendario para seleccionar un rango de fechas y añadir una nueva cita.</p>
+                            <p class="text-white mb-0">Haz clic en el calendario para seleccionar un rango de fechas y añadir una nueva cita.</p>
                         </div>
                     </div>
                     <!-- Editar citas -->
@@ -70,15 +70,15 @@
                         <div class="text-center">
                             <i class="bi-pencil icon-feature text-gradient d-block mb-3"></i>
                             <h3 class="font-alt">Editar Citas</h3>
-                            <p class="text-muted mb-0">Puedes arrastrar y soltar las citas para cambiar su fecha y hora.</p>
+                            <p class="text-white mb-0">Puedes arrastrar y soltar las citas para cambiar su fecha y hora.</p>
                         </div>
                     </div>
                     <!-- Borrar citas -->
                     <div class="col-lg-4 col-md-4 mb-5">
                         <div class="text-center">
                             <i class="bi-trash icon-feature text-gradient d-block mb-3"></i>
-                            <h3 class="font-alt">Borrar Citas</h3>
-                            <p class="text-muted mb-0">Haz clic en una cita para eliminarla del calendario.</p>
+                            <h3 class="font-alt text-white">Borrar Citas</h3>
+                            <p class="text-white mb-0">Haz clic en una cita para eliminarla del calendario.</p>
                         </div>
                     </div>
                 </div>

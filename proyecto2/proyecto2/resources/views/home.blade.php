@@ -73,8 +73,8 @@
         <x-nav-link :href="url('full-calender')" :active="request()->routeIs('full-calender')">
           <div class="text-center">
             <i class="bi-calendar icon-feature text-gradient d-block mb-3"></i>
-            <h3 class="font-alt">Calendario</h3>
-            <p class="text-muted mb-0">Organiza citas y recordatorios importantes para tu mascota.</p>
+            <h3 class="font-alt text-white">Calendario</h3>
+            <p class=" mb-0 text-white">Organiza citas y recordatorios importantes para tu mascota.</p>
           </div>
         </x-nav-link>
       </div>
@@ -83,8 +83,8 @@
         <x-nav-link :href="route('usuarios.search')" :active="request()->routeIs('usuarios.search')">
           <div class="text-center">
             <i class="bi-file-earmark-medical icon-feature text-gradient d-block mb-3"></i>
-            <h3 class="font-alt">Historial Clínico</h3>
-            <p class="text-muted mb-0">Mantén un registro detallado de las visitas al veterinario, tratamientos y más.</p>
+            <h3 class="font-alt text-white">Historial Clínico</h3>
+            <p class=" mb-0 text-white">Mantén un registro detallado de las visitas al veterinario, tratamientos y más.</p>
           </div>
         </x-nav-link>
       </div>
@@ -93,18 +93,18 @@
         <x-nav-link :href="url('quelepasa')" :active="request()->routeIs('quelepasa')">
           <div class="text-center">
             <i class="bi bi-heart icon-feature text-gradient d-block mb-3"></i>
-            <h3 class="font-alt">¿Qué le pasa a tu Mascota?</h3>
-            <p class="text-muted mb-0">Pregunta a nuestros especialistas cualquier duda que te pueda surgir en el cuidado de tu mascota</p>
+            <h3 class="font-alt text-white">¿Qué le pasa a tu Mascota?</h3>
+            <p class=" mb-0 text-white">Pregunta a nuestros especialistas cualquier duda que te pueda surgir en el cuidado de tu mascota</p>
           </div>
         </x-nav-link>
       </div>
       <div class="col-lg-4 col-md-6 mb-5"> <!-- Cambié col-md-6 por col-lg-4 -->
         <!-- Feature item: Sobre Nosotros -->
         <x-nav-link :href="url('home')" :active="request()->routeIs('home')">
-          <div class="text-center">
+          <div class="text-center ">
             <i class="bi bi-house-door icon-feature text-gradient d-block mb-3"></i>
             <h3 class="font-alt text-white">Sobre Nosotros</h3>
-            <p class="text-muted mb-0">En la página principal podrás encontrar la información general de su funcionamiento</p>
+            <p class="text-white mb-0 ">En la página principal podrás encontrar la información general de su funcionamiento</p>
           </div>
         </x-nav-link>
       </div>

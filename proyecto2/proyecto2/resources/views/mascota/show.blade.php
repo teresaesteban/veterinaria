@@ -71,13 +71,14 @@
             <div class="col-lg-11 col-xl-9 col-xxl-8">
                 <!-- Experience Section-->
                 <section>
+                    @if(auth()->user()->hasRole('employee'))
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h2 class="text-white fw-bolder mb-0">Historial</h2>
                         <button id="mostrarFormulario" class="btn btn-primary px-4 py-3">
                             {{ __('Agregar Cita') }}
                         </button>
                     </div>
-
+                    @endif
                     <div id="formularioCita" class="hidden p-6 bg-gray-800 dark:bg-gray-700 border-b border-gray-600 dark:border-gray-600">
                         <section class="py-5">
                             <div class="container px-5">
