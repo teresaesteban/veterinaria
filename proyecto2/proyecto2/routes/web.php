@@ -28,6 +28,9 @@ Route::get('/quelepasa', function () {
 });
 Route::resource('citas', CitaController::class);
 
+Route::post('/contacto', 'ContactController@store')->name('contact.store');
+Route::get('/admin/emails', 'App\Http\Controllers\ContactController@showEmails')->name('admin.emails');
+
 
 Route::get('/mascotas/{usuario}/show', [MascotaController::class, 'show'])->name('mascota.show');
 
