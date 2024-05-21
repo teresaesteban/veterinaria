@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('CONSULTAS') }}
+        <h2 id="header-title" class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            CONSULTAS
         </h2>
     </x-slot>
     <!DOCTYPE html>
@@ -23,55 +23,92 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
       </head>
-      <div class="py-12 bg-dark min-h-screen">
+    <div class="py-12 bg-dark min-h-screen">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-dark overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="content-section-heading text-center">
-                        <h3 class="text-secondary mb-0">Últimas preguntas</h3>
-                        <h2 class="mb-5 text-white">Listado consultas</h2>
+                        <h3 id="subheader-title" class="text-secondary mb-0">Últimas preguntas</h3>
+                        <h2 id="header-main-title" class="mb-5 text-white">Listado consultas</h2>
                     </div>
                     @foreach ($consultas as $consulta)
                     <div class="w-full mb-8 rounded-lg p-6 shadow-md bg-custom-blue text-white">
-                        <p class="mb-2"><strong>Nombre de la mascota:</strong> {{ $consulta->nombre }}</p>
-                        <p class="mb-2"><strong>Especie:</strong> {{ $consulta->especie }}</p>
-                        <p class="mb-2"><strong>Edad:</strong> {{ $consulta->edad }}</p>
-                        <p class="mb-2"><strong>Síntomas:</strong> {{ $consulta->sintomas }}</p>
-                        <p class="mb-2"><strong>Comentarios adicionales:</strong> {{ $consulta->comentarios }}</p>
+                        <p class="mb-2"><strong id="pet-name-label">Nombre de la mascota:</strong> {{ $consulta->nombre }}</p>
+                        <p class="mb-2"><strong id="species-label">Especie:</strong> {{ $consulta->especie }}</p>
+                        <p class="mb-2"><strong id="age-label">Edad:</strong> {{ $consulta->edad }}</p>
+                        <p class="mb-2"><strong id="symptoms-label">Síntomas:</strong> {{ $consulta->sintomas }}</p>
+                        <p class="mb-2"><strong id="additional-comments-label">Comentarios adicionales:</strong> {{ $consulta->comentarios }}</p>
                         @if ($consulta->respuesta)
-                        <p class="mb-2"><strong>Respuesta:</strong> {{ $consulta->respuesta }}</p>
-                    @endif
+                        <p class="mb-2"><strong id="response-label">Respuesta:</strong> {{ $consulta->respuesta }}</p>
+                        @endif
                         <form action="{{ route('consultas.destroy', $consulta->id) }}" method="POST" class="text-right">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="text-red-500 hover:text-red-700 focus:outline-none">
+                            <button type="submit" class="text-red-500 hover:text-red-700 focus:outline-none" id="delete-btn">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
-                         <form action="{{ route('responder.consulta', $consulta->id) }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="consulta_id" value="{{ $consulta->id }}">
-
-                    </form>
-                    @if(auth()->user()->hasRole('employee'))
-                    <form action="{{ route('responder.consulta') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="consulta_id" value="{{ $consulta->id }}">
-                        <div class="form-group">
-                            <label for="respuesta">Respuesta:</label>
-                            <textarea class="form-control" id="respuesta" name="respuesta" rows="3">{{ auth()->user()->name }}:</textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Enviar Respuesta</button>
-                    </form>
-                    @endif
-                </div>
-                <br>
-                @endforeach
+                        </form>
+                        @if(auth()->user()->hasRole('employee'))
+                        <form action="{{ route('responder.consulta', $consulta->id) }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="consulta_id" value="{{ $consulta->id }}">
+                            <div class="form-group">
+                                <label for="respuesta" id="response-label">Respuesta:</label>
+                                <textarea class="form-control" id="response-placeholder" name="respuesta" rows="3">{{ auth()->user()->name }}:</textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="send-response-btn">Enviar Respuesta</button>
+                        </form>
+                        @endif
+                    </div>
+                    <br>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
+
+    @include('registro.footer')
+
+    <!-- JavaScript para cambio de idioma -->
+    <script>
+        function translatePage(language) {
+            const translations = {
+                'es': {
+                    'header-title': 'CONSULTAS',
+                    'subheader-title': 'Últimas preguntas',
+                    'header-main-title': 'Listado consultas',
+                    'pet-name-label': 'Nombre de la mascota:',
+                    'species-label': 'Especie:',
+                    'age-label': 'Edad:',
+                    'symptoms-label': 'Síntomas:',
+                    'additional-comments-label': 'Comentarios adicionales:',
+                    'response-label': 'Respuesta:',
+                    'response-placeholder': 'Escribe tu respuesta aquí...',
+                    'send-response-btn': 'Enviar Respuesta'
+                },
+                'en': {
+                    'header-title': 'INQUIRIES',
+                    'subheader-title': 'Latest Questions',
+                    'header-main-title': 'Inquiry List',
+                    'pet-name-label': 'Pet Name:',
+                    'species-label': 'Species:',
+                    'age-label': 'Age:',
+                    'symptoms-label': 'Symptoms:',
+                    'additional-comments-label': 'Additional Comments:',
+                    'response-label': 'Response:',
+                    'response-placeholder': 'Write your response here...',
+                    'send-response-btn': 'Send Response'
+                }
+            };
+            // Actualizar el texto en la página según el idioma seleccionado
+            Object.keys(translations[language]).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = translations[language][key];
+                }
+            });
+        }
+    </script>
 </x-app-layout>
-@include('registro.footer')

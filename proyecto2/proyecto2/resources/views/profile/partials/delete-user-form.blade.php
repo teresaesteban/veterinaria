@@ -53,3 +53,39 @@
         </form>
     </x-modal>
 </section>
+<script>
+    function translatePage(language) {
+      const translations = {
+        en: {
+            'Perfil de usuario': 'User Profile',
+            'Actualiza la información del perfil de tu cuenta y la dirección de correo electrónico.': 'Update your account\'s profile information and email address.',
+            'Name': 'Name',
+            'Email': 'Email',
+            'unverified': 'Your email address is unverified.',
+            'verification': 'Click here to re-send the verification email.',
+            'address': 'A new verification link has been sent to your email address.',
+            'Save': 'Save',
+            'Saved': 'Saved.'
+        },
+        es: {
+            'Perfil de usuario': 'Perfil de usuario',
+            'Actualiza la información del perfil de tu cuenta y la dirección de correo electrónico.': 'Actualiza la información del perfil de tu cuenta y la dirección de correo electrónico.',
+            'Name': 'Nombre',
+            'Email': 'Correo electrónico',
+            'unverified': 'Tu dirección de correo electrónico no está verificada.',
+            'verification': 'Haz clic aquí para reenviar el correo de verificación.',
+            'address': 'Se ha enviado un nuevo enlace de verificación a tu dirección de correo electrónico.',
+            'Save': 'Guardar',
+            'Saved': 'Guardado.'
+        }
+      };
+
+      // Actualizar el texto en la página según el idioma seleccionado
+      Object.keys(translations[language]).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) {
+          element.textContent = translations[language][key];
+        }
+      });
+    }
+</script>

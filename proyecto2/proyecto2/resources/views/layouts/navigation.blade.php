@@ -56,6 +56,10 @@
                 @endif
             </div>
 
+            <div class="d-flex justify-content-end">
+                <button onclick="translatePage('es')" class="btn btn-primary mx-2">ES</button>
+                <button onclick="translatePage('en')" class="btn btn-secondary">EN</button>
+            </div>
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">

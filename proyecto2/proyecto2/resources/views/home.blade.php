@@ -25,15 +25,14 @@
     </head>
     <body id="page-top">
       <!-- Navigation-->
-
       <header class="masthead bg-dark">
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6">
                     <div class="mb-7 mb-lg-0 text-center text-lg-start">
-                        <h1 class="display-1 lh-1 mb-3">Bienvenido a la Clínica Veterinaria</h1>
-                        <p class="lead fw-normal text-muted mb-5">Cuidando de tus mascotas como si fueran de la familia</p>
-                        <a href="#section2" class="btn btn-primary">Saber más</a>
+                      <h1 class="display-1 lh-1 mb-3" id="clinic-title">Bienvenido a la Clínica Veterinaria</h1>
+                      <p class="lead fw-normal text-muted mb-5" id="clinic-description">Cuidando de tus mascotas como si fueran de la familia</p>
+                      <a href="#section2" class="btn btn-primary" id="learn-more">Saber más</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -60,7 +59,7 @@
     <div class="container px-5">
         <div class="row gx-5 justify-content-center">
             <div class="col-xl-8">
-              <div class="h2 fs-1 text-white mb-4">"Una forma sencilla de gestionar las visitas y cuidar de tus compañeros peludos, ¡todo en una sola aplicación!"</div>
+              <div class="h2 fs-1 text-white mb-4"id="clinic-sencilla">"Una forma sencilla de gestionar las visitas y cuidar de tus compañeros peludos, ¡todo en una sola aplicación!"</div>
             </div>
         </div>
     </div>
@@ -73,8 +72,8 @@
         <x-nav-link :href="url('full-calender')" :active="request()->routeIs('full-calender')">
           <div class="text-center">
             <i class="bi-calendar icon-feature text-gradient d-block mb-3"></i>
-            <h3 class="font-alt text-white">Calendario</h3>
-            <p class=" mb-0 text-white">Organiza citas y recordatorios importantes para tu mascota.</p>
+            <h3 class="font-alt text-white" id="feature-calendar">Calendario</h3>
+            <p class=" mb-0 text-white" id="calendar-description">Organiza citas y recordatorios importantes para tu mascota.</p>
           </div>
         </x-nav-link>
       </div>
@@ -83,8 +82,8 @@
         <x-nav-link :href="route('usuarios.search')" :active="request()->routeIs('usuarios.search')">
           <div class="text-center">
             <i class="bi-file-earmark-medical icon-feature text-gradient d-block mb-3"></i>
-            <h3 class="font-alt text-white">Historial Clínico</h3>
-            <p class=" mb-0 text-white">Mantén un registro detallado de las visitas al veterinario, tratamientos y más.</p>
+            <h3 class="font-alt text-white" id="feature-medical">Historial Clínico</h3>
+            <p class=" mb-0 text-white" id="medical-description">Mantén un registro detallado de las visitas al veterinario, tratamientos y más.</p>
           </div>
         </x-nav-link>
       </div>
@@ -93,8 +92,8 @@
         <x-nav-link :href="url('quelepasa')" :active="request()->routeIs('quelepasa')">
           <div class="text-center">
             <i class="bi bi-heart icon-feature text-gradient d-block mb-3"></i>
-            <h3 class="font-alt text-white">¿Qué le pasa a tu Mascota?</h3>
-            <p class=" mb-0 text-white">Pregunta a nuestros especialistas cualquier duda que te pueda surgir en el cuidado de tu mascota</p>
+            <h3 class="font-alt text-white" id="feature-question">¿Qué le pasa a tu Mascota?</h3>
+            <p class=" mb-0 text-white" id="question-description">Pregunta a nuestros especialistas cualquier duda que te pueda surgir en el cuidado de tu mascota</p>
           </div>
         </x-nav-link>
       </div>
@@ -103,8 +102,8 @@
         <x-nav-link :href="url('home')" :active="request()->routeIs('home')">
           <div class="text-center ">
             <i class="bi bi-house-door icon-feature text-gradient d-block mb-3"></i>
-            <h3 class="font-alt text-white">Sobre Nosotros</h3>
-            <p class="text-white mb-0 ">En la página principal podrás encontrar la información general de su funcionamiento</p>
+            <h3 class="font-alt text-white" id="feature-about">Sobre Nosotros</h3>
+            <p class="text-white mb-0 " id="about-description">En la página principal podrás encontrar la información general de su funcionamiento</p>
           </div>
         </x-nav-link>
       </div>
@@ -124,11 +123,11 @@
                 </div>
               </div>
               <div class="col-12 col-lg-5">
-                <h2 class="display-4 lh-1 mb-4 text-white">Sobre Nosotros</h2>
-                <p class="text-white mb-5">
+                <h2 class="display-4 lh-1 mb-4 text-white" id="about-title">Sobre Nosotros</h2>
+                <p class="text-white mb-5" id="about-text">
                   En VetClinic, nos esforzamos por brindar un entorno amigable y eficiente para que los veterinarios puedan registrar y acceder fácilmente a la información de los pacientes, administrar citas, llevar un historial clínico completo, y proporcionar un seguimiento más preciso y personalizado del estado de salud de las mascotas.
                 </p>
-                <p class="text-white mb-0"> <!-- Cambio de color del texto a primario -->
+                <p class="text-white mb-0">
                   Con VetClinic, esperamos contribuir al bienestar y cuidado de todas las mascotas, ofreciendo a los profesionales veterinarios las herramientas necesarias para un servicio de calidad y a los dueños de mascotas la tranquilidad de contar con un equipo comprometido con la salud y felicidad de sus compañeros peludos.
                 </p>
               </div>
@@ -142,7 +141,7 @@
   <div class="container position-relative">
       <div class="row justify-content-center">
           <div class="col-xl-6">
-              <h2 class="mb-4">¿Has tenido algún problema? Introduce tu correo electrónico y nos pondremos en contacto</h2>
+            <h2 class="mb-4" id="contact-title">¿Has tenido algún problema? Introduce tu correo electrónico y nos pondremos en contacto</h2>
               <!-- Contact form-->
               <form class="form-subscribe" id="contactFormFooter" method="POST" action="{{ route('contact.store') }}">
                   @csrf
@@ -151,17 +150,16 @@
                       <div class="col">
                           <input class="form-control form-control-lg" name="email" id="emailAddressBelow" type="email" placeholder="Correo electrónico" required />
                       </div>
-                      <div class="col-auto"><button class="btn btn-primary btn-lg" type="submit">Enviar</button></div>
+                      <div class="col-auto"><button class="btn btn-primary btn-lg" type="submit" id="send-button">Enviar</button></div>
                   </div>
                   <!-- Submit success message-->
                   <div class="d-none" id="submitSuccessMessage">
-                      <div class="text-center mb-3">
-                          <div class="fw-bolder">¡Correo electrónico enviado con éxito!</div>
-                          <p>Nos pondremos en contacto contigo pronto.</p>
-                      </div>
-                  </div>
-                  <!-- Submit error message-->
-                  <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">¡Error al enviar el correo electrónico!</div></div>
+                    <div class="text-center mb-3">
+                        <div class="fw-bolder">¡Correo electrónico enviado con éxito!</div>
+                        <p>Nos pondremos en contacto contigo pronto.</p>
+                    </div>
+                </div>
+                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">¡Error al enviar el correo electrónico!</div></div>
               </form>
           </div>
       </div>
@@ -169,3 +167,53 @@
 </section>
 </x-app-layout>
 @include('registro.footer')
+<script>
+  function translatePage(language) {
+    const translations = {
+      en: {
+        "clinic-title": "Welcome to the Veterinary Clinic",
+        "clinic-description": "Caring for your pets as if they were family",
+        "learn-more": "Learn more",
+        "clinic-sencilla": "A simple way to manage visits and take care of your furry companions, all in one app!",
+        "feature-calendar": "Calendar",
+        "calendar-description": "Organize appointments and important reminders for your pet.",
+        "feature-medical": "Medical History",
+        "medical-description": "Keep a detailed record of vet visits, treatments, and more.",
+        "feature-question": "What's Wrong with Your Pet?",
+        "question-description": "Ask our specialists any questions that may arise in caring for your pet.",
+        "feature-about": "About Us",
+        "about-description": "On the main page you can find general information about its operation.",
+        "about-title": "About Us",
+        "about-text": "At VetClinic, we strive to provide a friendly and efficient environment for veterinarians to easily record and access patient information, manage appointments, maintain a complete medical history, and provide more accurate and personalized monitoring of pets' health status. With VetClinic, we hope to contribute to the well-being and care of all pets, offering veterinarians the necessary tools for quality service and pet owners the peace of mind of having a team committed to the health and happiness of their furry companions.",
+        "contact-title": "Have you had any problems? Enter your email and we will contact you."
+      },
+      es: {
+        "clinic-title": "Bienvenido a la Clínica Veterinaria",
+        "clinic-description": "Cuidando de tus mascotas como si fueran de la familia",
+        "learn-more": "Saber más",
+        "clinic-sencilla": "Una forma sencilla de gestionar las visitas y cuidar de tus compañeros peludos, ¡todo en una sola aplicación!",
+        "feature-calendar": "Calendario",
+        "calendar-description": "Organiza citas y recordatorios importantes para tu mascota.",
+        "feature-medical": "Historial Clínico",
+        "medical-description": "Mantén un registro detallado de las visitas al veterinario, tratamientos y más.",
+        "feature-question": "¿Qué le pasa a tu Mascota?",
+        "question-description": "Pregunta a nuestros especialistas cualquier duda que te pueda surgir en el cuidado de tu mascota.",
+        "feature-about": "Sobre Nosotros",
+        "about-description": "En la página principal podrás encontrar la información general de su funcionamiento.",
+        "about-title": "Sobre Nosotros",
+        "about-text": "En VetClinic, nos esforzamos por brindar un entorno amigable y eficiente para que los veterinarios puedan registrar y acceder fácilmente a la información de los pacientes, administrar citas, llevar un historial clínico completo, y proporcionar un seguimiento más preciso y personalizado del estado de salud de las mascotas. Con VetClinic, esperamos contribuir al bienestar y cuidado de todas las mascotas, ofreciendo a los profesionales veterinarios las herramientas necesarias para un servicio de calidad y a los dueños de mascotas la tranquilidad de contar con un equipo comprometido con la salud y felicidad de sus compañeros peludos.",
+        "contact-title": "¿Has tenido algún problema? Introduce tu correo electrónico y nos pondremos en contacto."
+      }
+    };
+
+    // Actualizar el texto en la página según el idioma seleccionado
+    Object.keys(translations[language]).forEach(key => {
+      const element = document.getElementById(key);
+      if (element) {
+        element.textContent = translations[language][key];
+      }
+    });
+  }
+</script>
+
+

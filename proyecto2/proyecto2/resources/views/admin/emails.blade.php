@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('HISTORIAL') }}
+        <h2 id="header-title" class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            HISTORIAL
         </h2>
     </x-slot>
     <!DOCTYPE html>
@@ -22,49 +22,84 @@
             <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
             <!-- Core theme CSS (includes Bootstrap)-->
             <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+        </head>
+        <body>
+            <header class="py-5">
+                <div class="container px-5 pb-5">
+                    <div class="row gx-5 align-items-center">
 
-          </head>
-          <header class="py-5">
-            <div class="container px-5 pb-5">
-                <div class="row gx-5 align-items-center">
-                    <!-- Header text content-->
-                    <div class="text-uppercase">{{ auth()->user()->name }}</div>
-                    <div class="fs-3 fw-light text-muted"> Para ver los correos electrónicos de asistencia técnica, revisa la tabla a continuación. </div>
-                    <h1 class="display-3 fw-bolder mb-5"><span class="text-white d-inline">¡Bienvenido al Historial de Asistencia Técnica!</span></h1>
-                </div></div></header>
-          <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="card shadow">
-                        <div class="card-header bg-gradient-primary-to-secondary py-3">
-                            <h6 class="m-0 font-weight-bold text-white">Emails de Asistencia Técnica</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr class="bg-dark text-white">
-                                            <th>ID</th>
-                                            <th>Correo Electrónico</th>
-                                            <th>Fecha de Envío</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($emails as $email)
-                                        <tr>
-                                            <td>{{ $email->id }}</td>
-                                            <td>{{ $email->email }}</td>
-                                            <td>{{ $email->created_at }}</td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                        <div class="text-uppercase">{{ auth()->user()->name }}</div>
+                        <div class="fs-3 fw-light text-muted" id="instruction-text">Para ver los correos electrónicos de asistencia técnica, revisa la tabla a continuación.</div>
+                        <h1 class="display-3 fw-bolder mb-5"><span class="text-white d-inline" id="welcome-text">¡Bienvenido al Historial de Asistencia Técnica!</span></h1>
+                    </div>
+                </div>
+            </header>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card shadow">
+                            <div class="card-header bg-gradient-primary-to-secondary py-3">
+                                <h6 class="m-0 font-weight-bold text-white" id="table-header">Emails de Asistencia Técnica</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr class="bg-dark text-white">
+                                                <th>ID</th>
+                                                <th id="email-column">Correo Electrónico</th>
+                                                <th id="date-column">Fecha de Envío</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($emails as $email)
+                                            <tr>
+                                                <td>{{ $email->id }}</td>
+                                                <td>{{ $email->email }}</td>
+                                                <td>{{ $email->created_at }}</td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <BR>
-        @include('registro.footer')
-    </x-app-layout>
+            <br>
+            @include('registro.footer')
+
+            <script>
+                 function translatePage(language) {
+                const translations = {
+                    'es': {
+                        'header-title': 'HISTORIAL',
+                        'instruction-text': 'Para ver los correos electrónicos de asistencia técnica, revisa la tabla a continuación.',
+                        'welcome-text': '¡Bienvenido al Historial de Asistencia Técnica!',
+                        'table-header': 'Emails de Asistencia Técnica',
+                        'email-column': 'Correo Electrónico',
+                        'date-column': 'Fecha de Envío'
+                    },
+                    'en': {
+                        'header-title': 'HISTORY',
+                        'instruction-text': 'To see the technical support emails, check the table below.',
+                        'welcome-text': 'Welcome to the Technical Support History!',
+                        'table-header': 'Technical Support Emails',
+                        'email-column': 'Email Address',
+                        'date-column': 'Date Sent'
+                    }
+                };
+
+                  // Actualizar el texto en la página según el idioma seleccionado
+            Object.keys(translations[language]).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = translations[language][key];
+                }
+            });
+                }
+            </script>
+        </body>
+    </html>
+</x-app-layout>

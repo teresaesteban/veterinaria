@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('GESTION DE EMPLEADOS') }}
+        <h2 id="header-title" class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            GESTION DE EMPLEADOS
         </h2>
     </x-slot>
     <!DOCTYPE html>
@@ -23,72 +23,105 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
       </head>
-      <header class="py-5">
-        <div class="container px-5 pb-5">
-            <div class="row gx-5 align-items-center">
-
-                    <!-- Header text content-->
-
-                        <div class="text-uppercase">{{ auth()->user()->name }}</div>
-                        <div class="fs-3 fw-light text-muted"> Para crear una nueva empleado, introduce sus datos. Para ver los empleados mira al fondo de la página </div>
-                        <h1 class="display-3 fw-bolder mb-5"><span class="text-white d-inline">Bienvenido al gestor de empleados </span></h1>
-
-                </div></div></header>
-
-                    <!-- Header profile picture-->
-
-    <!-- Formulario para crear un nuevo empleado -->
-    <div class="container mt-4">
-        <form action="{{ route('employees.create') }}" method="POST" class="row g-3">
-            @csrf
-            <div class="col-md-4">
-                <input type="text" name="name" class="form-control" placeholder="Nombre" required>
+      <body>
+        <header class="py-5">
+            <div class="container px-5 pb-5">
+                <div class="row gx-5 align-items-center">
+                    <!-- Header text content -->
+                    <div class="text-uppercase">{{ auth()->user()->name }}</div>
+                    <div class="fs-3 fw-light text-muted" id="instruction-text">Para crear una nueva empleado, introduce sus datos. Para ver los empleados mira al fondo de la página</div>
+                    <h1 class="display-3 fw-bolder mb-5"><span class="text-white d-inline" id="welcome-text">Bienvenido al gestor de empleados</span></h1>
+                </div>
             </div>
-            <div class="col-md-4">
-                <input type="email" name="email" class="form-control" placeholder="Correo electrónico" required>
-            </div>
-            <div class="col-md-4">
-                <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Crear Empleado</button>
-            </div>
-        </form>
-    </div>
-<br>
-    <!-- Lista de empleados existentes -->
-    <div class="container mt-4">
-        <ul class="list-group">
-            @foreach($employees as $employee)
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    {{ $employee->name }} - {{ $employee->email }}
-                    <form action="{{ route('employees.delete', $employee->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Eliminar</button>
-                    </form>
-                </li>
-            @endforeach
-        </ul>
-    </div>
+        </header>
 
-    <!-- Mostrar mensajes de éxito o error -->
-    <div class="container mt-4">
-        @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
+        <!-- Formulario para crear un nuevo empleado -->
+        <div class="container mt-4">
+            <form action="{{ route('employees.create') }}" method="POST" class="row g-3">
+                @csrf
+                <div class="col-md-4">
+                    <input type="text" name="name" class="form-control" id="name-placeholder" placeholder="Nombre" required>
+                </div>
+                <div class="col-md-4">
+                    <input type="email" name="email" class="form-control" id="email-placeholder" placeholder="Correo electrónico" required>
+                </div>
+                <div class="col-md-4">
+                    <input type="password" name="password" class="form-control" id="password-placeholder" placeholder="Contraseña" required>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary" id="create-employee-btn">Crear Empleado</button>
+                </div>
+            </form>
+        </div>
+        <br>
+        <!-- Lista de empleados existentes -->
+        <div class="container mt-4">
+            <ul class="list-group">
+                @foreach($employees as $employee)
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{ $employee->name }} - {{ $employee->email }}
+                        <form action="{{ route('employees.delete', $employee->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger" id="delete-btn">Eliminar</button>
+                        </form>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
 
-        @if(session('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-        @endif
-    </div>
-    <BR>
+        <!-- Mostrar mensajes de éxito o error -->
+        <div class="container mt-4">
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
 
+            @if(session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
+        </div>
+        <br>
 
-    @include('registro.footer')
+        @include('registro.footer')
+
+        <!-- JavaScript para cambio de idioma -->
+        <script>
+             function translatePage(language) {
+            const translations = {
+                'es': {
+                    'header-title': 'GESTION DE EMPLEADOS',
+                    'instruction-text': 'Para crear una nueva empleado, introduce sus datos. Para ver los empleados mira al fondo de la página',
+                    'welcome-text': 'Bienvenido al gestor de empleados',
+                    'name-placeholder': 'Nombre',
+                    'email-placeholder': 'Correo electrónico',
+                    'password-placeholder': 'Contraseña',
+                    'create-employee-btn': 'Crear Empleado',
+                    'delete-btn': 'Eliminar'
+                },
+                'en': {
+                    'header-title': 'EMPLOYEE MANAGEMENT',
+                    'instruction-text': 'To create a new employee, enter their details. To see the employees, look at the bottom of the page',
+                    'welcome-text': 'Welcome to the Employee Manager',
+                    'name-placeholder': 'Name',
+                    'email-placeholder': 'Email',
+                    'password-placeholder': 'Password',
+                    'create-employee-btn': 'Create Employee',
+                    'delete-btn': 'Delete'
+                }
+            };
+
+            Object.keys(translations[language]).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = translations[language][key];
+                }
+            });
+                }
+        </script>
+      </body>
+    </html>
 </x-app-layout>
-

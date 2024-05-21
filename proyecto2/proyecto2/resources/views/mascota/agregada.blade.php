@@ -3,7 +3,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Mascota Agregada') }}
+            <span id="page-title">{{ __('Mascota Agregada') }}</span>
         </h2>
     </x-slot>
     <head>
@@ -25,43 +25,35 @@
 
       </head>
  <!-- Page content-->
-  <section class="py-5">
+ <section class="py-5">
     <div class="container px-5">
-        <!-- Contact form-->
         <div class="rounded-4 py-5 px-4 px-md-5">
             <div class="text-center mb-5">
                 <div class="text-center">
                     <i class="bi bi-heart icon-feature text-gradient d-block mb-3"></i>
                 </div>
-                <h1 class="fw-bolder">Crea tu mascota!</h1>
-                <p class="lead fw-normal text-muted mb-0">Gracias por confiar en nosotros</p>
+                <h1 class="fw-bolder"><span id="create-pet">Crea tu mascota!</span></h1>
+                <p class="lead fw-normal text-muted mb-0"><span id="thanks">Gracias por confiar en nosotros</span></p>
             </div>
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6">
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
-                    <!-- to get an API token!-->
                     <form action="{{ route('mascota.guardar') }}" method="POST">
                         @csrf
                         <input type="hidden" name="usuario_id" value="{{ $usuario->id }}">
                         <div class="mt-4">
-                            <label for="nombre">Nombre de la mascota:</label>
-                            <input type="text" name="nombre" id="nombre" class="form-input block w-full mt-1 text-black"required>
+                            <label for="nombre"><span id="pet-name">Nombre de la mascota:</span></label>
+                            <input type="text" name="nombre" id="nombre" class="form-input block w-full mt-1 text-black" required>
                         </div>
                         <div class="mt-4">
-                            <label for="tipo">Tipo de mascota:</label>
-                            <input type="text" name="tipo" id="tipo" class="form-input block w-full mt-1 text-black"required>
+                            <label for="tipo"><span id="pet-type">Tipo de mascota:</span></label>
+                            <input type="text" name="tipo" id="tipo" class="form-input block w-full mt-1 text-black" required>
                         </div>
                         <div class="mt-4">
-                            <label for="edad">Edad de la mascota:</label>
-                            <input type="number" name="edad" id="edad" class="form-input block w-full mt-1 text-black"required>
+                            <label for="edad"><span id="pet-age">Edad de la mascota:</span></label>
+                            <input type="number" name="edad" id="edad" class="form-input block w-full mt-1 text-black" required>
                         </div>
                         <div class="mt-4">
-                            <button type="submit" class="bg-primary hover:bg-gray-800 text-white font-bold py-2 px-4 rounded">Guardar Mascota</button>
+                            <button type="submit" class="bg-primary hover:bg-gray-800 text-white font-bold py-2 px-4 rounded"><span id="save-pet">Guardar Mascota</span></button>
                         </div>
                     </form>
                 </div>
@@ -69,6 +61,37 @@
         </div>
     </div>
 </section>
-
 </x-app-layout>
 @include('registro.footer')
+<script>
+function translatePage(language) {
+  const translations = {
+    en: {
+      'page-title': 'Added Pet',
+      'create-pet': 'Create your pet!',
+      'thanks': 'Thank you for trusting us',
+      'pet-name': 'Pet Name:',
+      'pet-type': 'Pet Type:',
+      'pet-age': 'Pet Age:',
+      'save-pet': 'Save Pet'
+    },
+    es: {
+      'page-title': 'Mascota Agregada',
+      'create-pet': 'Crea tu mascota!',
+      'thanks': 'Gracias por confiar en nosotros',
+      'pet-name': 'Nombre de la mascota:',
+      'pet-type': 'Tipo de mascota:',
+      'pet-age': 'Edad de la mascota:',
+      'save-pet': 'Guardar Mascota'
+    }
+  };
+
+  // Actualizar el texto en la página según el idioma seleccionado
+  Object.keys(translations[language]).forEach(key => {
+    const element = document.getElementById(key);
+    if (element) {
+      element.textContent = translations[language][key];
+    }
+  });
+}
+</script>
