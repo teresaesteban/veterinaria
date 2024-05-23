@@ -102,7 +102,7 @@
                                                     @endif
                                                     </td>
                                                     <td>
-                                                        <a href="{{ route('usuarios.agregar-mascota', ['usuario' => auth()->user()->id]) }}" class="btn btn-primary"id="agregar-mascota">Añadir mascota</a>
+                                                        <a href="{{ route('usuarios.agregar-mascota', ['usuario' => auth()->user()->id]) }}" class="btn bg-gradient-primary-to-secondary text-white"id="agregar-mascota">Añadir mascota</a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -178,7 +178,7 @@
                                                         @endif
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap">
-                                                        <a href="{{ route('usuarios.agregar-mascota', ['usuario' => $usuario->id]) }}" class="btn btn-primary"id="agregar-mascota">Añadir mascota</a>
+                                                        <a href="{{ route('usuarios.agregar-mascota', ['usuario' => $usuario->id]) }}" class="btn bg-gradient-primary-to-secondary text-white"id="agregar-mascota">Añadir mascota</a>
                                                     </td>
                                                 </tr>
                                             @endforeach

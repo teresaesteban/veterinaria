@@ -31,8 +31,8 @@
                 <div class="col-lg-6">
                     <div class="mb-7 mb-lg-0 text-center text-lg-start">
                       <h1 class="display-1 lh-1 mb-3" id="clinic-title">Bienvenido a la Clínica Veterinaria</h1>
-                      <p class="lead fw-normal text-muted mb-5" id="clinic-description">Cuidando de tus mascotas como si fueran de la familia</p>
-                      <a href="#section2" class="btn btn-primary" id="learn-more">Saber más</a>
+                      <div class="fs-3 fw-light text-muted" id="clinic-description">Cuidando de tus mascotas como si fueran de la familia</div><br>
+                      <a href="#section2" class="btn bg-gradient-primary-to-secondary text-white" id="learn-more">Saber más</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -73,7 +73,7 @@
           <div class="text-center">
             <i class="bi-calendar icon-feature text-gradient d-block mb-3"></i>
             <h3 class="font-alt text-white" id="feature-calendar">Calendario</h3>
-            <p class=" mb-0 text-white" id="calendar-description">Organiza citas y recordatorios importantes para tu mascota.</p>
+            <p class=" mb-0 text-white fs-5" id="calendar-description">Organiza citas y recordatorios importantes para tu mascota.</p>
           </div>
         </x-nav-link>
       </div>
@@ -83,7 +83,7 @@
           <div class="text-center">
             <i class="bi-file-earmark-medical icon-feature text-gradient d-block mb-3"></i>
             <h3 class="font-alt text-white" id="feature-medical">Historial Clínico</h3>
-            <p class=" mb-0 text-white" id="medical-description">Mantén un registro detallado de las visitas al veterinario, tratamientos y más.</p>
+            <p class=" mb-0 text-white fs-5" id="medical-description">Mantén un registro detallado de las visitas al veterinario, tratamientos y más.</p>
           </div>
         </x-nav-link>
       </div>
@@ -93,7 +93,7 @@
           <div class="text-center">
             <i class="bi bi-heart icon-feature text-gradient d-block mb-3"></i>
             <h3 class="font-alt text-white" id="feature-question">¿Qué le pasa a tu Mascota?</h3>
-            <p class=" mb-0 text-white" id="question-description">Pregunta a nuestros especialistas cualquier duda que te pueda surgir en el cuidado de tu mascota</p>
+            <p class=" mb-0 text-white fs-5" id="question-description">Pregunta a nuestros especialistas cualquier duda que te pueda surgir en el cuidado de tu mascota</p>
           </div>
         </x-nav-link>
       </div>
@@ -103,7 +103,7 @@
           <div class="text-center ">
             <i class="bi bi-house-door icon-feature text-gradient d-block mb-3"></i>
             <h3 class="font-alt text-white" id="feature-about">Sobre Nosotros</h3>
-            <p class="text-white mb-0 " id="about-description">En la página principal podrás encontrar la información general de su funcionamiento</p>
+            <p class="text-white mb-0 fs-5" id="about-description">En la página principal podrás encontrar la información general de su funcionamiento</p>
           </div>
         </x-nav-link>
       </div>
@@ -124,10 +124,10 @@
               </div>
               <div class="col-12 col-lg-5">
                 <h2 class="display-4 lh-1 mb-4 text-white" id="about-title">Sobre Nosotros</h2>
-                <p class="text-white mb-5" id="about-text">
+                <p class="text-white mb-5 fs-5" id="about-text">
                   En VetClinic, nos esforzamos por brindar un entorno amigable y eficiente para que los veterinarios puedan registrar y acceder fácilmente a la información de los pacientes, administrar citas, llevar un historial clínico completo, y proporcionar un seguimiento más preciso y personalizado del estado de salud de las mascotas.
                 </p>
-                <p class="text-white mb-0">
+                <p class="text-white mb-5 fs-5">
                   Con VetClinic, esperamos contribuir al bienestar y cuidado de todas las mascotas, ofreciendo a los profesionales veterinarios las herramientas necesarias para un servicio de calidad y a los dueños de mascotas la tranquilidad de contar con un equipo comprometido con la salud y felicidad de sus compañeros peludos.
                 </p>
               </div>
@@ -141,7 +141,9 @@
   <div class="container position-relative">
       <div class="row justify-content-center">
           <div class="col-xl-6">
-            <h2 class="mb-4" id="contact-title">¿Has tenido algún problema? Introduce tu correo electrónico y nos pondremos en contacto</h2>
+            <h2 class="mb-4" id="contact-title">¿Has tenido algún problema? </h2>
+            <h2>Introduce tu correo electrónico y nos pondremos en contacto</h2>
+            <br>
               <!-- Contact form-->
               <form class="form-subscribe" id="contactFormFooter" method="POST" action="{{ route('contact.store') }}">
                   @csrf
@@ -150,7 +152,7 @@
                       <div class="col">
                           <input class="form-control form-control-lg" name="email" id="emailAddressBelow" type="email" placeholder="Correo electrónico" required />
                       </div>
-                      <div class="col-auto"><button class="btn btn-primary btn-lg" type="submit" id="send-button">Enviar</button></div>
+                      <div class="col-auto"><button class="btn bg-gradient-primary-to-secondary text-white btn-lg" type="submit" id="send-button">Enviar</button></div>
                   </div>
                   <!-- Submit success message-->
                   <div class="d-none" id="submitSuccessMessage">

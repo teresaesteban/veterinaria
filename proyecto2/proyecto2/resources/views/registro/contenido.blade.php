@@ -3,7 +3,7 @@
         <div class="content-text">
             <p class="titulo">CUIDA A TUS MASCOTAS CON NOSOTROS</p>
             <p class="text-white">Mejorando vidas, Aquí mismo</p>
-            <button class="btn bg-primary">  @if (Route::has('login'))
+            <button class="btn bg-gradient-primary-to-secondary text-white">  @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                     @auth
                         <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Home</a>

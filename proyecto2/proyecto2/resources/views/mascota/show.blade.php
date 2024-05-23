@@ -74,7 +74,7 @@
                     @if(auth()->user()->hasRole('employee'))
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h2 class="text-white fw-bolder mb-0"><span id="history">Historial</span></h2>
-                        <button id="mostrarFormulario" class="btn btn-primary px-4 py-3">
+                        <button id="mostrarFormulario" class="btn bg-gradient-primary-to-secondary text-white px-4 py-3">
                             <span id="add-appointment">{{ __('Agregar Cita') }}</span>
                         </button>
                     </div>

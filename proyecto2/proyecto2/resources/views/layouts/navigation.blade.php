@@ -35,7 +35,7 @@
                             {{ __('Consultas') }}
                         </x-nav-link>
                         <div class="notification">
-                            <a href="/consultas" class="text-white"></a>
+                            <a href="route('mostrar-consultas')" class="text-white"></a>
                             <span id="unread-count" class="badge" style="display: none;">0</span>
                         </div>
                     </div>
@@ -60,14 +60,18 @@
                     </div>
                 @endif
             </div>
-
-            <div class="d-flex justify-content-end">
-                <button onclick="translatePage('es')" class="btn btn-primary mx-2">ES</button>
-                <button onclick="translatePage('en')" class="btn btn-secondary">EN</button>
-            </div>
-
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
+                <div class="dropdown">
+                    <button class="btn bg-gradient-primary-to-secondary dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        Idioma
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#" onclick="translatePage('es')">ES</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="translatePage('en')">EN</a></li>
+                    </ul>
+                </div>
+                <br>
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button

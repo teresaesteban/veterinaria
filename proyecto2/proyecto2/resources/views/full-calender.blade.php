@@ -33,7 +33,7 @@
                             <div class="fs-3 fw-light text-muted" id="instruction-text">Tu calendario facíl de usar</div>
                             <h1 class="display-3 fw-bolder mb-5"><span class="text-white d-inline" id="welcome-text">Concerta citas y consulta eventos</span></h1>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="#ir" id="create-appointment">Crea Cita</a>
+                                <a class="btn bg-gradient-primary-to-secondary text-white btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="#ir" id="create-appointment">Crea Cita</a>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                         <div class="d-flex justify-content-center mt-5 mt-xxl-0">
                             <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
                             <!-- Watch a tutorial on how to do this on YouTube (link)-->
-                            <img class="profile-img" src="images/calendario2.png" alt="..." width="70%"/>
+                            <img class="profile-img" src="images/calendario2.png" alt="..." width="100%"/>
                         </div>
                     </div>
                 </div>

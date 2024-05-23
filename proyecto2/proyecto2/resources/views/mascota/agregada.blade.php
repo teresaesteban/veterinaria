@@ -53,7 +53,7 @@
                             <input type="number" name="edad" id="edad" class="form-input block w-full mt-1 text-black" required>
                         </div>
                         <div class="mt-4">
-                            <button type="submit" class="bg-primary hover:bg-gray-800 text-white font-bold py-2 px-4 rounded"><span id="save-pet">Guardar Mascota</span></button>
+                            <button type="submit" class="bg-gradient-primary-to-secondary hover:bg-gray-800 text-white font-bold py-2 px-4 rounded"><span id="save-pet">Guardar Mascota</span></button>
                         </div>
                     </form>
                 </div>

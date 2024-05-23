@@ -49,7 +49,7 @@
                     <input type="password" name="password" class="form-control" id="password-placeholder" placeholder="Contraseña" required>
                 </div>
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary" id="create-employee-btn">Crear Empleado</button>
+                    <button type="submit" class="btn bg-gradient-primary-to-secondary text-white" id="create-employee-btn">Crear Empleado</button>
                 </div>
             </form>
         </div>

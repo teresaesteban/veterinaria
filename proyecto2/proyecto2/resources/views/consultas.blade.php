@@ -42,7 +42,13 @@
                         <p class="mb-2"><strong id="age-label">Edad:</strong> {{ $consulta->edad }}</p>
                         <p class="mb-2"><strong id="symptoms-label">Síntomas:</strong> {{ $consulta->sintomas }}</p>
                         <p class="mb-2"><strong id="additional-comments-label">Comentarios adicionales:</strong> {{ $consulta->comentarios }}</p>
-                        <p class="mb-2"><strong id="imagen"><img src="{{ url('images/veterinaria/' . $consulta->imagen) }}" alt="Imagen de la consulta"></strong></p>
+                        @if (!empty($consulta->imagen))
+    <p class="mb-2">
+        <strong id="imagen">
+            <img src="{{ url('images/veterinaria/' . $consulta->imagen) }}" alt="Imagen de la consulta">
+        </strong>
+    </p>
+@endif
                         @if ($consulta->respuesta)
                         <p class="mb-2"><strong id="response-label">Respuesta:</strong> {{ $consulta->respuesta }}</p>
                         @endif
@@ -63,7 +69,8 @@
                                 <label for="respuesta" id="response-label">Respuesta:</label>
                                 <textarea class="form-control" id="response-placeholder" name="respuesta" rows="3">{{ auth()->user()->name }}:</textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary" id="send-response-btn">Enviar Respuesta</button>
+                            <br>
+                            <button type="submit" class="btn bg-white text-black" id="send-response-btn">Enviar Respuesta</button>
                         </form>
                         @endif
                     </div>

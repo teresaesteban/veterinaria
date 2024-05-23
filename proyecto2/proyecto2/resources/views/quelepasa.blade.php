@@ -196,7 +196,7 @@
                                 @enderror
                             </div>
                             <div class="flex items-center justify-between">
-                                <button type="submit" class="bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-gray-900 dark:bg-black dark:text-gray-300 dark:hover:bg-gray-800"id="ask-question">Enviar consulta</button>
+                                <button type="submit" class="bg-gradient-primary-to-secondary text-white text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-gray-900 dark:bg-black dark:text-gray-300 dark:hover:bg-gray-800"id="ask-question">Enviar consulta</button>
                             </div>
                         </form>
 
