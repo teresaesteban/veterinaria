@@ -26,11 +26,18 @@ class ConsultaController extends Controller
             'nombre' => 'required',
             'especie' => 'required',
             'sintomas' => 'required',
+            'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         // Crear una nueva instancia del modelo Consulta
         $consulta = new Consulta();
-
+        if ($request->hasFile('imagen')) {
+            $file = $request->file('imagen');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $destinationPath = public_path('images/veterinaria');
+            $file->move($destinationPath, $fileName);
+            $consulta->imagen = $fileName;
+        }
         // Asignar los datos del formulario al modelo
         $consulta->nombre = $request->nombre;
         $consulta->especie = $request->especie;

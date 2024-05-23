@@ -151,7 +151,7 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-8 col-xl-6">
 
-                        <form action="{{ route('guardar-consulta') }}" method="POST">
+                        <form action="{{ route('guardar-consulta') }}" method="POST" enctype="multipart/form-data">>
                             @csrf
                             <div class="mb-4">
                                 <label for="nombre" class="block text-gray-700 text-white font-bold mb-2"id="nombre">Nombre de tu mascota:</label>
@@ -178,6 +178,13 @@
                                 <label for="sintomas" id="sintomas"class="block text-gray-700 text-white font-bold mb-2">Síntomas:</label>
                                 <textarea name="sintomas" id="sintomas" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300" required></textarea>
                                 @error('sintomas')
+                                    <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="mb-4">
+                                <label for="imagen" class="block text-gray-700 text-white font-bold mb-2" id="imagen">Subir imagen:</label>
+                                <input type="file" name="imagen" id="imagen" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700 dark:text-gray-300">
+                                @error('imagen')
                                     <p class="text-red-500 text-xs italic">{{ $message }}</p>
                                 @enderror
                             </div>
