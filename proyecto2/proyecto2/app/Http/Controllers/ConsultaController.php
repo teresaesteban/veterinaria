@@ -67,4 +67,11 @@ class ConsultaController extends Controller
         $consulta->delete();
         return redirect()->route('mostrar-consultas')->with('success', 'Consulta eliminada correctamente.');
     }
+    public function checkNewMessages()
+    {
+        // Suponiendo que una consulta sin respuesta tiene la columna 'respuesta' vacía
+        $newMessagesCount = Consulta::whereNull('respuesta')->count();
+
+        return response()->json(['newMessages' => $newMessagesCount]);
+    }
 }

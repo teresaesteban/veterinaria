@@ -42,7 +42,7 @@
                         <div class="d-flex justify-content-center mt-5 mt-xxl-0">
                             <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
                             <!-- Watch a tutorial on how to do this on YouTube (link)-->
-                            <img class="profile-img" src="images/calendarioe.png" alt="..." width="70%"/>
+                            <img class="profile-img" src="images/calendario2.png" alt="..." width="70%"/>
                         </div>
                     </div>
                 </div>

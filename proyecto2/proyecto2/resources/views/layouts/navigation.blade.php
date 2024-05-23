@@ -29,10 +29,15 @@
                     </x-nav-link>
                 </div>
                 @role('employee')
+
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                         <x-nav-link :href="route('mostrar-consultas')" :active="request()->routeIs('mostrar-consultas')">
                             {{ __('Consultas') }}
                         </x-nav-link>
+                        <div class="notification">
+                            <a href="/consultas" class="text-white"></a>
+                            <span id="unread-count" class="badge" style="display: none;">0</span>
+                        </div>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                         <x-nav-link :href="route('employees.index')" :active="request()->routeIs('employees.index')">
@@ -60,6 +65,7 @@
                 <button onclick="translatePage('es')" class="btn btn-primary mx-2">ES</button>
                 <button onclick="translatePage('en')" class="btn btn-secondary">EN</button>
             </div>
+
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
@@ -185,3 +191,25 @@
         </div>
     </div>
 </nav>
+<script>
+    function checkNewMessages() {
+        fetch('{{ route('check.new.messages') }}')
+            .then(response => response.json())
+            .then(data => {
+                const unreadCountElement = document.getElementById('unread-count');
+                if (data.newMessages > 0) {
+                    unreadCountElement.textContent = data.newMessages;
+                    unreadCountElement.style.display = 'inline-block';
+                } else {
+                    unreadCountElement.style.display = 'none';
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    // Verificar nuevos mensajes cada 30 segundos
+    setInterval(checkNewMessages, 30000);
+
+    // Opcionalmente, verificar inmediatamente cuando la página se carga
+    checkNewMessages();
+  </script>

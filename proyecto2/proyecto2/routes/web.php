@@ -20,6 +20,8 @@ Route::get('/', function () {
 Route::get('home', function () {
     return view('home');
 });
+Route::get('/check-new-messages', [ConsultaController::class, 'checkNewMessages'])->name('check.new.messages');
+
 Route::get('historial', function () {
     return view('historial');
 });
