@@ -45,7 +45,7 @@
                         <div class="d-flex justify-content-center mt-5 mt-xxl-0">
 
                             <!-- Primera "cajita" -->
-                            <div class="button-box red">
+                            <div class="button-box bg-preguntas">
                                 <a href="#preguntas-frecuentes" class="text-white" id="faq-link">Preguntas Frecuentes</a>
                             </div>
 
@@ -69,12 +69,12 @@
     <section class="content-section" id="preguntas-frecuentes">
         <div class="container px-4 px-lg-5">
             <div class="content-section-heading text-center">
-                <h3 class="text-secondary mb-0" id="hover-title">Pasa el cursor</h3>
-                <h2 class="mb-5" id="faq-title">Preguntas Frecuentes</h2>
+                <h3 class="text-muted mb-0 fs-5" id="hover-title">Pasa el cursor</h3>
+                <h2 class="mb-5 fs-1" id="faq-title">Preguntas Frecuentes</h2>
             </div>
-            <div class="row gx-0 ">
+            <div class="row gx-4 ">
                 <div class="col-lg-6 ">
-                    <a class="portfolio-item bg-gradient-primary-to-secondary" href="#!" onmouseover="showParagraph(this)">
+                    <a class="portfolio-item bg-gradient-primary-to-secondary rounded p-4" href="#!" onmouseover="showParagraph(this)">
                         <div class="caption ">
                             <div class="caption-content text-white">
                                 <div class="h2" id="faq1-title">¿Por qué esterilizar a mi mascota antes de los dos años?</div>
@@ -84,7 +84,7 @@
                     </a>
                 </div>
                 <div class="col-lg-6">
-                    <a class="portfolio-item bg-gradient-primary-to-secondary" href="#!" onmouseover="showParagraph(this)">
+                    <a class="portfolio-item bg-gradient-primary-to-secondary rounded p-4" href="#!" onmouseover="showParagraph(this)">
                         <div class="caption">
                             <div class="caption-content text-white">
                                 <div class="h2" id="faq2-title">¿Cómo evolucionan los problemas dentales de los perros/gatos?</div>
@@ -94,7 +94,7 @@
                     </a>
                 </div>
                 <div class="col-lg-6">
-                    <a class="portfolio-item bg-gradient-primary-to-secondary" href="#!" onmouseover="showParagraph(this)">
+                    <a class="portfolio-item bg-gradient-primary-to-secondary rounded p-4" href="#!" onmouseover="showParagraph(this)">
                         <div class="caption">
                             <div class="caption-content text-white">
                                 <div class="h2" id="faq3-title">¿Cómo combatir de las pulgas a mi mascota?</div>
@@ -104,7 +104,7 @@
                     </a>
                 </div>
                 <div class="col-lg-6">
-                    <a class="portfolio-item bg-gradient-primary-to-secondary" href="#!" onmouseover="showParagraph(this)">
+                    <a class="portfolio-item bg-gradient-primary-to-secondary rounded p-4" href="#!" onmouseover="showParagraph(this)">
                         <div class="caption">
                             <div class="caption-content text-white">
                                 <div class="h2" id="faq4-title">¿Cuándo le pongo el collar antiparasitario a mi perro?</div>
@@ -114,7 +114,7 @@
                     </a>
                 </div>
                 <div class="col-lg-6">
-                    <a class="portfolio-item bg-gradient-primary-to-secondary" href="#!" onmouseover="showParagraph(this)">
+                    <a class="portfolio-item bg-gradient-primary-to-secondary rounded p-3" href="#!" onmouseover="showParagraph(this)">
                         <div class="caption">
                             <div class="caption-content text-white">
                                 <div class="h2" id="faq5-title">¿Mi perr@ o mi gat@ tendrán problemas de comportamiento si no los esterilizo?</div>
@@ -124,7 +124,7 @@
                     </a>
                 </div>
                 <div class="col-lg-6">
-                    <a class="portfolio-item bg-gradient-primary-to-secondary" href="#!" onmouseover="showParagraph(this)">
+                    <a class="portfolio-item bg-gradient-primary-to-secondary rounded p-4" href="#!" onmouseover="showParagraph(this)">
                         <div class="caption">
                             <div class="caption-content text-white ">
                                 <div class="h2 text-white" id="faq6-title">Si mi perro tiene sarro en los dientes, ¿qué debería de hacer? </div>
@@ -143,7 +143,7 @@
             <div class="rounded-4 py-5 px-4 px-md-5">
                 <div class="text-center mb-5">
                     <div class="d-flex justify-content-center text-center">
-                        <img class="profile-img" src="images/pikaso_reimagine_digital-painting-A-chubby-gray-cat-with-a-cute-fri__1_-removebg-preview.png" alt="..." width="15%" />
+                        <img class="profile-img" src="images/pikaso_reimagine_digital-painting-A-chubby-gray-cat-with-a-cute-fri__1_-removebg-preview.png" alt="..." width="15%"/>
                     </div>
                     <h1 class="fw-bolder" id="main-titlee">¿Qué le ocurre a tu mascota?</h1>
                     <p class="lead fw-normal text-muted mb-0"id="titlee">Si tienes alguna duda puedes ponerte en contacto con nuestros especialistas</p>
@@ -151,7 +151,7 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-8 col-xl-6">
 
-                        <form action="{{ route('guardar-consulta') }}" method="POST" enctype="multipart/form-data">>
+                        <form action="{{ route('guardar-consulta') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-4">
                                 <label for="nombre" class="block text-gray-700 text-white font-bold mb-2"id="nombre">Nombre de tu mascota:</label>

@@ -12,6 +12,27 @@
  *//* Contenido de public/css/styles.css */
 
 /* Estilos personalizados */
+.bg-preguntas{
+  background-color: #9F9589;
+}
+.thick-underline {
+  text-decoration: none;
+  position: relative;
+}
+
+.thick-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px; /* Ajusta el grosor aquí */
+  background-color: #416881; /* Cambia el color aquí */
+  left: 0;
+  bottom: -2px; /* Ajusta la distancia desde el texto aquí */
+}
+
+.thick-underline:hover::after {
+  background-color: #416881; /* Mantén el mismo color en hover */
+}
 .notification {
   position: relative;
   display: inline-block;
@@ -11104,7 +11125,7 @@ html {
 }
 
 .text-gradient {
-  background: -webkit-linear-gradient(#2937f0, #9f1ae2);
+  background: -webkit-linear-gradient(#9F9589, #9F9589);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

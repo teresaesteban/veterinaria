@@ -37,7 +37,6 @@
                 <header class="py-5">
                     <div class="container px-5 pb-5">
                         <div class="row gx-5 align-items-center">
-                            <div class="col-xxl-5">
                                 <!-- Header text content-->
                                 <div class="text-center text-xxl-start">
                                     <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">{{ auth()->user()->name }}</div></div>
@@ -45,14 +44,22 @@
                                     <h1 class="display-3 fw-bolder mb-5"id="Bienvenidoalhistorial"><span class="text-white d-inline">Bienvenido al historial clínico de tu mascota </span></h1>
                                 </div>
                             </div>
-                            <div class="col-xxl-7">
                                 <!-- Header profile picture-->
                                 <div class="d-flex justify-content-center mt-5 mt-xxl-0">
 
                                     <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
                                     <!-- Watch a tutorial on how to do this on YouTube (link)-->
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-10">
+                                                <div class="card shadow">
+                                                    <div class="card-header bg-gradient-primary-to-secondary py-3">
+                                                        <h6 class="m-0 font-weight-bold text-white" id="table-header">Tabla de usuarios y mascotas</h6>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="table-responsive">
                                     <div class="mt-8">
-                                        <h3 class="text-lg font-semibold mb-4"id="tuusuario">{{ __('Tu Usuario') }}</h3>
+                                        <h3 class="text-lg font-semibold mb-4 text-black"id="tuusuario">{{ __('Tu Usuario') }}</h3>
                                         <table class="table table-striped table-bordered">
                                             <thead class="thead-dark">
                                                 <tr class="bg-gradient-primary-to-secondary text-white">
@@ -65,12 +72,12 @@
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        <a href="{{ route('usuarios.mascota', ['usuario' => auth()->user()->id]) }}" class="text-white">{{ auth()->user()->name }}</a>
+                                                        <a href="{{ route('usuarios.mascota', ['usuario' => auth()->user()->id]) }}" class="text-black hover:text-black-400 hover:underline thick-underline">{{ auth()->user()->name }}</a>
 
 
                                                     </td>
                                                     <td>
-                                                        <div class="text-white">{{ auth()->user()->email }}</div>
+                                                        <div class="">{{ auth()->user()->email }}</div>
                                                     </td>
                                                     <td>
                                                         @if (auth()->user()->mascota()->count() > 0)
@@ -97,7 +104,7 @@
 
                                                     @else
 
-                                                        <div class="text-white" id="Sinmascotas">Sin mascotas</div>
+                                                        <div class="" id="Sinmascotas">Sin mascotas</div>
 
                                                     @endif
                                                     </td>
@@ -108,7 +115,11 @@
                                             </tbody>
                                         </table>
                                     </div>
-
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                 </div>
                         </div>
                     </div>
@@ -117,16 +128,16 @@
                 @elseif(auth()->user()->hasRole('employee'))
                 <header class="py-5">
                     <div class="container px-5 pb-5">
-                        <div class="row gx-5 align-items-center">
-                            <div class="col-xxl-5">
+                        <div class=" align-items-center">
+
                                 <!-- Header text content-->
                                 <div class="text-center text-xxl-start">
                                     <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">{{ auth()->user()->name }}</div></div>
                                     <div class="fs-3 fw-light text-muted"id="Paracrearunanuevamascota1"> Para crear una nueva mascota, haz clic en el botón verde. Para ver el historial de tu mascota, haz clic en tu perfil. </div>
                                     <h1 class="display-3 fw-bolder mb-5"id="Bienvenidoalhistorial1"><span class="text-white d-inline">Bienvenido al buscador de usuarios </span></h1>
                                 </div>
-                            </div>
-                            <div class="col-xxl-7">
+
+
 
                                     <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
                                     <!-- Watch a tutorial on how to do this on YouTube (link)-->
@@ -137,10 +148,19 @@
                                                     <input type="text" name="search" id="search" placeholder="Buscar usuarios..." class="bg-transparent text-white border-none focus:outline-none">
                                                     <button type="submit" class="ml-2 bg-gray-600 px-4 py-2 rounded-md hover:bg-gray-700"id="search1">Buscar</button>
                                                 </div>
+                                                <br>
                                             </form>
                                         </div>
 
-
+                                        <div class="container">
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-10">
+                                                    <div class="card shadow">
+                                                        <div class="card-header bg-gradient-primary-to-secondary py-3">
+                                                            <h6 class="m-0 font-weight-bold text-white" id="table-header">Tabla de usuarios y mascotas</h6>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="table-responsive">
                                         <table class="table table-striped table-bordered">
                                             <thead class="thead-dark">
                                                 <tr class="bg-gradient-primary-to-secondary text-white">
@@ -156,10 +176,10 @@
                                                 @foreach($usuarios as $usuario)
                                                 <tr>
                                                     <td class="px-6 py-4 whitespace-nowrap">
-                                                        <a href="{{ route('usuarios.mascota', ['usuario' => $usuario->id]) }}" class="text-white hover:text-gray-400">{{ $usuario->name }}</a>
+                                                        <a href="{{ route('usuarios.mascota', ['usuario' => $usuario->id]) }}" class="text-black hover:text-black-400 hover:underline thick-underline">{{ $usuario->name }}</a>
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap">
-                                                        <div class="text-sm text-white">{{ $usuario->email }}</div>
+                                                        <div class="text-sm">{{ $usuario->email }}</div>
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap">
                                                         @if ($usuario->mascota && $usuario->mascota->count() > 0) <!-- Check if $usuario->mascotas is not null -->
@@ -174,7 +194,7 @@
                                                                 </div>
                                                             @endforeach
                                                         @else
-                                                            <div class="text-sm text-white"id="Sinmascotas">Sin mascotas</div>
+                                                            <div class="text-sm"id="Sinmascotas">Sin mascotas</div>
                                                         @endif
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap">
@@ -186,6 +206,12 @@
                                                 <!-- Fin del ejemplo de fila -->
                                             </tbody>
                                         </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                 </div>

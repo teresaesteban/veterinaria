@@ -28,8 +28,8 @@
             <div class="bg-dark overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="content-section-heading text-center">
-                        <h3 id="subheader-title" class="text-secondary mb-0">Últimas preguntas</h3>
-                        <h2 id="header-main-title" class="mb-5 text-white">Listado consultas</h2>
+                        <h3 id="subheader-title" class="text-muted mb-0 fs-5">Últimas preguntas</h3>
+                        <h2 id="header-main-title" class="mb-5 text-white fs-1">Listado consultas</h2>
                     </div>
                     <div class="notification">
                         <a href="/consultas" class="text-white"></a>
