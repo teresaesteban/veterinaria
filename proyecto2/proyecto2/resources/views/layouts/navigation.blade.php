@@ -12,26 +12,26 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('home')" :active="request()->routeIs('home')">
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex" >
+                    <x-nav-link :href="url('home')" :active="request()->routeIs('home')"    id="Inicio">
                         {{ __('INICIO') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('full-calender.index')" :active="request()->routeIs('full-calender.index')">
+                    <x-nav-link :href="route('full-calender.index')" :active="request()->routeIs('full-calender.index')" id="Calendario">
                         {{ __('CALENDARIO') }}
                     </x-nav-link>
 
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('usuarios.search')" :active="request()->routeIs('usuarios.search')">
+                    <x-nav-link :href="route('usuarios.search')" :active="request()->routeIs('usuarios.search')" id="Historial">
                         {{ __('HISTORIAL CLÍNICO') }}
                     </x-nav-link>
                 </div>
                 @role('employee')
 
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <x-nav-link :href="route('mostrar-consultas')" :active="request()->routeIs('mostrar-consultas')">
+                        <x-nav-link :href="route('mostrar-consultas')" :active="request()->routeIs('mostrar-consultas')" id="Consultas">
                             {{ __('CONSULTAS') }}
                         </x-nav-link>
                         <div class="notification">
@@ -40,12 +40,12 @@
                         </div>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <x-nav-link :href="route('employees.index')" :active="request()->routeIs('employees.index')">
+                        <x-nav-link :href="route('employees.index')" :active="request()->routeIs('employees.index')" id="Gestion">
                             {{ __('GESTIÓN DE EMPLEADOS') }}
                         </x-nav-link>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <x-nav-link :href="route('admin.emails')" :active="request()->routeIs('admin.emails')">
+                        <x-nav-link :href="route('admin.emails')" :active="request()->routeIs('admin.emails')" id="Soporte">
                             {{ __('SOPORTE') }}
                         </x-nav-link>
                     </div>
@@ -54,7 +54,7 @@
 
                 @if(!Auth::user()->hasRole('employee'))
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <x-nav-link :href="url('quelepasa')" :active="request()->routeIs('quelepasa')">
+                        <x-nav-link :href="url('quelepasa')" :active="request()->routeIs('quelepasa')" id="QueLePasa">
                             {{ __('¿QUÉ LE PASA A MI MASCOTA?') }}
                         </x-nav-link>
                     </div>
@@ -67,7 +67,7 @@
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <div class="dropdown">
-                    <button class="btn bg-gradient-primary-to-secondary dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button id="idioma" class="btn bg-gradient-primary-to-secondary dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" >
                         Idioma
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
