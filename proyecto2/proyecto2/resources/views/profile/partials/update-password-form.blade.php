@@ -1,10 +1,10 @@
 <section>
     <header>
-        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100" id="update2">
             {{ __('Actualizar contraseña') }}
         </h2>
 
-        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400" id="secure">
             {{ __('Asegúrate de que tu cuenta esté usando una contraseña larga y aleatoria para mantenerla segura.') }}
         </p>
     </header>
@@ -14,24 +14,24 @@
         @method('put')
 
         <div>
-            <x-input-label for="update_password_current_password" :value="__('Contraseña actual')" />
+            <x-input-label id="update3" :value="__('Contraseña actual')" />
             <x-text-input id="update_password_current_password" name="current_password" type="password" class="mt-1 block w-full text-black" autocomplete="current-password" />
             <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
         </div>
 
         <div>
-            <x-input-label for="update_password_password" :value="__('Nueva contraseña')" />
+            <x-input-label id="update4" :value="__('Nueva contraseña')" />
             <x-text-input id="update_password_password" name="password" type="password" class="mt-1 block w-full text-black" autocomplete="new-password" />
             <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
         </div>
 
         <div>
-            <x-input-label for="update_password_password_confirmation" :value="__('Confirmar contraseña')" />
+            <x-input-label id="update5" :value="__('Confirmar contraseña')" />
             <x-text-input id="update_password_password_confirmation" name="password_confirmation" type="password" class="mt-1 block w-full text-black" autocomplete="new-password" />
             <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
         </div>
 
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-4" id="guardar">
             <x-primary-button>{{ __('Guardar') }}</x-primary-button>
 
             @if (session('status') === 'password-updated')
@@ -47,24 +47,3 @@
     </form>
 </section>
 
-<script>
-    function translatePage(language) {
-        const translations = {
-            en: {
-                "update2": "Update Password",
-            },
-            es: {
-                "update2": "Actualizar Contraseña",
-
-            }
-        };
-
-        // Actualizar el texto en la página según el idioma seleccionado
-        Object.keys(translations[language]).forEach(key => {
-            const element = document.getElementById(key);
-            if (element) {
-                element.textContent = translations[language][key];
-            }
-        });
-    }
-</script>

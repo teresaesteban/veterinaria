@@ -79,7 +79,16 @@
                 "footer-contact": "CONTACT US",
                 "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
                 "footer-phone": "976 30 08 04",
-                "footer-email": "teresaestegraci@gmail.com"
+                "footer-email": "teresaestegraci@gmail.com",
+                "update2": "Update Password",
+                "secure":"Ensure your account is using a long, random password to stay secure.",
+                "update3":"Current Password",
+                "update4":"New Password",
+                "update5":"Confirm New Password",
+                "guardar":"Save",
+                "Eliminar cuenta":"Delete Account",
+                "explicacion":"Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.",
+                "boton":"Delete Account",
         },
         es: {
             'Perfil de usuario': 'Perfil de usuario',
@@ -95,8 +104,16 @@
                 "footer-contact": "CONTACTE CON NOSOTROS",
                 "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
                 "footer-phone": "976 30 08 04",
-                "footer-email": "teresaestegraci@gmail.com"
+                "footer-email": "teresaestegraci@gmail.com",
                 "update2": "Actualizar Contraseña",
+                "secure":"Asegúrate de que tu cuenta este usando una contraseña más larga y aleatoria para mantenerse segura.",
+                "update3":"Contraseña Actual",
+                "update4":"Contraseña Nueva",
+                "update5":"Confirmar Contraseña Nueva",
+                "guardar":"Guardar",
+                "Eliminar cuenta":"Eliminar cuenta",
+                "explicacion":"Una vez que se elimine tu cuenta, todos sus recursos y datos se eliminarán de forma permanente. Por favor, descarga cualquier dato o información que desees conservar.",
+                "boton":"Eliminar cuenta",
         }
       };
 
