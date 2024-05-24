@@ -14,25 +14,25 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="url('home')" :active="request()->routeIs('home')">
-                        {{ __('Home') }}
+                        {{ __('INICIO') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('full-calender.index')" :active="request()->routeIs('full-calender.index')">
-                        {{ __('Calendario') }}
+                        {{ __('CALENDARIO') }}
                     </x-nav-link>
 
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('usuarios.search')" :active="request()->routeIs('usuarios.search')">
-                        {{ __('Historial Clínico') }}
+                        {{ __('HISTORIAL CLÍNICO') }}
                     </x-nav-link>
                 </div>
                 @role('employee')
 
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                         <x-nav-link :href="route('mostrar-consultas')" :active="request()->routeIs('mostrar-consultas')">
-                            {{ __('Consultas') }}
+                            {{ __('CONSULTAS') }}
                         </x-nav-link>
                         <div class="notification">
                             <a href="route('mostrar-consultas')" class="text-white"></a>
@@ -41,12 +41,12 @@
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                         <x-nav-link :href="route('employees.index')" :active="request()->routeIs('employees.index')">
-                            {{ __('Gestión de Empleados') }}
+                            {{ __('GESTIÓN DE EMPLEADOS') }}
                         </x-nav-link>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                         <x-nav-link :href="route('admin.emails')" :active="request()->routeIs('admin.emails')">
-                            {{ __('Soporte') }}
+                            {{ __('SOPORTE') }}
                         </x-nav-link>
                     </div>
                 @endrole
@@ -55,7 +55,7 @@
                 @if(!Auth::user()->hasRole('employee'))
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                         <x-nav-link :href="url('quelepasa')" :active="request()->routeIs('quelepasa')">
-                            {{ __('¿Qué le pasa a mi mascota?') }}
+                            {{ __('¿QUÉ LE PASA A MI MASCOTA?') }}
                         </x-nav-link>
                     </div>
                 @endif
