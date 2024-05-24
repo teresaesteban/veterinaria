@@ -86,7 +86,8 @@
         </div>
         <br>
 
-        @include('registro.footer')
+
+@include('registro.footer')
 
         <!-- JavaScript para cambio de idioma -->
         <script>
@@ -100,7 +101,13 @@
                     'email-placeholder': 'Correo electrónico',
                     'password-placeholder': 'Contraseña',
                     'create-employee-btn': 'Crear Empleado',
-                    'delete-btn': 'Eliminar'
+                    'delete-btn': 'Eliminar',
+                    "footer-copyright": "© 2024 Vet Clinic. Todos los derechos reservados.",
+                "footer-contact": "CONTACTE CON NOSOTROS",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
+
                 },
                 'en': {
                     'header-title': 'EMPLOYEE MANAGEMENT',
@@ -110,7 +117,13 @@
                     'email-placeholder': 'Email',
                     'password-placeholder': 'Password',
                     'create-employee-btn': 'Create Employee',
-                    'delete-btn': 'Delete'
+                    'delete-btn': 'Delete',
+                    "footer-copyright": "© 2024 Vet Clinic. All rights reserved.",
+                "footer-contact": "CONTACT US",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
+
                 }
             };
 

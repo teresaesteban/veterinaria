@@ -73,7 +73,12 @@ function translatePage(language) {
       'pet-name': 'Pet Name:',
       'pet-type': 'Pet Type:',
       'pet-age': 'Pet Age:',
-      'save-pet': 'Save Pet'
+      'save-pet': 'Save Pet',
+      "footer-copyright": "© 2024 Vet Clinic. All rights reserved.",
+                "footer-contact": "CONTACT US",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
     },
     es: {
       'page-title': 'Mascota Agregada',
@@ -82,7 +87,12 @@ function translatePage(language) {
       'pet-name': 'Nombre de la mascota:',
       'pet-type': 'Tipo de mascota:',
       'pet-age': 'Edad de la mascota:',
-      'save-pet': 'Guardar Mascota'
+      'save-pet': 'Guardar Mascota',
+      "footer-copyright": "© 2024 Vet Clinic. Todos los derechos reservados.",
+                "footer-contact": "CONTACTE CON NOSOTROS",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
     }
   };
 

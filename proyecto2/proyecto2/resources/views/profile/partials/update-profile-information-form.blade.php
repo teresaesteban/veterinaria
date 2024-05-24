@@ -74,7 +74,12 @@
             'verification': 'Click here to re-send the verification email.',
             'address': 'A new verification link has been sent to your email address.',
             'Save': 'Save',
-            'Saved': 'Saved.'
+            'Saved': 'Saved.',
+            "footer-copyright": "© 2024 Vet Clinic. All rights reserved.",
+                "footer-contact": "CONTACT US",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
         },
         es: {
             'Perfil de usuario': 'Perfil de usuario',
@@ -85,7 +90,13 @@
             'verification': 'Haz clic aquí para reenviar el correo de verificación.',
             'address': 'Se ha enviado un nuevo enlace de verificación a tu dirección de correo electrónico.',
             'Save': 'Guardar',
-            'Saved': 'Guardado.'
+            'Saved': 'Guardado.',
+            "footer-copyright": "© 2024 Vet Clinic. Todos los derechos reservados.",
+                "footer-contact": "CONTACTE CON NOSOTROS",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
+                "update2": "Actualizar Contraseña",
         }
       };
 

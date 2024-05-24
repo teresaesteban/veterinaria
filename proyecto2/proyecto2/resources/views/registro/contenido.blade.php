@@ -23,25 +23,39 @@
 </div>
 <script>
     function translatePage(language) {
-      const translations = {
-        en: {
-"clinic-title": "CARE FOR YOUR PETS WITH US",
-"clinic-subtitle": "Better lives, here",
-"register": "Register"
-        },
-        es: {
-"clinic-title": "CUIDA A TUS MASCOTAS CON NOSOTROS",
-"clinic-subtitle": "Mejorando vidas, Aquí mismo",
-"register": "Registrarse"
-        }
-      };
+        const translations = {
+            en: {
+                "home": "Home",
+                "login": "Login",
+                "clinic-title": "CARE FOR YOUR PETS WITH US",
+                "clinic-subtitle": "Better lives, here",
+                "register": "Register",
+                "footer-copyright": "© 2024 Vet Clinic. All rights reserved.",
+                "footer-contact": "CONTACT US",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
+            },
+            es: {
+                "home": "Inicio",
+                "login": "Iniciar sesión",
+                "clinic-title": "CUIDA A TUS MASCOTAS CON NOSOTROS",
+                "clinic-subtitle": "Mejorando vidas, Aquí mismo",
+                "register": "Registrarse",
+                "footer-copyright": "© 2024 Vet Clinic. Todos los derechos reservados.",
+                "footer-contact": "CONTACTE CON NOSOTROS",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
+            }
+        };
 
-      // Actualizar el texto en la página según el idioma seleccionado
-      Object.keys(translations[language]).forEach(key => {
-        const element = document.getElementById(key);
-        if (element) {
-          element.textContent = translations[language][key];
-        }
-      });
+        // Actualizar el texto en la página según el idioma seleccionado
+        Object.keys(translations[language]).forEach(key => {
+            const element = document.getElementById(key);
+            if (element) {
+                element.textContent = translations[language][key];
+            }
+        });
     }
-  </script>
+</script>

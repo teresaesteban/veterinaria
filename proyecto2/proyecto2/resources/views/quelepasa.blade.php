@@ -240,7 +240,12 @@
 'comentarios':'Comments',
 'main-titlee':'What\'s wrong with my pet?',
 'titlee':'If you have any questions, please contact us',
-'ask-question':'Send your question'
+'ask-question':'Send your question',
+"footer-copyright": "© 2024 Vet Clinic. All rights reserved.",
+                "footer-contact": "CONTACT US",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
 
     },
     es: {
@@ -272,7 +277,12 @@
 'comentarios':'Comentarios adicionales',
 'main-titlee':'¿Qué le ocurre a tu mascota?',
 'titlee':'Si tienes alguna consulta, por favor, ponte en contacto con nuestros especialistas',
-'ask-question':'Enviar tu consulta'
+'ask-question':'Enviar tu consulta',
+"footer-copyright": "© 2024 Vet Clinic. Todos los derechos reservados.",
+                "footer-contact": "CONTACTE CON NOSOTROS",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
     }
 };
 

@@ -79,7 +79,12 @@
                         'welcome-text': '¡Bienvenido al Historial de Asistencia Técnica!',
                         'table-header': 'Emails de Asistencia Técnica',
                         'email-column': 'Correo Electrónico',
-                        'date-column': 'Fecha de Envío'
+                        'date-column': 'Fecha de Envío',
+                        "footer-copyright": "© 2024 Vet Clinic. Todos los derechos reservados.",
+                "footer-contact": "CONTACTE CON NOSOTROS",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
                     },
                     'en': {
                         'header-title': 'HISTORY',
@@ -87,7 +92,12 @@
                         'welcome-text': 'Welcome to the Technical Support History!',
                         'table-header': 'Technical Support Emails',
                         'email-column': 'Email Address',
-                        'date-column': 'Date Sent'
+                        'date-column': 'Date Sent',
+                        "footer-copyright": "© 2024 Vet Clinic. All rights reserved.",
+                "footer-contact": "CONTACT US",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
                     }
                 };
 

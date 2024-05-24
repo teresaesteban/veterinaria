@@ -30,25 +30,3 @@
         </button>
     </div>
 </nav>
-<script>
-    function translatePage(language) {
-      const translations = {
-        en: {
-            "home": "Home",
-            "login": "Login"
-        },
-        es: {
-"home": "Inicio",
-"login": "Iniciar sesión"
-        }
-      };
-
-      // Actualizar el texto en la página según el idioma seleccionado
-      Object.keys(translations[language]).forEach(key => {
-        const element = document.getElementById(key);
-        if (element) {
-          element.textContent = translations[language][key];
-        }
-      });
-    }
-  </script>

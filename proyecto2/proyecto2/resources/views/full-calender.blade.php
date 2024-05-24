@@ -225,7 +225,12 @@
                             'edit-appointment-text': 'Puedes arrastrar y soltar las citas para cambiar su fecha y hora.',
                             'delete-appointment': 'Borrar Citas',
                             'delete-appointment-text': 'Haz clic en una cita para eliminarla del calendario.',
-                            'calendar-title': 'Calendario clínica veterinaria'
+                            'calendar-title': 'Calendario clínica veterinaria',
+                            "footer-copyright": "© 2024 Vet Clinic. Todos los derechos reservados.",
+                "footer-contact": "CONTACTE CON NOSOTROS",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
                         },
                         'en': {
                             'header-title': 'CALENDAR',
@@ -239,7 +244,12 @@
                             'edit-appointment-text': 'You can drag and drop appointments to change their date and time.',
                             'delete-appointment': 'Delete Appointments',
                             'delete-appointment-text': 'Click on an appointment to delete it from the calendar.',
-                            'calendar-title': 'Veterinary Clinic Calendar'
+                            'calendar-title': 'Veterinary Clinic Calendar',
+                            "footer-copyright": "© 2024 Vet Clinic. All rights reserved.",
+                "footer-contact": "CONTACT US",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
                         }
                     };
 

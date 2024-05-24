@@ -189,7 +189,13 @@
         "about-text": "At VetClinic, we strive to provide a friendly and efficient environment for veterinarians to easily record and access patient information, manage appointments, maintain a complete medical history, and provide more accurate and personalized monitoring of pets' health status. ",
         "about-text2":"With VetClinic, we hope to contribute to the well-being and care of all pets, offering veterinarians the necessary tools for quality service and pet owners the peace of mind of having a team committed to the health and happiness of their furry companions.",
         "contact-title": "Have you had any problems?",
-        "contact-title2": "Enter your email and we will contact you."
+        "contact-title2": "Enter your email and we will contact you.",
+        "footer-copyright": "© 2024 Vet Clinic. All rights reserved.",
+                "footer-contact": "CONTACT US",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com",
+
       },
       es: {
         "clinic-title": "Bienvenido a la Clínica Veterinaria",
@@ -208,7 +214,14 @@
         "about-text": "En VetClinic, nos esforzamos por brindar un entorno amigable y eficiente para que los veterinarios puedan registrar y acceder fácilmente a la información de los pacientes, administrar citas, llevar un historial clínico completo, y proporcionar un seguimiento más preciso y personalizado del estado de salud de las mascotas.",
         "about-text2":"Con VetClinic, esperamos contribuir al bienestar y cuidado de todas las mascotas, ofreciendo a los profesionales veterinarios las herramientas necesarias para un servicio de calidad y a los dueños de mascotas la tranquilidad de contar con un equipo comprometido con la salud y felicidad de sus compañeros peludos.",
         "contact-title": "¿Has tenido algún problema?",
-        "contact-title2": "Introduce tu correo electrónico y nos pondremos en contacto."
+        "contact-title2": "Introduce tu correo electrónico y nos pondremos en contacto.",
+        "footer-copyright": "© 2024 Vet Clinic. Todos los derechos reservados.",
+                "footer-contact": "CONTACTE CON NOSOTROS",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com",
+
+
       }
     };
 

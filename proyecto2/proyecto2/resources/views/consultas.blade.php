@@ -97,7 +97,12 @@
                     'response-label': 'Respuesta:',
                     'response-placeholder': 'Escribe tu respuesta aquí...',
                     'send-response-btn': 'Enviar Respuesta',
-                    'delete-btn': 'Eliminar'
+                    'delete-btn': 'Eliminar',
+                    "footer-copyright": "© 2024 Vet Clinic. Todos los derechos reservados.",
+                "footer-contact": "CONTACTE CON NOSOTROS",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
                 },
                 'en': {
                     'header-title': 'INQUIRIES',
@@ -111,7 +116,12 @@
                     'response-label': 'Response:',
                     'response-placeholder': 'Write your response here...',
                     'send-response-btn': 'Send Response',
-                    'delete-btn': 'Delete'
+                    'delete-btn': 'Delete',
+                    "footer-copyright": "© 2024 Vet Clinic. All rights reserved.",
+                "footer-contact": "CONTACT US",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
                 }
             };
             // Actualizar el texto en la página según el idioma seleccionado

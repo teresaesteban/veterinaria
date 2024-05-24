@@ -255,6 +255,11 @@
             'mascota1':'pet',
             'acciones1':'actions',
             'tuusuario1':'your user',
+            "footer-copyright": "© 2024 Vet Clinic. All rights reserved.",
+                "footer-contact": "CONTACT US",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
 
 
         },
@@ -281,6 +286,11 @@
             'mascota1': 'mascota',
             'acciones1': 'acciones',
             'tuusuario1': 'tu usuario',
+            "footer-copyright": "© 2024 Vet Clinic. Todos los derechos reservados.",
+                "footer-contact": "CONTACTE CON NOSOTROS",
+                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                "footer-phone": "976 30 08 04",
+                "footer-email": "teresaestegraci@gmail.com"
 
         }
       };
