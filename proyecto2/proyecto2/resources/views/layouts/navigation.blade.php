@@ -54,7 +54,7 @@
 
                 @if(!Auth::user()->hasRole('employee'))
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <x-nav-link :href="url('quelepasa')" :active="request()->routeIs('quelepasa')" id="QueLePasa">
+                        <x-nav-link :href="url('quelepasa')" :active="request()->routeIs('quelepasa')" id="Quelepasa">
                             {{ __('¿QUÉ LE PASA A MI MASCOTA?') }}
                         </x-nav-link>
                     </div>

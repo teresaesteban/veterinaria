@@ -230,7 +230,16 @@
                 "footer-contact": "CONTACTE CON NOSOTROS",
                 "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
                 "footer-phone": "976 30 08 04",
-                "footer-email": "teresaestegraci@gmail.com"
+                "footer-email": "teresaestegraci@gmail.com",
+                "Inicio": "{{ __('INICIO') }}",
+        "Calendario": "{{ __('CALENDARIO') }}",
+        "Historial": "{{ __('HISTORIAL') }}",
+        "Consultas": "{{ __('CONSULTAS') }}",
+        "Gestion": "{{ __('GESTION DE EMPLEADOS') }}",
+        "Soporte": "{{ __('SOPORTE') }}",
+        "Quelepasa": "{{ __('¿QUE LE PASA A MI MASCOTA') }}",
+        "idioma": "Idioma",
+
                         },
                         'en': {
                             'header-title': 'CALENDAR',
@@ -249,7 +258,16 @@
                 "footer-contact": "CONTACT US",
                 "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
                 "footer-phone": "976 30 08 04",
-                "footer-email": "teresaestegraci@gmail.com"
+                "footer-email": "teresaestegraci@gmail.com",
+                "Inicio":"{{ __('HOME') }}",
+                "Calendario":"{{ __('CALENDAR') }}",
+                "Historial":"{{ __('HISTORY') }}",
+                "Consultas":"{{ __('CONSULTS') }}",
+                "Gestion":"{{ __('EMPLOYEES') }}",
+                "Soporte":"{{ __('SUPPORT') }}",
+                "Quelepasa":"{{ __('WHAT´S WRONG WITH MY PET') }}",
+                "idioma":"Language",
+
                         }
                     };
 
