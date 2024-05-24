@@ -127,7 +127,7 @@
                 <p class="text-white mb-5 fs-5" id="about-text">
                   En VetClinic, nos esforzamos por brindar un entorno amigable y eficiente para que los veterinarios puedan registrar y acceder fácilmente a la información de los pacientes, administrar citas, llevar un historial clínico completo, y proporcionar un seguimiento más preciso y personalizado del estado de salud de las mascotas.
                 </p>
-                <p class="text-white mb-5 fs-5">
+                <p class="text-white mb-5 fs-5" id="about-text2">
                   Con VetClinic, esperamos contribuir al bienestar y cuidado de todas las mascotas, ofreciendo a los profesionales veterinarios las herramientas necesarias para un servicio de calidad y a los dueños de mascotas la tranquilidad de contar con un equipo comprometido con la salud y felicidad de sus compañeros peludos.
                 </p>
               </div>
@@ -142,7 +142,7 @@
       <div class="row justify-content-center">
           <div class="col-xl-6">
             <h2 class="mb-4" id="contact-title">¿Has tenido algún problema? </h2>
-            <h2>Introduce tu correo electrónico y nos pondremos en contacto</h2>
+            <h2 id="contact-title2">Introduce tu correo electrónico y nos pondremos en contacto</h2>
             <br>
               <!-- Contact form-->
               <form class="form-subscribe" id="contactFormFooter" method="POST" action="{{ route('contact.store') }}">
@@ -186,8 +186,10 @@
         "feature-about": "About Us",
         "about-description": "On the main page you can find general information about its operation.",
         "about-title": "About Us",
-        "about-text": "At VetClinic, we strive to provide a friendly and efficient environment for veterinarians to easily record and access patient information, manage appointments, maintain a complete medical history, and provide more accurate and personalized monitoring of pets' health status. With VetClinic, we hope to contribute to the well-being and care of all pets, offering veterinarians the necessary tools for quality service and pet owners the peace of mind of having a team committed to the health and happiness of their furry companions.",
-        "contact-title": "Have you had any problems? Enter your email and we will contact you."
+        "about-text": "At VetClinic, we strive to provide a friendly and efficient environment for veterinarians to easily record and access patient information, manage appointments, maintain a complete medical history, and provide more accurate and personalized monitoring of pets' health status. ",
+        "about-text2":"With VetClinic, we hope to contribute to the well-being and care of all pets, offering veterinarians the necessary tools for quality service and pet owners the peace of mind of having a team committed to the health and happiness of their furry companions.",
+        "contact-title": "Have you had any problems?",
+        "contact-title2": "Enter your email and we will contact you."
       },
       es: {
         "clinic-title": "Bienvenido a la Clínica Veterinaria",
@@ -203,8 +205,10 @@
         "feature-about": "Sobre Nosotros",
         "about-description": "En la página principal podrás encontrar la información general de su funcionamiento.",
         "about-title": "Sobre Nosotros",
-        "about-text": "En VetClinic, nos esforzamos por brindar un entorno amigable y eficiente para que los veterinarios puedan registrar y acceder fácilmente a la información de los pacientes, administrar citas, llevar un historial clínico completo, y proporcionar un seguimiento más preciso y personalizado del estado de salud de las mascotas. Con VetClinic, esperamos contribuir al bienestar y cuidado de todas las mascotas, ofreciendo a los profesionales veterinarios las herramientas necesarias para un servicio de calidad y a los dueños de mascotas la tranquilidad de contar con un equipo comprometido con la salud y felicidad de sus compañeros peludos.",
-        "contact-title": "¿Has tenido algún problema? Introduce tu correo electrónico y nos pondremos en contacto."
+        "about-text": "En VetClinic, nos esforzamos por brindar un entorno amigable y eficiente para que los veterinarios puedan registrar y acceder fácilmente a la información de los pacientes, administrar citas, llevar un historial clínico completo, y proporcionar un seguimiento más preciso y personalizado del estado de salud de las mascotas.",
+        "about-text2":"Con VetClinic, esperamos contribuir al bienestar y cuidado de todas las mascotas, ofreciendo a los profesionales veterinarios las herramientas necesarias para un servicio de calidad y a los dueños de mascotas la tranquilidad de contar con un equipo comprometido con la salud y felicidad de sus compañeros peludos.",
+        "contact-title": "¿Has tenido algún problema?",
+        "contact-title2": "Introduce tu correo electrónico y nos pondremos en contacto."
       }
     };
 

@@ -96,7 +96,8 @@
                     'additional-comments-label': 'Comentarios adicionales:',
                     'response-label': 'Respuesta:',
                     'response-placeholder': 'Escribe tu respuesta aquí...',
-                    'send-response-btn': 'Enviar Respuesta'
+                    'send-response-btn': 'Enviar Respuesta',
+                    'delete-btn': 'Eliminar'
                 },
                 'en': {
                     'header-title': 'INQUIRIES',
@@ -109,7 +110,8 @@
                     'additional-comments-label': 'Additional Comments:',
                     'response-label': 'Response:',
                     'response-placeholder': 'Write your response here...',
-                    'send-response-btn': 'Send Response'
+                    'send-response-btn': 'Send Response',
+                    'delete-btn': 'Delete'
                 }
             };
             // Actualizar el texto en la página según el idioma seleccionado
