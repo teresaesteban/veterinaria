@@ -14,6 +14,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\MascotaController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EmployeeController;
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
     return view('all');
 });
@@ -21,7 +23,16 @@ Route::get('home', function () {
     return view('home');
 });
 Route::get('/check-new-messages', [ConsultaController::class, 'checkNewMessages'])->name('check.new.messages');
-
+Route::get('/check-respuestas-count', function () {
+    $respuestasCount = 0;
+    if (Auth::check()) {
+        $userId = Auth::id();
+        $respuestasCount = Consulta::where('user_id', $userId)
+                                   ->whereNotNull('respuesta')
+                                   ->count();
+    }
+    return response()->json(['respuestasCount' => $respuestasCount]);
+})->name('check.respuestas.count');
 Route::get('historial', function () {
     return view('historial');
 });

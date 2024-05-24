@@ -31,10 +31,7 @@
                         <h3 id="subheader-title" class="text-muted mb-0 fs-5">Últimas preguntas</h3>
                         <h2 id="header-main-title" class="mb-5 text-white fs-1">Listado consultas</h2>
                     </div>
-                    <div class="notification">
-                        <a href="/consultas" class="text-white"></a>
-                        <span id="unread-count" class="badge" style="display: none;">0</span>
-                    </div>
+
                     @foreach ($consultas as $consulta)
                     <div class="w-full mb-8 rounded-lg p-6 shadow-md bg-custom-blue text-white">
                         <p class="mb-2"><strong id="pet-name-label">Nombre del usuario:</strong>{{ $consulta->user->name }}</p>

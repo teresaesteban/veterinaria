@@ -58,6 +58,10 @@
                             {{ __('¿QUÉ LE PASA A MI MASCOTA?') }}
                         </x-nav-link>
                     </div>
+                    <div class="notification">
+                        <span id="respuestas-count" class="badge">0</span>
+                    </div>
+
                 @endif
             </div>
             <!-- Settings Dropdown -->
@@ -195,6 +199,23 @@
         </div>
     </div>
 </nav>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch("{{ route('check.respuestas.count') }}")
+            .then(response => response.json())
+            .then(data => {
+                const respuestasCountContainer = document.getElementById("respuestas-count-container");
+                const respuestasCount = document.getElementById("respuestas-count");
+                respuestasCount.textContent = data.respuestasCount;
+
+                if (data.respuestasCount > 0) {
+                    respuestasCountContainer.style.display = "block";
+                } else {
+                    respuestasCountContainer.style.display = "none";
+                }
+            });
+    });
+</script>
 <script>
     function checkNewMessages() {
         fetch('{{ route('check.new.messages') }}')
