@@ -50,6 +50,7 @@
                         @if ($consulta->respuesta)
                         <p class="mb-2"><strong id="response-label">Respuesta:</strong> {{ $consulta->respuesta }}</p>
                         @endif
+                        @if(auth()->user()->id == $consulta->user_id)
                         <form action="{{ route('consultas.destroy', $consulta->id) }}" method="POST" class="text-right">
                             @csrf
                             @method('DELETE')
@@ -59,6 +60,7 @@
                                 </svg>
                             </button>
                         </form>
+                        @endif
                         @if(auth()->user()->hasRole('employee'))
                         <form action="{{ route('responder.consulta', $consulta->id) }}" method="POST">
                             @csrf
