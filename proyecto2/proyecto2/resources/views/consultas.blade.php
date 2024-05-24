@@ -37,6 +37,7 @@
                     </div>
                     @foreach ($consultas as $consulta)
                     <div class="w-full mb-8 rounded-lg p-6 shadow-md bg-custom-blue text-white">
+                        <p class="mb-2"><strong id="pet-name-label">Nombre del usuario:</strong>{{ $consulta->user->name }}</p>
                         <p class="mb-2"><strong id="pet-name-label">Nombre de la mascota:</strong> {{ $consulta->nombre }}</p>
                         <p class="mb-2"><strong id="species-label">Especie:</strong> {{ $consulta->especie }}</p>
                         <p class="mb-2"><strong id="age-label">Edad:</strong> {{ $consulta->edad }}</p>

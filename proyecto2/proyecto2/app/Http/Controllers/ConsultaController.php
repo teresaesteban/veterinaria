@@ -1,9 +1,11 @@
 <?php
+// app/Http/Controllers/ConsultaController.php
 
 namespace App\Http\Controllers;
-use App\Models\Mascota;
+
+use App\Models\Consulta;
 use Illuminate\Http\Request;
-use App\Models\Consulta; // Ajusta esto según el nombre de tu modelo de consulta
+use Illuminate\Support\Facades\Auth;
 
 class ConsultaController extends Controller
 {
@@ -19,6 +21,7 @@ class ConsultaController extends Controller
         // Redirigir a la lista de consultas con un mensaje de éxito
         return redirect()->route('mostrar-consultas')->with('success', '¡Se ha enviado la respuesta!');
     }
+
     public function guardarConsulta(Request $request)
     {
         // Validación de datos
@@ -38,7 +41,9 @@ class ConsultaController extends Controller
             $file->move($destinationPath, $fileName);
             $consulta->imagen = $fileName;
         }
+
         // Asignar los datos del formulario al modelo
+        $consulta->user_id = Auth::id();  // Capturar el ID del usuario autenticado
         $consulta->nombre = $request->nombre;
         $consulta->especie = $request->especie;
         $consulta->edad = $request->edad ?? null;
@@ -61,12 +66,12 @@ class ConsultaController extends Controller
         return view('consultas', ['consultas' => $consultas]);
     }
 
-
     public function destroy(Consulta $consulta)
     {
         $consulta->delete();
         return redirect()->route('mostrar-consultas')->with('success', 'Consulta eliminada correctamente.');
     }
+
     public function checkNewMessages()
     {
         // Suponiendo que una consulta sin respuesta tiene la columna 'respuesta' vacía

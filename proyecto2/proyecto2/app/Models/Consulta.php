@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Consulta extends Model
 {
-    use HasFactory;
+    protected $fillable = ['user_id', 'nombre', 'especie', 'edad', 'sintomas', 'imagen', 'comentarios'];
 
-    protected $fillable = ['nombre', 'especie', 'edad', 'sintomas', 'comentarios'];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
