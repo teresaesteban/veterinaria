@@ -32,7 +32,8 @@
                 <div class="text-center">
                     <i class="bi bi-heart icon-feature text-gradient d-block mb-3"></i>
                 </div>
-                <h1 class="fw-bolder"><span id="create-pet">Crea tu mascota!</span></h1>
+                <h1 class="fw-bolder"><span id="create-pet">Agrega los datos de tu mascota!
+                </span></h1>
                 <p class="lead fw-normal text-muted mb-0"><span id="thanks">Gracias por confiar en nosotros</span></p>
             </div>
             <div class="row gx-5 justify-content-center">
@@ -68,7 +69,7 @@ function translatePage(language) {
   const translations = {
     en: {
       'page-title': 'Added Pet',
-      'create-pet': 'Create your pet!',
+      'create-pet': 'Add your pet data',
       'thanks': 'Thank you for trusting us',
       'pet-name': 'Pet Name:',
       'pet-type': 'Pet Type:',
@@ -90,7 +91,7 @@ function translatePage(language) {
     },
     es: {
       'page-title': 'Mascota Agregada',
-      'create-pet': 'Crea tu mascota!',
+      'create-pet': 'Agrega los datos de tu mascota!',
       'thanks': 'Gracias por confiar en nosotros',
       'pet-name': 'Nombre de la mascota:',
       'pet-type': 'Tipo de mascota:',

@@ -18,22 +18,27 @@ class EmployeeController extends Controller
 
     // Método para crear un nuevo empleado
     public function create(Request $request)
-    {
-        // Verificar si el usuario actual tiene el rol 'employee'
-        if ($request->user()->hasRole('employee')) {
-            // Crear el nuevo usuario y asignarle el rol
-            $user = User::create([
-                'name' => $request->input('name'),
-                'email' => $request->input('email'),
-                'password' => bcrypt($request->input('password')),
-            ]);
-            $user->assignRole(Role::where('name', 'employee')->first());
-
-            return back()->with('success', 'Empleado creado exitosamente.');
-        } else {
-            return back()->with('error', 'No tienes permiso para crear empleados.');
+{
+    // Verificar si el usuario actual tiene el rol 'employee'
+    if ($request->user()->hasRole('employee')) {
+        // Comprobar si el correo electrónico ya existe
+        if (User::where('email', $request->input('email'))->exists()) {
+            return back()->with('error', 'El correo electrónico ya está en uso.');
         }
+
+        // Crear el nuevo usuario y asignarle el rol
+        $user = User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+        ]);
+        $user->assignRole(Role::where('name', 'employee')->first());
+
+        return back()->with('success', 'Empleado creado exitosamente.');
+    } else {
+        return back()->with('error', 'No tienes permiso para crear empleados.');
     }
+}
 
     // Método para eliminar un empleado
     public function delete(Request $request, $userId)
