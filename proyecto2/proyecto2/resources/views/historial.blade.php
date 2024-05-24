@@ -82,8 +82,6 @@
                                                     <td>
                                                         @if (auth()->user()->mascota()->count() > 0)
 
-                                                        <div class="text-white">Mascotas:</div>
-
                                                         @foreach (auth()->user()->mascota as $mascota)
 
                                                         <div class="container mt-5">
