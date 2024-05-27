@@ -6,7 +6,8 @@
     </x-slot>
     <!DOCTYPE html>
     <html lang="en">
-      <head>
+
+    <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -17,12 +18,16 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Google fonts-->
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap"
+            rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap"
+            rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-      </head>
+    </head>
     <div class="py-12 bg-dark min-h-screen">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-dark overflow-hidden shadow-sm sm:rounded-lg">
@@ -33,46 +38,54 @@
                     </div>
 
                     @foreach ($consultas as $consulta)
-                    <div class="w-full mb-8 rounded-lg p-6 shadow-md bg-custom-blue text-white">
-                        <p class="mb-2"><strong id="pet-name-label">Nombre del usuario:</strong>{{ $consulta->user->name }}</p>
-                        <p class="mb-2"><strong id="pet-name-label">Nombre de la mascota:</strong> {{ $consulta->nombre }}</p>
-                        <p class="mb-2"><strong id="species-label">Especie:</strong> {{ $consulta->especie }}</p>
-                        <p class="mb-2"><strong id="age-label">Edad:</strong> {{ $consulta->edad }}</p>
-                        <p class="mb-2"><strong id="symptoms-label">Síntomas:</strong> {{ $consulta->sintomas }}</p>
-                        <p class="mb-2"><strong id="additional-comments-label">Comentarios adicionales:</strong> {{ $consulta->comentarios }}</p>
-                        @if (!empty($consulta->imagen))
-    <p class="mb-2">
-        <strong id="imagen">
-            <img src="{{ url('images/veterinaria/' . $consulta->imagen) }}" alt="Imagen de la consulta">
-        </strong>
-    </p>
-@endif
-                        @if ($consulta->respuesta)
-                        <p class="mb-2"><strong id="response-label">Respuesta:</strong> {{ $consulta->respuesta }}</p>
-                        @endif
-                        @if(auth()->user()->id == $consulta->user_id)
-                        <form action="{{ route('consultas.destroy', $consulta->id) }}" method="POST" class="text-right">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger" id="delete-btn">
-                                Eliminar
-                            </button>
-                        </form>
-                        @endif
-                        @if(auth()->user()->hasRole('employee'))
-                        <form action="{{ route('responder.consulta', $consulta->id) }}" method="POST">
-                            @csrf
-                            <input type="hidden" name="consulta_id" value="{{ $consulta->id }}">
-                            <div class="form-group">
-                                <label for="respuesta" id="response-label">Respuesta:</label>
-                                <textarea class="form-control" id="response-placeholder" name="respuesta" rows="3">{{ auth()->user()->name }}:</textarea>
-                            </div>
-                            <br>
-                            <button type="submit" class="btn bg-white text-black" id="send-response-btn">Enviar Respuesta</button>
-                        </form>
-                        @endif
-                    </div>
-                    <br>
+                        <div class="w-full mb-8 rounded-lg p-6 shadow-md bg-custom-blue text-white">
+                            <p class="mb-2"><strong id="pet-name-label">Nombre del
+                                    usuario:</strong>{{ $consulta->user->name }}</p>
+                            <p class="mb-2"><strong id="pet-name-label">Nombre de la mascota:</strong>
+                                {{ $consulta->nombre }}</p>
+                            <p class="mb-2"><strong id="species-label">Especie:</strong> {{ $consulta->especie }}</p>
+                            <p class="mb-2"><strong id="age-label">Edad:</strong> {{ $consulta->edad }}</p>
+                            <p class="mb-2"><strong id="symptoms-label">Síntomas:</strong> {{ $consulta->sintomas }}
+                            </p>
+                            <p class="mb-2"><strong id="additional-comments-label">Comentarios adicionales:</strong>
+                                {{ $consulta->comentarios }}</p>
+                            @if (!empty($consulta->imagen))
+                                <p class="mb-2">
+                                    <strong id="imagen">
+                                        <img src="{{ url('images/veterinaria/' . $consulta->imagen) }}"
+                                            alt="Imagen de la consulta">
+                                    </strong>
+                                </p>
+                            @endif
+                            @if ($consulta->respuesta)
+                                <p class="mb-2"><strong id="response-label">Respuesta:</strong>
+                                    {{ $consulta->respuesta }}</p>
+                            @endif
+                            @if (auth()->user()->id == $consulta->user_id)
+                                <form action="{{ route('consultas.destroy', $consulta->id) }}" method="POST"
+                                    class="text-right">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger" id="delete-btn">
+                                        Eliminar
+                                    </button>
+                                </form>
+                            @endif
+                            @if (auth()->user()->hasRole('employee'))
+                                <form action="{{ route('responder.consulta', $consulta->id) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="consulta_id" value="{{ $consulta->id }}">
+                                    <div class="form-group">
+                                        <label for="respuesta" id="response-label">Respuesta:</label>
+                                        <textarea class="form-control" id="response-placeholder" name="respuesta" rows="3">{{ auth()->user()->name }}:</textarea>
+                                    </div>
+                                    <br>
+                                    <button type="submit" class="btn bg-white text-black" id="send-response-btn">Enviar
+                                        Respuesta</button>
+                                </form>
+                            @endif
+                        </div>
+                        <br>
                     @endforeach
                 </div>
             </div>
@@ -99,18 +112,18 @@
                     'send-response-btn': 'Enviar Respuesta',
                     'delete-btn': 'Eliminar',
                     "footer-copyright": "© 2024 Vet Clinic. Todos los derechos reservados.",
-                "footer-contact": "CONTACTE CON NOSOTROS",
-                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
-                "footer-phone": "976 30 08 04",
-                "footer-email": "teresaestegraci@gmail.com",
-                "Inicio": "{{ __('INICIO') }}",
-        "Calendario": "{{ __('CALENDARIO') }}",
-        "Historial": "{{ __('HISTORIAL') }}",
-        "Consultas": "{{ __('CONSULTAS') }}",
-        "Gestion": "{{ __('GESTION DE EMPLEADOS') }}",
-        "Soporte": "{{ __('SOPORTE') }}",
-        "Quelepasa": "{{ __('¿QUE LE PASA A MI MASCOTA') }}",
-        "idioma": "Idioma",
+                    "footer-contact": "CONTACTE CON NOSOTROS",
+                    "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                    "footer-phone": "976 30 08 04",
+                    "footer-email": "teresaestegraci@gmail.com",
+                    "Inicio": "{{ __('INICIO') }}",
+                    "Calendario": "{{ __('CALENDARIO') }}",
+                    "Historial": "{{ __('HISTORIAL') }}",
+                    "Consultas": "{{ __('CONSULTAS') }}",
+                    "Gestion": "{{ __('GESTION DE EMPLEADOS') }}",
+                    "Soporte": "{{ __('SOPORTE') }}",
+                    "Quelepasa": "{{ __('¿QUE LE PASA A MI MASCOTA') }}",
+                    "idioma": "Idioma",
                 },
                 'en': {
                     'header-title': 'INQUIRIES',
@@ -126,18 +139,18 @@
                     'send-response-btn': 'Send Response',
                     'delete-btn': 'Delete',
                     "footer-copyright": "© 2024 Vet Clinic. All rights reserved.",
-                "footer-contact": "CONTACT US",
-                "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
-                "footer-phone": "976 30 08 04",
-                "footer-email": "teresaestegraci@gmail.com",
-        "Inicio":"{{ __('HOME') }}",
-                "Calendario":"{{ __('CALENDAR') }}",
-                "Historial":"{{ __('HISTORY') }}",
-                "Consultas":"{{ __('CONSULTS') }}",
-                "Gestion":"{{ __('EMPLOYEES') }}",
-                "Soporte":"{{ __('SUPPORT') }}",
-                "Quelepasa":"{{ __('WHAT´S WRONG WITH MY PET') }}",
-                "idioma":"Language",
+                    "footer-contact": "CONTACT US",
+                    "footer-address": "C. de Jarque de Moncayo, 10, 50012 Zaragoza",
+                    "footer-phone": "976 30 08 04",
+                    "footer-email": "teresaestegraci@gmail.com",
+                    "Inicio": "{{ __('HOME') }}",
+                    "Calendario": "{{ __('CALENDAR') }}",
+                    "Historial": "{{ __('HISTORY') }}",
+                    "Consultas": "{{ __('CONSULTS') }}",
+                    "Gestion": "{{ __('EMPLOYEES') }}",
+                    "Soporte": "{{ __('SUPPORT') }}",
+                    "Quelepasa": "{{ __('WHAT´S WRONG WITH MY PET') }}",
+                    "idioma": "Language",
                 }
             };
             // Actualizar el texto en la página según el idioma seleccionado
